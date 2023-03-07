@@ -15,7 +15,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext(
+builder.Services.AddDbContext<UsersDBContext>(
     options => options.UseSqlServer(builder.Configuration.GetConnectionString("SchoolApiContextConnection")));
 var app = builder.Build();
 

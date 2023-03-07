@@ -1,4 +1,5 @@
 ﻿using Application.Users.Queries.GetUser;
+using Infrastructure.Persistance;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Backend.Controllers
