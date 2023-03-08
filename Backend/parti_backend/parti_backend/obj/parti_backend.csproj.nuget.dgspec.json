@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nada\\source\\repos\\parti_backend\\parti_backend\\parti_backend.csproj": {}
+    "E:\\Stage Acteol\\Workcode\\Backend\\parti_backend\\parti_backend\\parti_backend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nada\\source\\repos\\parti_backend\\parti_backend\\parti_backend.csproj": {
+    "E:\\Stage Acteol\\Workcode\\Backend\\parti_backend\\parti_backend\\parti_backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nada\\source\\repos\\parti_backend\\parti_backend\\parti_backend.csproj",
+        "projectUniqueName": "E:\\Stage Acteol\\Workcode\\Backend\\parti_backend\\parti_backend\\parti_backend.csproj",
         "projectName": "parti_backend",
-        "projectPath": "C:\\Users\\nada\\source\\repos\\parti_backend\\parti_backend\\parti_backend.csproj",
+        "projectPath": "E:\\Stage Acteol\\Workcode\\Backend\\parti_backend\\parti_backend\\parti_backend.csproj",
         "packagesPath": "C:\\Users\\nada\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nada\\source\\repos\\parti_backend\\parti_backend\\obj\\",
+        "outputPath": "E:\\Stage Acteol\\Workcode\\Backend\\parti_backend\\parti_backend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -44,20 +44,6 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[5.0.0, )"
-            },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[5.0.0, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[5.0.0, )"
-            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.5.0, )"
