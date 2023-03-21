@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nada\\Desktop\\Back\\Application\\Application.csproj": {}
+    "E:\\Stage Acteol\\Workcode\\Back\\Application\\Application.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nada\\Desktop\\Back\\Application\\Application.csproj": {
+    "E:\\Stage Acteol\\Workcode\\Back\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nada\\Desktop\\Back\\Application\\Application.csproj",
+        "projectUniqueName": "E:\\Stage Acteol\\Workcode\\Back\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\Users\\nada\\Desktop\\Back\\Application\\Application.csproj",
+        "projectPath": "E:\\Stage Acteol\\Workcode\\Back\\Application\\Application.csproj",
         "packagesPath": "C:\\Users\\nada\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nada\\Desktop\\Back\\Application\\obj\\",
+        "outputPath": "E:\\Stage Acteol\\Workcode\\Back\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,8 +32,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\nada\\Desktop\\Back\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\nada\\Desktop\\Back\\Domain\\Domain.csproj"
+              "E:\\Stage Acteol\\Workcode\\Back\\Domain\\Domain.csproj": {
+                "projectPath": "E:\\Stage Acteol\\Workcode\\Back\\Domain\\Domain.csproj"
               }
             }
           }
@@ -93,18 +93,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\nada\\Desktop\\Back\\Domain\\Domain.csproj": {
+    "E:\\Stage Acteol\\Workcode\\Back\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nada\\Desktop\\Back\\Domain\\Domain.csproj",
+        "projectUniqueName": "E:\\Stage Acteol\\Workcode\\Back\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\nada\\Desktop\\Back\\Domain\\Domain.csproj",
+        "projectPath": "E:\\Stage Acteol\\Workcode\\Back\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\nada\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nada\\Desktop\\Back\\Domain\\obj\\",
+        "outputPath": "E:\\Stage Acteol\\Workcode\\Back\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -166,7 +166,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

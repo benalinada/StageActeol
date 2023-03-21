@@ -4732,11 +4732,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nada\\Desktop\\Back\\Backend\\Backend.csproj",
+      "projectUniqueName": "E:\\Stage Acteol\\Workcode\\Back\\Backend\\Backend.csproj",
       "projectName": "Backend",
-      "projectPath": "C:\\Users\\nada\\Desktop\\Back\\Backend\\Backend.csproj",
+      "projectPath": "E:\\Stage Acteol\\Workcode\\Back\\Backend\\Backend.csproj",
       "packagesPath": "C:\\Users\\nada\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nada\\Desktop\\Back\\Backend\\obj\\",
+      "outputPath": "E:\\Stage Acteol\\Workcode\\Back\\Backend\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -4757,11 +4757,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\nada\\Desktop\\Back\\Application\\Application.csproj": {
-              "projectPath": "C:\\Users\\nada\\Desktop\\Back\\Application\\Application.csproj"
+            "E:\\Stage Acteol\\Workcode\\Back\\Application\\Application.csproj": {
+              "projectPath": "E:\\Stage Acteol\\Workcode\\Back\\Application\\Application.csproj"
             },
-            "C:\\Users\\nada\\Desktop\\Back\\Infrastructure\\Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\nada\\Desktop\\Back\\Infrastructure\\Infrastructure.csproj"
+            "E:\\Stage Acteol\\Workcode\\Back\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "E:\\Stage Acteol\\Workcode\\Back\\Infrastructure\\Infrastructure.csproj"
             }
           }
         }
@@ -4838,7 +4838,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

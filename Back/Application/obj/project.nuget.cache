@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ct7sZAEtoGmWlDsJKb3mqyONaohmdcYga8vAg8rY/U1o5taJ2EA8jFoU0MW5ypdaqByKYVEsNv0ep3uOvjzDdw==",
+  "dgSpecHash": "Ix8fZN2qeKb2pUaK+fYzk2HUr7ApUu64IiT4rztxzkZzBOFMVEZsfKxKbxENXUhS1QerYry3vgU74NmKfZsUMQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\nada\\Desktop\\Back\\Application\\Application.csproj",
+  "projectFilePath": "E:\\Stage Acteol\\Workcode\\Back\\Application\\Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nada\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\nada\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",

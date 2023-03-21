@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+t23aZLI/3nSbfqBomme5VDVgGeF8MhszMnRuq3zmBxDLENiMUkR4G6f2QP+ZMb5q8yQIbSR6ODpqJ+T99dwtQ==",
+  "dgSpecHash": "LQzHHFHaSAIqTTnVwecnPKvczJUGWxjM2bBN35z1pc5HGQt3ijXVKr4UQAWheTh3Aq8CnIzKEoBIkGL1Js5R/Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\nada\\Desktop\\Back\\Backend\\Backend.csproj",
+  "projectFilePath": "E:\\Stage Acteol\\Workcode\\Back\\Backend\\Backend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nada\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\nada\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",

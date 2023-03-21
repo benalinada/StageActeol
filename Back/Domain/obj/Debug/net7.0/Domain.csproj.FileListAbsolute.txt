@@ -22,3 +22,15 @@ C:\Users\nada\Desktop\Back\Domain\obj\Debug\net7.0\Domain.dll
 C:\Users\nada\Desktop\Back\Domain\obj\Debug\net7.0\refint\Domain.dll
 C:\Users\nada\Desktop\Back\Domain\obj\Debug\net7.0\Domain.pdb
 C:\Users\nada\Desktop\Back\Domain\obj\Debug\net7.0\ref\Domain.dll
+E:\Stage Acteol\Workcode\Back\Domain\bin\Debug\net7.0\Domain.deps.json
+E:\Stage Acteol\Workcode\Back\Domain\bin\Debug\net7.0\Domain.dll
+E:\Stage Acteol\Workcode\Back\Domain\bin\Debug\net7.0\Domain.pdb
+E:\Stage Acteol\Workcode\Back\Domain\obj\Debug\net7.0\Domain.csproj.AssemblyReference.cache
+E:\Stage Acteol\Workcode\Back\Domain\obj\Debug\net7.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+E:\Stage Acteol\Workcode\Back\Domain\obj\Debug\net7.0\Domain.AssemblyInfoInputs.cache
+E:\Stage Acteol\Workcode\Back\Domain\obj\Debug\net7.0\Domain.AssemblyInfo.cs
+E:\Stage Acteol\Workcode\Back\Domain\obj\Debug\net7.0\Domain.csproj.CoreCompileInputs.cache
+E:\Stage Acteol\Workcode\Back\Domain\obj\Debug\net7.0\Domain.dll
+E:\Stage Acteol\Workcode\Back\Domain\obj\Debug\net7.0\refint\Domain.dll
+E:\Stage Acteol\Workcode\Back\Domain\obj\Debug\net7.0\Domain.pdb
+E:\Stage Acteol\Workcode\Back\Domain\obj\Debug\net7.0\ref\Domain.dll
