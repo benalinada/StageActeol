@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Stage Acteol\\Workcode\\Back\\Backend\\Backend.csproj": {}
+    "C:\\Users\\nada\\Desktop\\fatma\\StageActeol\\Back\\Backend\\Backend.csproj": {}
   },
   "projects": {
-    "E:\\Stage Acteol\\Workcode\\Back\\Application\\Application.csproj": {
+    "C:\\Users\\nada\\Desktop\\fatma\\StageActeol\\Back\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Stage Acteol\\Workcode\\Back\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\Users\\nada\\Desktop\\fatma\\StageActeol\\Back\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "E:\\Stage Acteol\\Workcode\\Back\\Application\\Application.csproj",
+        "projectPath": "C:\\Users\\nada\\Desktop\\fatma\\StageActeol\\Back\\Application\\Application.csproj",
         "packagesPath": "C:\\Users\\nada\\.nuget\\packages\\",
-        "outputPath": "E:\\Stage Acteol\\Workcode\\Back\\Application\\obj\\",
+        "outputPath": "C:\\Users\\nada\\Desktop\\fatma\\StageActeol\\Back\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,8 +32,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "E:\\Stage Acteol\\Workcode\\Back\\Domain\\Domain.csproj": {
-                "projectPath": "E:\\Stage Acteol\\Workcode\\Back\\Domain\\Domain.csproj"
+              "C:\\Users\\nada\\Desktop\\fatma\\StageActeol\\Back\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\nada\\Desktop\\fatma\\StageActeol\\Back\\Domain\\Domain.csproj"
               }
             }
           }
@@ -56,6 +56,10 @@
               "target": "Package",
               "version": "[12.0.0, )"
             },
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            },
             "FluentValidation": {
               "target": "Package",
               "version": "[11.5.1, )"
@@ -69,6 +73,10 @@
               "version": "[7.0.3, )"
             },
             "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Abstractions": {
               "target": "Package",
               "version": "[7.0.3, )"
             },
@@ -97,14 +105,14 @@
         }
       }
     },
-    "E:\\Stage Acteol\\Workcode\\Back\\Backend\\Backend.csproj": {
+    "C:\\Users\\nada\\Desktop\\fatma\\StageActeol\\Back\\Backend\\Backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Stage Acteol\\Workcode\\Back\\Backend\\Backend.csproj",
+        "projectUniqueName": "C:\\Users\\nada\\Desktop\\fatma\\StageActeol\\Back\\Backend\\Backend.csproj",
         "projectName": "Backend",
-        "projectPath": "E:\\Stage Acteol\\Workcode\\Back\\Backend\\Backend.csproj",
+        "projectPath": "C:\\Users\\nada\\Desktop\\fatma\\StageActeol\\Back\\Backend\\Backend.csproj",
         "packagesPath": "C:\\Users\\nada\\.nuget\\packages\\",
-        "outputPath": "E:\\Stage Acteol\\Workcode\\Back\\Backend\\obj\\",
+        "outputPath": "C:\\Users\\nada\\Desktop\\fatma\\StageActeol\\Back\\Backend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -125,11 +133,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "E:\\Stage Acteol\\Workcode\\Back\\Application\\Application.csproj": {
-                "projectPath": "E:\\Stage Acteol\\Workcode\\Back\\Application\\Application.csproj"
+              "C:\\Users\\nada\\Desktop\\fatma\\StageActeol\\Back\\Application\\Application.csproj": {
+                "projectPath": "C:\\Users\\nada\\Desktop\\fatma\\StageActeol\\Back\\Application\\Application.csproj"
               },
-              "E:\\Stage Acteol\\Workcode\\Back\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "E:\\Stage Acteol\\Workcode\\Back\\Infrastructure\\Infrastructure.csproj"
+              "C:\\Users\\nada\\Desktop\\fatma\\StageActeol\\Back\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\nada\\Desktop\\fatma\\StageActeol\\Back\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -152,35 +160,35 @@
               "target": "Package",
               "version": "[12.0.0, )"
             },
-            "EntityFramework": {
-              "target": "Package",
-              "version": "[6.4.4, )"
-            },
             "MediatR": {
               "target": "Package",
               "version": "[12.0.1, )"
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
-              "version": "[7.0.3, )"
+              "version": "[7.0.4, )"
             },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
-              "version": "[7.0.2, )"
+              "version": "[7.0.4, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[7.0.3, )"
+              "version": "[7.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Abstractions": {
+              "target": "Package",
+              "version": "[7.0.4, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[7.0.3, )"
+              "version": "[7.0.4, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[7.0.3, )"
+              "version": "[7.0.4, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -210,14 +218,14 @@
         }
       }
     },
-    "E:\\Stage Acteol\\Workcode\\Back\\Domain\\Domain.csproj": {
+    "C:\\Users\\nada\\Desktop\\fatma\\StageActeol\\Back\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Stage Acteol\\Workcode\\Back\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\nada\\Desktop\\fatma\\StageActeol\\Back\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "E:\\Stage Acteol\\Workcode\\Back\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Users\\nada\\Desktop\\fatma\\StageActeol\\Back\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\nada\\.nuget\\packages\\",
-        "outputPath": "E:\\Stage Acteol\\Workcode\\Back\\Domain\\obj\\",
+        "outputPath": "C:\\Users\\nada\\Desktop\\fatma\\StageActeol\\Back\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -258,7 +266,19 @@
               "target": "Package",
               "version": "[12.0.0, )"
             },
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[7.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Abstractions": {
               "target": "Package",
               "version": "[7.0.3, )"
             }
@@ -283,14 +303,14 @@
         }
       }
     },
-    "E:\\Stage Acteol\\Workcode\\Back\\Infrastructure\\Infrastructure.csproj": {
+    "C:\\Users\\nada\\Desktop\\fatma\\StageActeol\\Back\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Stage Acteol\\Workcode\\Back\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\nada\\Desktop\\fatma\\StageActeol\\Back\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "E:\\Stage Acteol\\Workcode\\Back\\Infrastructure\\Infrastructure.csproj",
+        "projectPath": "C:\\Users\\nada\\Desktop\\fatma\\StageActeol\\Back\\Infrastructure\\Infrastructure.csproj",
         "packagesPath": "C:\\Users\\nada\\.nuget\\packages\\",
-        "outputPath": "E:\\Stage Acteol\\Workcode\\Back\\Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\nada\\Desktop\\fatma\\StageActeol\\Back\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -311,11 +331,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "E:\\Stage Acteol\\Workcode\\Back\\Application\\Application.csproj": {
-                "projectPath": "E:\\Stage Acteol\\Workcode\\Back\\Application\\Application.csproj"
+              "C:\\Users\\nada\\Desktop\\fatma\\StageActeol\\Back\\Application\\Application.csproj": {
+                "projectPath": "C:\\Users\\nada\\Desktop\\fatma\\StageActeol\\Back\\Application\\Application.csproj"
               },
-              "E:\\Stage Acteol\\Workcode\\Back\\Domain\\Domain.csproj": {
-                "projectPath": "E:\\Stage Acteol\\Workcode\\Back\\Domain\\Domain.csproj"
+              "C:\\Users\\nada\\Desktop\\fatma\\StageActeol\\Back\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\nada\\Desktop\\fatma\\StageActeol\\Back\\Domain\\Domain.csproj"
               }
             }
           }
@@ -338,6 +358,10 @@
               "target": "Package",
               "version": "[12.0.0, )"
             },
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.4, )"
+            },
             "Ical.Net": {
               "target": "Package",
               "version": "[4.2.0, )"
@@ -346,27 +370,23 @@
               "target": "Package",
               "version": "[12.0.1, )"
             },
-            "Microsoft.AspNetCore.Authentication.JwtBearer": {
-              "target": "Package",
-              "version": "[7.0.3, )"
-            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[7.0.3, )"
+              "version": "[7.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Analyzers": {
+              "target": "Package",
+              "version": "[7.0.4, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[7.0.3, )"
+              "version": "[7.0.4, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.13, )"
-            },
-            "Microsoft.Extensions.Configuration.Abstractions": {
-              "target": "Package",
-              "version": "[7.0.0, )"
+              "version": "[7.0.4, )"
             }
           },
           "imports": [

@@ -1,0 +1,34 @@
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+select {
+  width: 800px;
+  height: 40px;
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid#6a4141;
+}
+
+button {
+  display: block;
+  width: 600px;
+  height: 40px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  background-color: #1e2225;
+  color: #fff;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button:hover {
+  background-color: #0069d9;
+}

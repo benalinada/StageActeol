@@ -5,7 +5,7 @@ using System.Diagnostics.Contracts;
 
 namespace Application.Users.Queries.GetUser
 {
-    public class GetUserQueryResponse : IMapFrom<User>
+    public class GetServeurQueryResponse : IMapFrom<User>
     {
         public string Email { get; set; }
         public string FirstName { get; set; }
@@ -14,7 +14,7 @@ namespace Application.Users.Queries.GetUser
         public string Job { get; set; }
         public  void Mapping(Profile profile)
         {
-            profile.CreateMap<User,GetUserQueryResponse>();
+            profile.CreateMap<User,GetServeurQueryResponse>();
         }
     }
 }

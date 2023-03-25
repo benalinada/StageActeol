@@ -1,0 +1,82 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+  <div class="container-fluid">
+    <div class="header-body">
+      <!-- Card stats -->
+      <div class="row">
+  
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Page content -->
+<div class="container-fluid mt--7">
+  <!-- Table -->
+  <div class="row">
+    <div class="col">
+      <div class="card shadow">
+          <div class="card-header bg-transparent">
+            <h3 class="mb-0">Icons</h3>
+          </div>
+          <header>
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-12 navigation">
+                  <nav class="navbar ">
+                    <div class="container entete">
+                      <!--<div class="navbar-header">-->
+                        <a class="navbar-brand" href="#">
+                          <h1>Select Measure Group Tables&nbsp;!</h1>
+                        </a>
+                      <!--</div>-->
+                    </div>
+                  </nav>  
+                </div>
+                <div class="col-md-12 text-center titre">
+                  <h4> Select a date source view or diagram and then select the tables that will be
+                    used for measure groups.!</h4>
+                </div>
+              </div>
+            </div>
+          </header>
+      <!-- Template pour l'interface utilisateur -->
+      <div>
+        <label for="database-select">Sélectionner une base de données :</label>
+        <select id="database-select" [(ngModel)]="selectedDatabase" (change)="onDatabaseChange()">
+          <option *ngFor="let database of databases" [value]="database">{{database}}</option>
+        </select>
+      </div>
+      <br>
+      <div class="card border-dark mb-3" style=" width: 800px; height: 300px; border: 1px black solid; margin-left: auto;
+      margin-right: auto;" >
+        <div class="card-body">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" disabled>
+              <label class="form-check-label" for="defaultCheck2">
+                Disabled checkbox
+              </label>
+            <div *ngIf="tables.length > 0">
+                <div *ngFor="let table of tables">
+                  <label>
+                    <input type="checkbox" [(ngModel)]="selectedTables[table]" name="selectedTables" [value]="table">
+                    {{table}}
+                  </label>
+                </div>
+              </div>
+            </div>
+         </div>
+      </div>
+      <br>
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-primary">Left</button>
+        <button type="button" class="btn btn-primary">Middle</button>
+        <button type="button" class="btn btn-primary">Right</button>
+      </div>
+      
+      <div>
+        <canvas id="chart"></canvas>
+      </div>
+      
+
+    </div>
+  </div>
+</div>

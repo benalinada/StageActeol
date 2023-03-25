@@ -23,12 +23,17 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 var connectionString = builder.Configuration.GetConnectionString("ApiContextConnection");
-
+var connectioncubeString = builder.Configuration.GetConnectionString("ApiContextConnection");
 builder.Services.AddDbContext<UsersDBContext>(options =>
               options.UseSqlServer(connectionString, option => option.EnableRetryOnFailure()),
               ServiceLifetime.Transient,
               ServiceLifetime.Transient);
+builder.Services.AddDbContext<UsersDBContext>(options =>
+              options.UseSqlServer(connectioncubeString, option => option.EnableRetryOnFailure()),
+              ServiceLifetime.Transient,
+              ServiceLifetime.Transient);
 builder.Services.AddTransient<IUsersDBContext>(provider => provider.GetService<UsersDBContext>());
+builder.Services.AddTransient<IServeurDBcontext>(provider => provider.GetService<ServeurDBContext>());
 builder.Services.AddScoped<IDateTime, DateTimeService>();
 builder.Services.AddApplication();
 builder.Services.AddOptions();

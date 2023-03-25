@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Application.Users.Queries.GetUser
 {
-    public class GetUserQueryHandler : IRequestHandler<GetUserQuery, GetUserQueryResponse>
+    public class GetUserQueryHandler : IRequestHandler<GetUserQuery, GetServeurQueryResponse>
     {
          private readonly IUsersDBContext _usersDBContext;
         private readonly IMapper _mapper;
@@ -19,11 +19,11 @@ namespace Application.Users.Queries.GetUser
             _mapper= mapper;
             _usersDBContext= usersDBContext;
         }
-        public async Task<GetUserQueryResponse> Handle(GetUserQuery request, CancellationToken cancellationToken)
+        public async Task<GetServeurQueryResponse> Handle(GetUserQuery request, CancellationToken cancellationToken)
         {
              User user = _usersDBContext.Users.SingleOrDefault(u=> u.Email == request.Email);
             //return  _mapper.Map<GetUserQueryResponse>(user);
-            return new GetUserQueryResponse()
+            return new GetServeurQueryResponse()
             {
                 Email = user.Email,
                 FirstName = user.FirstName,

@@ -192,101 +192,199 @@ C:\Users\nada\Desktop\Back\Backend\obj\Debug\net7.0\Backend.genruntimeconfig.cac
 C:\Users\nada\Desktop\Back\Backend\obj\Debug\net7.0\ref\Backend.dll
 C:\Users\nada\Desktop\Back\Backend\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\nada\Desktop\Back\Backend\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\appsettings.Development.json
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\appsettings.json
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\Backend.exe
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\Backend.deps.json
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\Backend.runtimeconfig.json
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\Backend.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\Backend.pdb
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\AutoMapper.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\Azure.Core.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\Azure.Identity.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\EntityFramework.SqlServer.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\EntityFramework.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\FluentValidation.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\Humanizer.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\Ical.Net.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\MediatR.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\MediatR.Contracts.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\Microsoft.Bcl.AsyncInterfaces.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\Microsoft.Data.SqlClient.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.SqlServer.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\Microsoft.Identity.Client.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\Microsoft.Identity.Client.Extensions.Msal.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\Microsoft.IdentityModel.Abstractions.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\Microsoft.IdentityModel.JsonWebTokens.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\Microsoft.IdentityModel.Logging.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\Microsoft.OpenApi.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\Microsoft.SqlServer.Server.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\Microsoft.Win32.SystemEvents.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\Mono.TextTemplating.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\NodaTime.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\System.CodeDom.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\System.Configuration.ConfigurationManager.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\System.Data.SqlClient.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\System.Drawing.Common.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\System.Memory.Data.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\System.Runtime.Caching.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\System.Security.Cryptography.ProtectedData.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\System.Security.Permissions.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\System.Windows.Extensions.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\runtimes\win-arm64\native\sni.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\runtimes\win-x64\native\sni.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\runtimes\win-x86\native\sni.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\Application.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\Domain.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\Infrastructure.dll
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\Application.pdb
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\Infrastructure.pdb
-E:\Stage Acteol\Workcode\Back\Backend\bin\Debug\net7.0\Domain.pdb
-E:\Stage Acteol\Workcode\Back\Backend\obj\Debug\net7.0\Backend.csproj.AssemblyReference.cache
-E:\Stage Acteol\Workcode\Back\Backend\obj\Debug\net7.0\Backend.GeneratedMSBuildEditorConfig.editorconfig
-E:\Stage Acteol\Workcode\Back\Backend\obj\Debug\net7.0\Backend.AssemblyInfoInputs.cache
-E:\Stage Acteol\Workcode\Back\Backend\obj\Debug\net7.0\Backend.AssemblyInfo.cs
-E:\Stage Acteol\Workcode\Back\Backend\obj\Debug\net7.0\Backend.csproj.CoreCompileInputs.cache
-E:\Stage Acteol\Workcode\Back\Backend\obj\Debug\net7.0\Backend.MvcApplicationPartsAssemblyInfo.cs
-E:\Stage Acteol\Workcode\Back\Backend\obj\Debug\net7.0\Backend.MvcApplicationPartsAssemblyInfo.cache
-E:\Stage Acteol\Workcode\Back\Backend\obj\Debug\net7.0\staticwebassets\msbuild.Backend.Microsoft.AspNetCore.StaticWebAssets.props
-E:\Stage Acteol\Workcode\Back\Backend\obj\Debug\net7.0\staticwebassets\msbuild.build.Backend.props
-E:\Stage Acteol\Workcode\Back\Backend\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.Backend.props
-E:\Stage Acteol\Workcode\Back\Backend\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.Backend.props
-E:\Stage Acteol\Workcode\Back\Backend\obj\Debug\net7.0\staticwebassets.pack.json
-E:\Stage Acteol\Workcode\Back\Backend\obj\Debug\net7.0\staticwebassets.build.json
-E:\Stage Acteol\Workcode\Back\Backend\obj\Debug\net7.0\staticwebassets.development.json
-E:\Stage Acteol\Workcode\Back\Backend\obj\Debug\net7.0\scopedcss\bundle\Backend.styles.css
-E:\Stage Acteol\Workcode\Back\Backend\obj\Debug\net7.0\Backend.csproj.CopyComplete
-E:\Stage Acteol\Workcode\Back\Backend\obj\Debug\net7.0\Backend.dll
-E:\Stage Acteol\Workcode\Back\Backend\obj\Debug\net7.0\refint\Backend.dll
-E:\Stage Acteol\Workcode\Back\Backend\obj\Debug\net7.0\Backend.pdb
-E:\Stage Acteol\Workcode\Back\Backend\obj\Debug\net7.0\Backend.genruntimeconfig.cache
-E:\Stage Acteol\Workcode\Back\Backend\obj\Debug\net7.0\ref\Backend.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\appsettings.Development.json
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\appsettings.json
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\Backend.exe
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\Backend.deps.json
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\Backend.runtimeconfig.json
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\Backend.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\Backend.pdb
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\AutoMapper.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\Azure.Core.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\Azure.Identity.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\EntityFramework.SqlServer.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\EntityFramework.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\FluentValidation.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\Humanizer.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\Ical.Net.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\MediatR.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\MediatR.Contracts.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\Microsoft.Data.SqlClient.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\Microsoft.Identity.Client.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\Microsoft.IdentityModel.Abstractions.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\Microsoft.IdentityModel.Logging.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\Microsoft.OpenApi.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\Microsoft.SqlServer.Server.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\Microsoft.Win32.SystemEvents.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\Mono.TextTemplating.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\NodaTime.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\System.CodeDom.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\System.Configuration.ConfigurationManager.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\System.Data.SqlClient.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\System.Drawing.Common.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\System.Memory.Data.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\System.Runtime.Caching.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\System.Security.Cryptography.ProtectedData.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\System.Security.Permissions.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\System.Windows.Extensions.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\runtimes\win-arm64\native\sni.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\runtimes\win-x64\native\sni.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\runtimes\win-x86\native\sni.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\Application.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\Domain.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\Infrastructure.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\Application.pdb
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\Infrastructure.pdb
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\bin\Debug\net7.0\Domain.pdb
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.csproj.AssemblyReference.cache
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.GeneratedMSBuildEditorConfig.editorconfig
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.AssemblyInfoInputs.cache
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.AssemblyInfo.cs
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.csproj.CoreCompileInputs.cache
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.MvcApplicationPartsAssemblyInfo.cs
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.MvcApplicationPartsAssemblyInfo.cache
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\obj\Debug\net7.0\staticwebassets\msbuild.Backend.Microsoft.AspNetCore.StaticWebAssets.props
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\obj\Debug\net7.0\staticwebassets\msbuild.build.Backend.props
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.Backend.props
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.Backend.props
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\obj\Debug\net7.0\staticwebassets.pack.json
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\obj\Debug\net7.0\staticwebassets.build.json
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\obj\Debug\net7.0\staticwebassets.development.json
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\obj\Debug\net7.0\scopedcss\bundle\Backend.styles.css
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.csproj.CopyComplete
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\obj\Debug\net7.0\refint\Backend.dll
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.pdb
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.genruntimeconfig.cache
+D:\stage pfe acteol\backend\StageActeol\Back\Backend\obj\Debug\net7.0\ref\Backend.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\appsettings.Development.json
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\appsettings.json
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\Backend.exe
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\Backend.deps.json
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\Backend.runtimeconfig.json
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\Backend.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\Backend.pdb
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\AutoMapper.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\Azure.Core.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\Azure.Identity.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\EntityFramework.SqlServer.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\EntityFramework.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\FluentValidation.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\Humanizer.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\Ical.Net.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\MediatR.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\MediatR.Contracts.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\Microsoft.Data.SqlClient.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\Microsoft.Identity.Client.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\Microsoft.OpenApi.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\Microsoft.SqlServer.Server.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\Mono.TextTemplating.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\NodaTime.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\System.CodeDom.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\System.Configuration.ConfigurationManager.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\System.Data.SqlClient.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\System.Drawing.Common.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\System.Memory.Data.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\System.Runtime.Caching.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\System.Security.Permissions.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\System.Windows.Extensions.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\runtimes\win-arm64\native\sni.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\runtimes\win-x64\native\sni.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\runtimes\win-x86\native\sni.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\Application.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\Domain.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\Infrastructure.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\Application.pdb
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\Infrastructure.pdb
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\bin\Debug\net7.0\Domain.pdb
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.csproj.AssemblyReference.cache
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.AssemblyInfoInputs.cache
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.AssemblyInfo.cs
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.csproj.CoreCompileInputs.cache
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\obj\Debug\net7.0\staticwebassets\msbuild.Backend.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\obj\Debug\net7.0\staticwebassets\msbuild.build.Backend.props
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.Backend.props
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.Backend.props
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\obj\Debug\net7.0\staticwebassets.pack.json
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\obj\Debug\net7.0\staticwebassets.build.json
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\obj\Debug\net7.0\staticwebassets.development.json
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\obj\Debug\net7.0\scopedcss\bundle\Backend.styles.css
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.csproj.CopyComplete
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\obj\Debug\net7.0\refint\Backend.dll
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.pdb
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.genruntimeconfig.cache
+C:\Users\nada\Desktop\fatma\StageActeol\Back\Backend\obj\Debug\net7.0\ref\Backend.dll

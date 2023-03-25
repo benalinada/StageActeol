@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Application.Users.Queries.GetUser
 {
-    public class GetUserQuery : IRequest<GetUserQueryResponse>
+    public class GetUserQuery : IRequest<GetServeurQueryResponse>
     {
         public string Email { get; set; }
     }
