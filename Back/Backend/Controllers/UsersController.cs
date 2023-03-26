@@ -6,11 +6,6 @@ namespace Backend.Controllers
 {
     public class UsersController : ApiControllerBase
     {
-        private readonly ISender _mediator;
-        public UsersController(ISender mediator)
-        {
-            _mediator = mediator;
-        }
         [HttpGet()]
         public async Task<IActionResult> Get(string email)
         {

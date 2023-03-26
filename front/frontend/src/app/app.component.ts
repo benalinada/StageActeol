@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { JwksValidationHandler, OAuthService } from 'angular-oauth2-oidc';
 import Swal from 'sweetalert2';
+import { authConfig } from './config/auth.config';
 
 @Component({
   selector: 'app-root',
@@ -8,30 +10,14 @@ import Swal from 'sweetalert2';
 })
 export class AppComponent {
   title = 'argon-dashboard-angular';
-  ngOnInit() {
-    (async () => {
+  constructor(private oauthService: OAuthService) {
+    this.configure();
+  }
 
-      const { value: Serveurs } = await Swal.fire({
-        title: 'Select Serveur ',
-        input: 'select',
-        inputOptions: {
-          'Serveurs': {
-           Serveurname: 'Serveur id',
-           Serveurname2: 'Serveur id2',
+private configure() {
+  this.oauthService.configure(authConfig);
+  this.oauthService.tokenValidationHandler = new JwksValidationHandler();
+  this.oauthService.loadDiscoveryDocumentAndTryLogin();
+}
 
-       
-          },
-         
-        },
-        inputPlaceholder: 'Select a Serveur',
-        confirmButtonText: 'Connect'
-        
-      })
-      
-      if (Serveurs) {
-        Swal.fire(`You selected: ${Serveurs}`)
-      }
-      
-    })();
-};
 }

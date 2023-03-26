@@ -24,16 +24,15 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 var connectionString = builder.Configuration.GetConnectionString("ApiContextConnection");
 var connectioncubeString = builder.Configuration.GetConnectionString("ApiContextConnection");
-builder.Services.AddDbContext<UsersDBContext>(options =>
+builder.Services.AddDbContext<ApplicationDBContext>(options =>
               options.UseSqlServer(connectionString, option => option.EnableRetryOnFailure()),
               ServiceLifetime.Transient,
               ServiceLifetime.Transient);
-builder.Services.AddDbContext<UsersDBContext>(options =>
+builder.Services.AddDbContext<ApplicationDBContext>(options =>
               options.UseSqlServer(connectioncubeString, option => option.EnableRetryOnFailure()),
               ServiceLifetime.Transient,
               ServiceLifetime.Transient);
-builder.Services.AddTransient<IUsersDBContext>(provider => provider.GetService<UsersDBContext>());
-builder.Services.AddTransient<IServeurDBcontext>(provider => provider.GetService<ServeurDBContext>());
+builder.Services.AddTransient<IApplicationDBContext>(provider => provider.GetService<ApplicationDBContext>());
 builder.Services.AddScoped<IDateTime, DateTimeService>();
 builder.Services.AddApplication();
 builder.Services.AddOptions();
@@ -65,6 +64,16 @@ builder.Services.AddAuthorization(options =>
         policy.RequireClaim("scope", "api1");
     });
 });
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+                      policy =>
+                      {
+                          policy.WithOrigins("http://localhost:4200",
+                                              "https://localhost:4200");
+                      });
+});
 builder.Services.AddApplication();
 var app = builder.Build();
 // Configure the HTTP request pipeline.
@@ -73,7 +82,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseCors(MyAllowSpecificOrigins);
 app.UseHttpsRedirection();
 app.UseAuthentication();
 

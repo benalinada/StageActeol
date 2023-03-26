@@ -12,9 +12,9 @@ namespace Application.Users.Queries.GetUser
 {
     public class GetUserQueryHandler : IRequestHandler<GetUserQuery, GetServeurQueryResponse>
     {
-         private readonly IUsersDBContext _usersDBContext;
+         private readonly IApplicationDBContext _usersDBContext;
         private readonly IMapper _mapper;
-       public GetUserQueryHandler(IUsersDBContext usersDBContext,IMapper  mapper)
+       public GetUserQueryHandler(IApplicationDBContext usersDBContext,IMapper  mapper)
         {
             _mapper= mapper;
             _usersDBContext= usersDBContext;

@@ -14,6 +14,7 @@ namespace Domain.Entities
         public string LastName { get; set; }
         public string Function { get; set; }
         public string Job { get; set; }
+        public virtual ICollection<UserServer> userServers { get; set; }
 
     }
 }

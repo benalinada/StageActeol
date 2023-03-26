@@ -9,16 +9,22 @@ namespace IdentityServerHost.Configuration
 {
     public static class ClientsWeb
     {
-        static string[] allowedScopes = 
+        static string[] allowedScopes =
         {
             IdentityServerConstants.StandardScopes.OpenId,
             IdentityServerConstants.StandardScopes.Profile,
             IdentityServerConstants.StandardScopes.Email,
-            "resource1.scope1", 
+            "resource1.scope1",
             "resource2.scope1",
-            "transaction"
+            "transaction",
+            "api1"
         };
-        
+        static string[] allowedmyScopes =
+        {
+            IdentityServerConstants.StandardScopes.OpenId,
+            IdentityServerConstants.StandardScopes.Profile
+        };
+
         public static IEnumerable<Client> Get()
         {
             return new List<Client>
@@ -31,16 +37,15 @@ namespace IdentityServerHost.Configuration
                     ClientId = "js_oidc",
                     ClientName = "JavaScript OIDC Client",
                     ClientUri = "http://identityserver.io",
-                    
                     AllowedGrantTypes = GrantTypes.Code,
                     RequireClientSecret = false,
-                    
-                    RedirectUris = 
+                    RedirectUris =
                     {
                         "https://localhost:44300/index.html",
                         "https://localhost:44300/callback.html",
                         "https://localhost:44300/silent.html",
-                        "https://localhost:44300/popup.html"
+                        "https://localhost:44300/popup.html",
+
                     },
 
                     PostLogoutRedirectUris = { "https://localhost:44300/index.html" },
@@ -55,7 +60,7 @@ namespace IdentityServerHost.Configuration
                 new Client
                 {
                     ClientId = "mvc.tokenmanagement",
-                    
+
                     ClientSecrets =
                     {
                         new Secret("secret".Sha256())
@@ -115,7 +120,7 @@ namespace IdentityServerHost.Configuration
                         new Secret("secret".Sha256())
                     },
 
-                    AllowedGrantTypes = GrantTypes.Hybrid,
+                    AllowedGrantTypes = GrantTypes.Code,
                     RequirePkce = false,
 
                     RedirectUris = { "https://localhost:44303/signin-oidc" },
@@ -125,6 +130,23 @@ namespace IdentityServerHost.Configuration
                     AllowOfflineAccess = true,
 
                     AllowedScopes = allowedScopes
+                },
+                new Client
+                {
+                    ClientId = "acteol",
+                    ClientName = "Front Acteol",
+                    ClientUri = "http://localhost:4200",
+                    AllowedGrantTypes = GrantTypes.ImplicitAndClientCredentials,
+                    RequireClientSecret= false,
+                    RedirectUris = { "http://localhost:4200/signin-oidc" },
+                    BackChannelLogoutUri = "http://localhost:4200/logout",
+                    PostLogoutRedirectUris = { "http://localhost:4200/signout-callback-oidc" },
+                    AllowedCorsOrigins = { "https://localhost:4200" },
+                    AllowedScopes = allowedmyScopes,
+                    AllowAccessTokensViaBrowser = true,
+                    AllowOfflineAccess = true,
+                    RequireConsent = false,
+                    AccessTokenLifetime = 600
                 }
             };
         }

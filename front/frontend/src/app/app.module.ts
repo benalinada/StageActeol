@@ -12,8 +12,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
-import { provideOAuthClient } from 'angular-oauth2-oidc';
+import { OAuthModule, OAuthService, provideOAuthClient } from 'angular-oauth2-oidc';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { ServerService } from './services/server.service';
+import { AuthModule, LogLevel } from 'angular-auth-oidc-client';
 
 
 
@@ -28,6 +30,19 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     RouterModule,
     AppRoutingModule,
     MatProgressSpinnerModule,
+    AuthModule.forRoot({
+      config: {
+        authority: 'https://localhost:5001',
+        redirectUrl: window.location.origin,
+        postLogoutRedirectUri: window.location.origin,
+        clientId: 'acteol',
+        scope: 'openid profile',
+        responseType: 'code',
+        silentRenew: true,
+        useRefreshToken: true,
+        logLevel: LogLevel.Debug,
+      },
+    }),
    
   ],
   declarations: [
@@ -37,7 +52,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
   ],
 
   providers: [
-    
+    OAuthService,
+    ServerService,
     provideOAuthClient()
   ],
   bootstrap: [AppComponent]

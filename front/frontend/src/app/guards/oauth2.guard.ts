@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from "@angular/router";
 import { OAuthService } from "angular-oauth2-oidc";
+import { authConfig } from "../config/auth.config";
 
 @Injectable({
     providedIn: 'root'
@@ -8,13 +9,32 @@ import { OAuthService } from "angular-oauth2-oidc";
   export class AuthGuard implements CanActivate {
     constructor( private oauthService: OAuthService, private router: Router) {
     }
-    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-        
+    async canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<boolean> {
+      debugger
+     
         if (this.oauthService.hasValidAccessToken() ) {
-          
+       
           return true;
         } else {
-            this.oauthService.initLoginFlow();
+
+          await this.oauthService.tryLogin({})
+          .then(
+            status => {
+    
+              if (!this.oauthService.hasValidAccessToken()) {
+                this.oauthService.initImplicitFlow()
+              }
+              else {
+                return true
+              }
+    
+            }
+          ).catch(
+            error => {
+             return false
+            }
+    
+          );
         }
     }
   }
