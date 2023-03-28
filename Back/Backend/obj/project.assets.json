@@ -4731,25 +4731,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\anter.benali\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Nedia\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Nada\\nada\\StageActeol\\Back\\Backend\\Backend.csproj",
+      "projectUniqueName": "D:\\PFE\\StageActeol\\Back\\Backend\\Backend.csproj",
       "projectName": "Backend",
-      "projectPath": "C:\\Nada\\nada\\StageActeol\\Back\\Backend\\Backend.csproj",
-      "packagesPath": "C:\\Users\\anter.benali\\.nuget\\packages\\",
-      "outputPath": "C:\\Nada\\nada\\StageActeol\\Back\\Backend\\obj\\",
+      "projectPath": "D:\\PFE\\StageActeol\\Back\\Backend\\Backend.csproj",
+      "packagesPath": "C:\\Users\\Nedia\\.nuget\\packages\\",
+      "outputPath": "D:\\PFE\\StageActeol\\Back\\Backend\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\anter.benali\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Nedia\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4758,19 +4756,17 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
-        "C:\\TMA\\Middelware\\Audit Extention\\EFCore.AuditExtensions\\src\\EFCore.AuditExtensions.SqlServer\\bin\\Release\\net6.0\\publish": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Nada\\nada\\StageActeol\\Back\\Application\\Application.csproj": {
-              "projectPath": "C:\\Nada\\nada\\StageActeol\\Back\\Application\\Application.csproj"
+            "D:\\PFE\\StageActeol\\Back\\Application\\Application.csproj": {
+              "projectPath": "D:\\PFE\\StageActeol\\Back\\Application\\Application.csproj"
             },
-            "C:\\Nada\\nada\\StageActeol\\Back\\Infrastructure\\Infrastructure.csproj": {
-              "projectPath": "C:\\Nada\\nada\\StageActeol\\Back\\Infrastructure\\Infrastructure.csproj"
+            "D:\\PFE\\StageActeol\\Back\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "D:\\PFE\\StageActeol\\Back\\Infrastructure\\Infrastructure.csproj"
             }
           }
         }
@@ -4847,7 +4843,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.104\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

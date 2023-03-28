@@ -10,6 +10,10 @@ using System.Numerics;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
+using System.Data;
+using System.Linq;
+
 
 namespace Application.Database.Queries
 {
@@ -27,11 +31,33 @@ namespace Application.Database.Queries
             {
                 throw new ArgumentException();
             }
-            var resultat  = new List<string>() { "Db1","Db2"};
-            return new GetDataBaseResponse()
+
+
+            
+            string connectionString ="Data Source=DESKTOP-0159C82\\VE_SERVER ;Initial Catalog=ActeolDb; Integrated Security=true;TrustServerCertificate=True";
+            string query = "SELECT name FROM sys.databases";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                DataBases = resultat.Select(t => new Domain.Common.Models.DataBase() {Id= Guid.NewGuid(), Name = t })
-            };
+                connection.Open();
+
+                using (SqlDataAdapter adapter = new SqlDataAdapter(query, connection))
+                {
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+
+                    string[] queryResponse = dataTable.AsEnumerable().Select(r => r.Field<string>("name")).ToArray();
+
+                    // Utiliser le tableau de noms de base de données récupérés
+                    return new GetDataBaseResponse()
+                    {
+                        DataBases = queryResponse.Select(t => new Domain.Common.Models.DataBase() { Id = Guid.NewGuid(), Name = t })
+                    };
+                }
+            }
+
+
+         
         }
     }
 }

@@ -9,12 +9,12 @@ import { AuthGuard } from './guards/oauth2.guard';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 const routes: Routes =[
-  /*{
+  {
     path: '',
     redirectTo: 'dashboard',
     pathMatch: 'full',
     canActivate: [AuthGuard],
-  }, */
+  }, 
 
   {
     path: '**',
@@ -45,7 +45,7 @@ const routes: Routes =[
     ],
     
   }, 
-   /*{
+  {
     path: '',
     component: AuthLayoutComponent,
     children: [
@@ -60,7 +60,7 @@ const routes: Routes =[
   {
     path: '**',
     redirectTo: 'dashboard'
-  }*/
+  }
 ];
 
 @NgModule({

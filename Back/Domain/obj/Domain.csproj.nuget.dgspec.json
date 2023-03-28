@@ -1,24 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Nada\\nada\\StageActeol\\Back\\Domain\\Domain.csproj": {}
+    "D:\\PFE\\StageActeol\\Back\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "C:\\Nada\\nada\\StageActeol\\Back\\Domain\\Domain.csproj": {
+    "D:\\PFE\\StageActeol\\Back\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Nada\\nada\\StageActeol\\Back\\Domain\\Domain.csproj",
+        "projectUniqueName": "D:\\PFE\\StageActeol\\Back\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Nada\\nada\\StageActeol\\Back\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\anter.benali\\.nuget\\packages\\",
-        "outputPath": "C:\\Nada\\nada\\StageActeol\\Back\\Domain\\obj\\",
+        "projectPath": "D:\\PFE\\StageActeol\\Back\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\Nedia\\.nuget\\packages\\",
+        "outputPath": "D:\\PFE\\StageActeol\\Back\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\anter.benali\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Nedia\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -27,8 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "C:\\TMA\\Middelware\\Audit Extention\\EFCore.AuditExtensions\\src\\EFCore.AuditExtensions.SqlServer\\bin\\Release\\net6.0\\publish": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -88,7 +85,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.104\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
