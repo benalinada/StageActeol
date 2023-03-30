@@ -7,12 +7,15 @@ import { ServerData } from 'src/app/models/ServerData';
 import { ServerService } from 'src/app/services/server.service';
 import Swal from 'sweetalert2';
 
+declare var multiSelect: any;
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  styleUrls: ['./dashboard.component.scss'
+]
 })
 export class DashboardComponent  {
+  [x: string]: any;
       databases: any ;
       servers : ServerData[];
       serverDisplays : any ;
@@ -21,27 +24,29 @@ export class DashboardComponent  {
       selectedServerId : string;
       selectedDatabase: string;
       tables: string[] = [];
-      selectedTables: {[key: string]: boolean} = {};
+      selectedTables: string;
       selectedTablesForNext: string[] = [];
+    
    lodaing : boolean = false;
       constructor(private serverService:ServerService) {}
-      async ngOnInit(){
+    
+      async ngOnInit()  {
         this.databaseDisplays =new Map<string, string>();
         this.databaseDisplays.set("0","select value")
          this.getServers();
+         this.multiSelect();
       }
+   
 
       onDatabaseChange() {
         this.getTables();
       }
 
       onNext() {
-        this.selectedTablesForNext = Object.keys(this.selectedTables).filter((table) => {
-          return this.selectedTables[table];
-        });
-        this.selectedTables = {};
+     
+        
       }
-
+   
       async getServers(){
           this.serverDisplays =new Map<string, number>();
           const data =  this.serverService.getServers("b995b0f3-f7da-4878-ae1a-d3a667b79906")
@@ -102,7 +107,7 @@ export class DashboardComponent  {
       getTables()
       {
         this.tablesDisplay =new Map<string, string>();
-        const data =  this.serverService.getTables(this.selectedServerId,"DB1")
+        const data =  this.serverService.getTables(this.selectedServerId,this.selectedDatabase)
         .pipe(
           catchError(err => of(null)),
           tap(() => this.lodaing == false)
@@ -116,5 +121,6 @@ export class DashboardComponent  {
         });
  
       }
-
+    
+     
 }

@@ -1,6 +1,6 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { NgModule,  NO_ERRORS_SCHEMA } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
@@ -17,18 +17,24 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ServerService } from './services/server.service';
 import { AuthModule, LogLevel } from 'angular-auth-oidc-client';
 
+import { CommonModule } from '@angular/common';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 
 
 
 @NgModule({
   imports: [
+    CommonModule,
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
     ComponentsModule,
-    NgbModule,
+    NgbModule,  
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule,
     AppRoutingModule,
+    NgMultiSelectDropDownModule.forRoot(),
     MatProgressSpinnerModule,
     AuthModule.forRoot({
       config: {
@@ -43,18 +49,23 @@ import { AuthModule, LogLevel } from 'angular-auth-oidc-client';
         logLevel: LogLevel.Debug,
       },
     }),
-   
+    
   ],
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    AuthLayoutComponent
+    AuthLayoutComponent, 
+  
+
   ],
 
   providers: [
     OAuthService,
     ServerService,
     provideOAuthClient()
+  ], 
+  schemas: [
+    NO_ERRORS_SCHEMA
   ],
   bootstrap: [AppComponent]
 })
