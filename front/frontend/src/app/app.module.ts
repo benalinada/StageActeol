@@ -19,6 +19,7 @@ import { AuthModule, LogLevel } from 'angular-auth-oidc-client';
 
 import { CommonModule } from '@angular/common';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { UserAppService } from './services/userApp.service';
 
 
 
@@ -42,7 +43,7 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
         redirectUrl: window.location.origin,
         postLogoutRedirectUri: window.location.origin,
         clientId: 'acteol',
-        scope: 'openid profile',
+        scope: 'openid profile email resource1.scope1 resource2.scope1 transaction api1',
         responseType: 'code',
         silentRenew: true,
         useRefreshToken: true,
@@ -62,6 +63,7 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
   providers: [
     OAuthService,
     ServerService,
+    UserAppService,
     provideOAuthClient()
   ], 
   schemas: [

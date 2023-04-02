@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Application.Tables.Queries.GetTables
 {
-    public class GetTableQuery : IRequest<GetTableResponse>
+    public class GetTablesQuery : IRequest<GetTablesResponse>
     {
         public Guid ServerId { get; set; }
         public string   DBName { get; set; }

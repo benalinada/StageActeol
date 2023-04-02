@@ -11,6 +11,9 @@ namespace Domain.Entities
         public Guid Id { get; set; }
         public string Name { get; set; }
         public string ConnexionString { get; set; }
+        //public virtual ICollection<serveurdata> server.serveurdatas { get; set; }
+
+        
     }
 }
 

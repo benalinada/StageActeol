@@ -486,6 +486,13 @@ C:\Nada\nada\StageActeol\Back\Backend\obj\Debug\net7.0\refint\Backend.dll
 C:\Nada\nada\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.pdb
 C:\Nada\nada\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.genruntimeconfig.cache
 C:\Nada\nada\StageActeol\Back\Backend\obj\Debug\net7.0\ref\Backend.dll
+D:\PFE\StageActeol\Back\Backend\bin\Debug\net7.0\EntityFramework.dll
+D:\PFE\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.csproj.AssemblyReference.cache
+D:\PFE\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.GeneratedMSBuildEditorConfig.editorconfig
+D:\PFE\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.AssemblyInfoInputs.cache
+D:\PFE\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.AssemblyInfo.cs
+D:\PFE\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.csproj.CoreCompileInputs.cache
+D:\PFE\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.MvcApplicationPartsAssemblyInfo.cache
 D:\PFE\StageActeol\Back\Backend\bin\Debug\net7.0\appsettings.Development.json
 D:\PFE\StageActeol\Back\Backend\bin\Debug\net7.0\appsettings.json
 D:\PFE\StageActeol\Back\Backend\bin\Debug\net7.0\Backend.exe
@@ -498,7 +505,6 @@ D:\PFE\StageActeol\Back\Backend\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft
 D:\PFE\StageActeol\Back\Backend\bin\Debug\net7.0\Azure.Core.dll
 D:\PFE\StageActeol\Back\Backend\bin\Debug\net7.0\Azure.Identity.dll
 D:\PFE\StageActeol\Back\Backend\bin\Debug\net7.0\EntityFramework.SqlServer.dll
-D:\PFE\StageActeol\Back\Backend\bin\Debug\net7.0\EntityFramework.dll
 D:\PFE\StageActeol\Back\Backend\bin\Debug\net7.0\FluentValidation.dll
 D:\PFE\StageActeol\Back\Backend\bin\Debug\net7.0\Humanizer.dll
 D:\PFE\StageActeol\Back\Backend\bin\Debug\net7.0\Ical.Net.dll
@@ -563,13 +569,6 @@ D:\PFE\StageActeol\Back\Backend\bin\Debug\net7.0\Infrastructure.dll
 D:\PFE\StageActeol\Back\Backend\bin\Debug\net7.0\Application.pdb
 D:\PFE\StageActeol\Back\Backend\bin\Debug\net7.0\Infrastructure.pdb
 D:\PFE\StageActeol\Back\Backend\bin\Debug\net7.0\Domain.pdb
-D:\PFE\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.csproj.AssemblyReference.cache
-D:\PFE\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.GeneratedMSBuildEditorConfig.editorconfig
-D:\PFE\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.AssemblyInfoInputs.cache
-D:\PFE\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.AssemblyInfo.cs
-D:\PFE\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.csproj.CoreCompileInputs.cache
-D:\PFE\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.MvcApplicationPartsAssemblyInfo.cs
-D:\PFE\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.MvcApplicationPartsAssemblyInfo.cache
 D:\PFE\StageActeol\Back\Backend\obj\Debug\net7.0\staticwebassets\msbuild.Backend.Microsoft.AspNetCore.StaticWebAssets.props
 D:\PFE\StageActeol\Back\Backend\obj\Debug\net7.0\staticwebassets\msbuild.build.Backend.props
 D:\PFE\StageActeol\Back\Backend\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.Backend.props

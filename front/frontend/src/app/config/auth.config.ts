@@ -14,5 +14,5 @@ export const authConfig: AuthConfig = {
   useSilentRefresh: true,
   silentRefreshRedirectUri: window.location.origin + '/assets/silent-refresh.html',
   useIdTokenHintForSilentRefresh: true,
-  scope: "openid profile"
+  scope: "openid profile email"
 }

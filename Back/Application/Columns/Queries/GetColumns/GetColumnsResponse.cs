@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.Tables.Queries.GetTables
+namespace Application.Columns.Queries.GetColumns
 {
-    public class GetTablesResponse
+    public class GetColumnsResponse
     {
-        public IEnumerable<Table> Tables { get; set; }
+        public IEnumerable<Column> Columns { get; set; }
     }
 }

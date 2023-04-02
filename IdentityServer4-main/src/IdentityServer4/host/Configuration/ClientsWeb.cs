@@ -22,7 +22,13 @@ namespace IdentityServerHost.Configuration
         static string[] allowedmyScopes =
         {
             IdentityServerConstants.StandardScopes.OpenId,
-            IdentityServerConstants.StandardScopes.Profile
+            IdentityServerConstants.StandardScopes.Profile,
+            IdentityServerConstants.StandardScopes.Email,
+            "resource1.scope1",
+            "resource2.scope1",
+            "transaction",
+            "api1"
+
         };
 
         public static IEnumerable<Client> Get()

@@ -34,10 +34,10 @@ namespace Application.Database.Queries
 
 
             
-            string connectionString ="Data Source=DESKTOP-0159C82\\VE_SERVER ;Initial Catalog=ActeolDb; Integrated Security=true;TrustServerCertificate=True";
+         
             string query = "SELECT name FROM sys.databases";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(basedb.ConnexionString))
             {
                 connection.Open();
 

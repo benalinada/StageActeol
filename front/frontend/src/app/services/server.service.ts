@@ -4,13 +4,15 @@ import { catchError, finalize, Observable, of, tap } from "rxjs";
 import { BaseData, BasesData } from "../models/BaseData";
 import { ServerData, ServersData } from '../models/ServerData';
 import { TableData, TablesData } from "../models/TableData";
+import { ColumnData, ColumnsData } from "../models/ColumnData";
 @Injectable()
 export class ServerService {
     dataserver: ServerData[] ;
     databases: BaseData[] ;
     Tables: TableData[] ;
+    Columns : ColumnData[];
     loading : boolean = false;
-    constructor(private http: HttpClient,) {
+    constructor(private http: HttpClient) {
 
     }
     getServers(userid: string): Observable<ServersData> {
@@ -51,6 +53,19 @@ export class ServerService {
           finalize(() =>this.loading = false)
         );
         return res;
+}
+getColumns(id: string, dbName:string,tableName:string): Observable<ColumnsData> {
+  this.loading = true;
+  const res = this.http.get<ColumnsData | null>(`https://localhost:44362/api/Columns/${id}/${dbName}/${tableName}`).pipe(
+      tap( data => {
+          this.Columns = data.Columns;
+        }),
+        catchError(err => {
+          return of(null);
+        }),
+        finalize(() =>this.loading = false)
+      );
+      return res;
 }
 }
 

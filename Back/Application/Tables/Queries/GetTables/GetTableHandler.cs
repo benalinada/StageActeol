@@ -1,5 +1,6 @@
 ﻿using Application.Common.Interfaces;
 using Application.Database.Queries;
+using Domain.Entities;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -11,43 +12,55 @@ using System.Threading.Tasks;
 
 namespace Application.Tables.Queries.GetTables
 {
-    public class GetTableHandler : IRequestHandler<GetTableQuery, GetTableResponse>
+    public class GetTablesHandler : IRequestHandler<GetTablesQuery, GetTablesResponse>
     {
         private readonly IApplicationDBContext _applicationDBContext;
-        public GetTableHandler(IApplicationDBContext applicationDBContext)
+
+        public GetTablesHandler(IApplicationDBContext applicationDBContext)
         {
-            _applicationDBContext= applicationDBContext;
+            _applicationDBContext = applicationDBContext;
         }
-        async Task<GetTableResponse>  IRequestHandler<GetTableQuery, GetTableResponse>.Handle(GetTableQuery request, CancellationToken cancellationToken)
+
+        public async Task<GetTablesResponse> Handle(GetTablesQuery request, CancellationToken cancellationToken)
         {
-            var basedb = _applicationDBContext.Servers.SingleOrDefault(s => s.Id == request.ServerId);
-            if (basedb == null)
-            {
-                throw new ArgumentException();
-            }
-             
-            string connectionString ="Data Source=DESKTOP-0159C82\\VE_SERVER ;Initial Catalog=ActeolDb; Integrated Security=true;TrustServerCertificate=True";
-            SqlConnection connection = new SqlConnection(connectionString);
+            // Récupérer le serveur correspondant à l'ID spécifié
+            var server = _applicationDBContext.Servers.SingleOrDefault(s => s.Id == request.ServerId);
 
-            // Ouverture de la connexion
-            connection.Open();
-
-            // Récupération de la liste des tables
-            DataTable schemaTable = connection.GetSchema("Tables");
-            string[] tableNames = new string[schemaTable.Rows.Count];
-            int i = 0;
-            foreach (DataRow row in schemaTable.Rows)
+            if (server == null)
             {
-                tableNames[i++] = (string)row[2];
+                throw new ArgumentException("Invalid server ID specified.");
             }
 
-            // Fermeture de la connexion
-            connection.Close();
+            //// Construire la chaîne de connexion en utilisant les informations du serveur
+            //string connectionString = $"Data Source={server.Name};Initial Catalog=ActeolDb ;Integrated Security=True;";
+            string connectionString = server.ConnexionString.Replace("master", request.DBName);
 
-            return new GetTableResponse()
+            //// Ouvrir une connexion à la base de données
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                Tables = tableNames.Select(t => new Domain.Common.Models.Table() { Id = Guid.NewGuid(), Name = t })
-            };
+                await connection.OpenAsync();
+
+                // Récupérer la liste des tables de la base de données spécifiée
+                DataTable schemaTable = connection.GetSchema("Tables");
+                string[] tableNames = new string[schemaTable.Rows.Count];
+
+                for (int i = 0; i < schemaTable.Rows.Count; i++)
+                {
+                    tableNames[i] = schemaTable.Rows[i].Field<string>("TABLE_NAME");
+                }
+
+                // Fermer la connexion
+                connection.Close();
+
+                //    // Retourner la liste des tables sous forme de réponse
+                return new GetTablesResponse()
+                {
+                    Tables = tableNames.Select(t => new Domain.Common.Models.Table() { Id = Guid.NewGuid(), Name = t })
+                };
+
+            }
         }
     }
 }
+
+

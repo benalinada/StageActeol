@@ -6,7 +6,7 @@ namespace Backend.Controllers
 {
     public class UsersController : ApiControllerBase
     {
-        [HttpGet()]
+        [HttpGet("{email}")]
         public async Task<IActionResult> Get(string email)
         {
             var vm =  await Mediator.Send(new GetUserQuery() { Email = email });

@@ -1,18 +1,17 @@
 ﻿
 using Application.Database.Queries;
 using Application.Servers.Qeuries.GetServers;
-using Application.Tables.Queries.GetTables;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Backend.Controllers
 {
-    public class TablesController : ApiControllerBase
+    public class DataBasesController : ApiControllerBase
     {
-        [HttpGet("{id}/{dBName}")]
-        public async Task<IActionResult> Get(string id,string dBName)
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Get(string id)
         {
-            var vm =  await Mediator.Send(new GetTableQuery() { ServerId = new Guid(id),DBName=dBName });
+            var vm =  await Mediator.Send(new GetDataBaseQuery() { ServerId = new Guid(id) });
             return Ok(vm);
         }
     }

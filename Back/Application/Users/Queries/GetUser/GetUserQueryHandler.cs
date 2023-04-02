@@ -25,6 +25,7 @@ namespace Application.Users.Queries.GetUser
             //return  _mapper.Map<GetUserQueryResponse>(user);
             return new GetServeurQueryResponse()
             {
+                Id = user.Id,
                 Email = user.Email,
                 FirstName = user.FirstName,
                 LastName = user.LastName,
