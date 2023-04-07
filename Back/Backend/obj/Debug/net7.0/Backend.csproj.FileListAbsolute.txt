@@ -583,3 +583,8 @@ D:\PFE\StageActeol\Back\Backend\obj\Debug\net7.0\refint\Backend.dll
 D:\PFE\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.pdb
 D:\PFE\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.genruntimeconfig.cache
 D:\PFE\StageActeol\Back\Backend\obj\Debug\net7.0\ref\Backend.dll
+D:\PFE\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.MvcApplicationPartsAssemblyInfo.cs
+D:\PFE\StageActeol\Back\Backend\bin\Debug\net7.0\System.Net.Http.Formatting.dll
+D:\PFE\StageActeol\Back\Backend\bin\Debug\net7.0\System.Web.Http.dll
+D:\PFE\StageActeol\Back\Backend\bin\Debug\net7.0\Newtonsoft.Json.dll
+D:\PFE\StageActeol\Back\Backend\bin\Debug\net7.0\Newtonsoft.Json.Bson.dll

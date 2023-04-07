@@ -1,5 +1,6 @@
 ﻿using Application.Common.Interfaces;
 using Application.Database.Queries;
+using Domain.Common.Models;
 using Domain.Entities;
 using MediatR;
 using System;
@@ -36,28 +37,28 @@ namespace Application.Tables.Queries.GetTables
             string connectionString = server.ConnexionString.Replace("master", request.DBName);
 
             //// Ouvrir une connexion à la base de données
+            var query = $"SELECT  f.name AS name FROM  sys.foreign_keys fk   INNER JOIN sys.tables f ON fk.parent_object_id = f.object_id    INNER JOIN sys.tables d ON fk.referenced_object_id = d.object_id WHERE     f.type = 'U'     AND d.type = 'U'  GROUP BY     f.name ";
+            //// Ouvrir une connexion à la base de données
+            ///{request.TableName}
+
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                await connection.OpenAsync();
+                connection.Open();
 
-                // Récupérer la liste des tables de la base de données spécifiée
-                DataTable schemaTable = connection.GetSchema("Tables");
-                string[] tableNames = new string[schemaTable.Rows.Count];
-
-                for (int i = 0; i < schemaTable.Rows.Count; i++)
+                using (SqlDataAdapter adapter = new SqlDataAdapter(query, connection))
                 {
-                    tableNames[i] = schemaTable.Rows[i].Field<string>("TABLE_NAME");
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+
+                    string[] queryResponse = dataTable.AsEnumerable().Select(r => r.Field<string>("name")).ToArray();
+
+                    // Utiliser le tableau de noms de base de données récupérés
+                    return new GetTablesResponse()
+                    {
+                        DataBaseName = request.DBName,
+                        Tables = queryResponse.Select(t => new TableDto() { Id = Guid.NewGuid(), Name = t, })
+                    };
                 }
-
-                // Fermer la connexion
-                connection.Close();
-
-                //    // Retourner la liste des tables sous forme de réponse
-                return new GetTablesResponse()
-                {
-                    Tables = tableNames.Select(t => new Domain.Common.Models.Table() { Id = Guid.NewGuid(), Name = t })
-                };
-
             }
         }
     }

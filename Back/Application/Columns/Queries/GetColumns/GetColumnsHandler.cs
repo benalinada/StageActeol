@@ -8,6 +8,7 @@ using System.Buffers.Text;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,8 +34,10 @@ namespace Application.Tables.Queries.GetColumns
                 throw new ArgumentException("Invalid server ID specified.");
             }
             string connectionString = server.ConnexionString.Replace("master", request.DBName);
-            var query = $"SELECT name FROM sys.columns WHERE object_id = OBJECT_ID('{request.TableName}') ";
+            var query = $"SELECT d.name AS name FROM sys.foreign_keys fk INNER JOIN sys.tables f ON fk.parent_object_id = f.object_id INNER JOIN sys.tables d ON fk.referenced_object_id = d.object_id WHERE f.type = 'U' AND d.type = 'U' AND fk.referenced_object_id IS NOT NULL AND f.name = '{request.TableName}' GROUP BY d.name  ";
             //// Ouvrir une connexion à la base de données
+            ///{request.TableName}
+        
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
@@ -49,7 +52,8 @@ namespace Application.Tables.Queries.GetColumns
                     // Utiliser le tableau de noms de base de données récupérés
                     return new GetColumnsResponse()
                     {
-                        Columns = queryResponse.Select(t => new Domain.Common.Models.Column() { Id = Guid.NewGuid(), Name = t })
+                        FactTableName = request.TableName,
+                        Columns = queryResponse.Select(t => new ColumnDto() { Id = Guid.NewGuid(), Name = t, })
                     };
                 }
             }

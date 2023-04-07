@@ -9,6 +9,12 @@ namespace Application.Columns.Queries.GetColumns
 {
     public class GetColumnsResponse
     {
-        public IEnumerable<Column> Columns { get; set; }
+        public string FactTableName { get; set; }
+        public IEnumerable<ColumnDto> Columns { get; set; }
+    }
+    public class ColumnDto
+    {
+        public Guid Id { get; set; }
+        public string Name { get; set; }
     }
 }

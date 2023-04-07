@@ -9,6 +9,12 @@ namespace Application.Tables.Queries.GetTables
 {
     public class GetTablesResponse
     {
-        public IEnumerable<Table> Tables { get; set; }
+        public string DataBaseName { get; set; }
+        public IEnumerable<TableDto> Tables { get; set; }
+    }
+    public class TableDto
+    {
+        public Guid Id { get; set; }
+        public string Name { get; set; }
     }
 }

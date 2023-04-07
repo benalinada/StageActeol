@@ -28,7 +28,7 @@ export class DashboardComponent  {
       selectedServerId : string;
       selectedDatabase: string;
       tables: string[] = [];
-      selectedTables: string;
+      selectedTables: string ;
       selectedColumn: string[];
       selectedTablesForNext: string[] = [];
       columnsDisplay : any;
@@ -43,8 +43,9 @@ export class DashboardComponent  {
         this.databaseDisplays =new Map<string, string>();
         this.databaseDisplays.set("0","select value");
          await this.getUser();
-         
+        
          this.multiSelect();
+
       }
       
           
@@ -53,7 +54,7 @@ export class DashboardComponent  {
 
       onDatabaseChange() {
         this.getTables();
-        this.getColumns();
+        
       }
 
       onNext() {
@@ -167,6 +168,7 @@ export class DashboardComponent  {
             }
           }
         });
+
         Swal.fire({
           title: 'Loading...',
           html: `
@@ -181,10 +183,10 @@ export class DashboardComponent  {
             }, 3500);
           }
         });
-      
+        this.getColumns();
       }
       getColumns() {
-        this.selectedTablesColumns = new Map<string, string[]>();
+        this.columnsDisplay = new Map<string, string[]>();
         const data = this.serverService.getColumns(this.selectedServerId, this.selectedDatabase,this.selectedTables).pipe(
           catchError(err => of(null)),
           tap(() => this.loading = false)

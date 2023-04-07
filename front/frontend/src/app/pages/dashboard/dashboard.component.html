@@ -38,17 +38,18 @@
           <br>
               <h2>Select the tables that will beused for measure groups.</h2>
                 <h4> Measure group tables:</h4>
-                <label for="selectedTablesf"></label>
-                <select    id="selectedTablesf" [(ngModel)]="selectedTablesf" name="selectedTablesf">
+                <label for="selectedTables"></label>
+                <select    id="selectedTables" [(ngModel)]="selectedTables" name="selectedTables">
                   <option *ngFor="let table of tablesDisplay | keyvalue" [value]="table.value">{{table.value}}</option>
                 </select>
         
           <br>
           <h2>Select new dimensions to be created, based on available tables.</h2>
           <h4> Measure group tables:</h4>
+
                 <label for="selectedColum"></label>
                 <select    id="selectedColumn" [(ngModel)]="selectedColumn" name="selectedColumn">
-                  <option *ngFor="let Column of selectedTablesColumns | keyvalue" [value]="Column.value">{{Column.value}}</option>
+                  <option *ngFor="let Column of columnsDisplay | keyvalue" [value]="Column">{{Column}}</option>
                 </select>
           <br>
       
