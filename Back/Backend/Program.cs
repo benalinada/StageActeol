@@ -4,6 +4,7 @@ using AutoMapper;
 using Infrastructure.Persistance;
 using Infrastructure.Services;
 using MediatR;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -13,12 +14,17 @@ using System;
 using System.Configuration;
 using System.Data.Entity;
 using System.Reflection;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddJsonOptions(x =>
+{
+    x.JsonSerializerOptions.NumberHandling = JsonNumberHandling.AllowReadingFromString;
+    x.JsonSerializerOptions.PropertyNameCaseInsensitive = true;
+});
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -74,6 +80,8 @@ builder.Services.AddCors(options =>
                                               "https://localhost:4200");
                       });
 });
+builder.Services.AddMvc();
+builder.Services.AddHttpContextAccessor();
 builder.Services.AddApplication();
 var app = builder.Build();
 // Configure the HTTP request pipeline.
@@ -89,5 +97,5 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
-
+app.UseRouting();
 app.Run();

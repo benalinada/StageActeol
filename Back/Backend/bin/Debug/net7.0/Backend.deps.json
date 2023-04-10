@@ -72,7 +72,7 @@
           "Microsoft.Identity.Client": "4.45.0",
           "Microsoft.Identity.Client.Extensions.Msal": "2.19.3",
           "System.Memory": "4.5.4",
-          "System.Security.Cryptography.ProtectedData": "5.0.0",
+          "System.Security.Cryptography.ProtectedData": "7.0.0",
           "System.Text.Json": "7.0.0",
           "System.Threading.Tasks.Extensions": "4.5.4"
         },
@@ -88,7 +88,7 @@
           "Microsoft.CSharp": "4.7.0",
           "System.CodeDom": "4.7.0",
           "System.ComponentModel.Annotations": "4.7.0",
-          "System.Configuration.ConfigurationManager": "5.0.0",
+          "System.Configuration.ConfigurationManager": "7.0.0",
           "System.Data.SqlClient": "4.8.1"
         },
         "runtime": {
@@ -146,6 +146,704 @@
           "lib/netstandard2.0/MediatR.Contracts.dll": {
             "assemblyVersion": "2.0.1.0",
             "fileVersion": "2.0.1.0"
+          }
+        }
+      },
+      "Microsoft.AnalysisServices.AdomdClient.NetCore.retail.amd64/19.61.1.4": {
+        "dependencies": {
+          "Microsoft.Identity.Client": "4.45.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Microsoft.AnalysisServices.AdomdClient.dll": {
+            "assemblyVersion": "19.61.1.4",
+            "fileVersion": "16.0.77.22"
+          },
+          "lib/netcoreapp3.0/Microsoft.AnalysisServices.Runtime.Core.dll": {
+            "assemblyVersion": "19.61.1.4",
+            "fileVersion": "16.0.77.22"
+          },
+          "lib/netcoreapp3.0/Microsoft.AnalysisServices.Runtime.Windows.dll": {
+            "assemblyVersion": "19.61.1.4",
+            "fileVersion": "16.0.77.22"
+          }
+        },
+        "resources": {
+          "lib/netcoreapp3.0/ar/Microsoft.AnalysisServices.AdomdClient.resources.dll": {
+            "locale": "ar"
+          },
+          "lib/netcoreapp3.0/ar/Microsoft.AnalysisServices.Runtime.Core.resources.dll": {
+            "locale": "ar"
+          },
+          "lib/netcoreapp3.0/bg/Microsoft.AnalysisServices.AdomdClient.resources.dll": {
+            "locale": "bg"
+          },
+          "lib/netcoreapp3.0/bg/Microsoft.AnalysisServices.Runtime.Core.resources.dll": {
+            "locale": "bg"
+          },
+          "lib/netcoreapp3.0/ca/Microsoft.AnalysisServices.AdomdClient.resources.dll": {
+            "locale": "ca"
+          },
+          "lib/netcoreapp3.0/ca/Microsoft.AnalysisServices.Runtime.Core.resources.dll": {
+            "locale": "ca"
+          },
+          "lib/netcoreapp3.0/cs/Microsoft.AnalysisServices.AdomdClient.resources.dll": {
+            "locale": "cs"
+          },
+          "lib/netcoreapp3.0/cs/Microsoft.AnalysisServices.Runtime.Core.resources.dll": {
+            "locale": "cs"
+          },
+          "lib/netcoreapp3.0/da/Microsoft.AnalysisServices.AdomdClient.resources.dll": {
+            "locale": "da"
+          },
+          "lib/netcoreapp3.0/da/Microsoft.AnalysisServices.Runtime.Core.resources.dll": {
+            "locale": "da"
+          },
+          "lib/netcoreapp3.0/de/Microsoft.AnalysisServices.AdomdClient.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/Microsoft.AnalysisServices.Runtime.Core.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/el/Microsoft.AnalysisServices.AdomdClient.resources.dll": {
+            "locale": "el"
+          },
+          "lib/netcoreapp3.0/el/Microsoft.AnalysisServices.Runtime.Core.resources.dll": {
+            "locale": "el"
+          },
+          "lib/netcoreapp3.0/es/Microsoft.AnalysisServices.AdomdClient.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/Microsoft.AnalysisServices.Runtime.Core.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/et/Microsoft.AnalysisServices.AdomdClient.resources.dll": {
+            "locale": "et"
+          },
+          "lib/netcoreapp3.0/et/Microsoft.AnalysisServices.Runtime.Core.resources.dll": {
+            "locale": "et"
+          },
+          "lib/netcoreapp3.0/eu/Microsoft.AnalysisServices.AdomdClient.resources.dll": {
+            "locale": "eu"
+          },
+          "lib/netcoreapp3.0/eu/Microsoft.AnalysisServices.Runtime.Core.resources.dll": {
+            "locale": "eu"
+          },
+          "lib/netcoreapp3.0/fi/Microsoft.AnalysisServices.AdomdClient.resources.dll": {
+            "locale": "fi"
+          },
+          "lib/netcoreapp3.0/fi/Microsoft.AnalysisServices.Runtime.Core.resources.dll": {
+            "locale": "fi"
+          },
+          "lib/netcoreapp3.0/fr/Microsoft.AnalysisServices.AdomdClient.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/netcoreapp3.0/fr/Microsoft.AnalysisServices.Runtime.Core.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/netcoreapp3.0/gl/Microsoft.AnalysisServices.AdomdClient.resources.dll": {
+            "locale": "gl"
+          },
+          "lib/netcoreapp3.0/gl/Microsoft.AnalysisServices.Runtime.Core.resources.dll": {
+            "locale": "gl"
+          },
+          "lib/netcoreapp3.0/he/Microsoft.AnalysisServices.AdomdClient.resources.dll": {
+            "locale": "he"
+          },
+          "lib/netcoreapp3.0/he/Microsoft.AnalysisServices.Runtime.Core.resources.dll": {
+            "locale": "he"
+          },
+          "lib/netcoreapp3.0/hi/Microsoft.AnalysisServices.AdomdClient.resources.dll": {
+            "locale": "hi"
+          },
+          "lib/netcoreapp3.0/hi/Microsoft.AnalysisServices.Runtime.Core.resources.dll": {
+            "locale": "hi"
+          },
+          "lib/netcoreapp3.0/hr/Microsoft.AnalysisServices.AdomdClient.resources.dll": {
+            "locale": "hr"
+          },
+          "lib/netcoreapp3.0/hr/Microsoft.AnalysisServices.Runtime.Core.resources.dll": {
+            "locale": "hr"
+          },
+          "lib/netcoreapp3.0/hu/Microsoft.AnalysisServices.AdomdClient.resources.dll": {
+            "locale": "hu"
+          },
+          "lib/netcoreapp3.0/hu/Microsoft.AnalysisServices.Runtime.Core.resources.dll": {
+            "locale": "hu"
+          },
+          "lib/netcoreapp3.0/id/Microsoft.AnalysisServices.AdomdClient.resources.dll": {
+            "locale": "id"
+          },
+          "lib/netcoreapp3.0/id/Microsoft.AnalysisServices.Runtime.Core.resources.dll": {
+            "locale": "id"
+          },
+          "lib/netcoreapp3.0/it/Microsoft.AnalysisServices.AdomdClient.resources.dll": {
+            "locale": "it"
+          },
+          "lib/netcoreapp3.0/it/Microsoft.AnalysisServices.Runtime.Core.resources.dll": {
+            "locale": "it"
+          },
+          "lib/netcoreapp3.0/ja/Microsoft.AnalysisServices.AdomdClient.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/Microsoft.AnalysisServices.Runtime.Core.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/kk/Microsoft.AnalysisServices.AdomdClient.resources.dll": {
+            "locale": "kk"
+          },
+          "lib/netcoreapp3.0/kk/Microsoft.AnalysisServices.Runtime.Core.resources.dll": {
+            "locale": "kk"
+          },
+          "lib/netcoreapp3.0/ko/Microsoft.AnalysisServices.AdomdClient.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/netcoreapp3.0/ko/Microsoft.AnalysisServices.Runtime.Core.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/netcoreapp3.0/lt/Microsoft.AnalysisServices.AdomdClient.resources.dll": {
+            "locale": "lt"
+          },
+          "lib/netcoreapp3.0/lt/Microsoft.AnalysisServices.Runtime.Core.resources.dll": {
+            "locale": "lt"
+          },
+          "lib/netcoreapp3.0/lv/Microsoft.AnalysisServices.AdomdClient.resources.dll": {
+            "locale": "lv"
+          },
+          "lib/netcoreapp3.0/lv/Microsoft.AnalysisServices.Runtime.Core.resources.dll": {
+            "locale": "lv"
+          },
+          "lib/netcoreapp3.0/ms/Microsoft.AnalysisServices.AdomdClient.resources.dll": {
+            "locale": "ms"
+          },
+          "lib/netcoreapp3.0/ms/Microsoft.AnalysisServices.Runtime.Core.resources.dll": {
+            "locale": "ms"
+          },
+          "lib/netcoreapp3.0/nl/Microsoft.AnalysisServices.AdomdClient.resources.dll": {
+            "locale": "nl"
+          },
+          "lib/netcoreapp3.0/nl/Microsoft.AnalysisServices.Runtime.Core.resources.dll": {
+            "locale": "nl"
+          },
+          "lib/netcoreapp3.0/no/Microsoft.AnalysisServices.AdomdClient.resources.dll": {
+            "locale": "no"
+          },
+          "lib/netcoreapp3.0/no/Microsoft.AnalysisServices.Runtime.Core.resources.dll": {
+            "locale": "no"
+          },
+          "lib/netcoreapp3.0/pl/Microsoft.AnalysisServices.AdomdClient.resources.dll": {
+            "locale": "pl"
+          },
+          "lib/netcoreapp3.0/pl/Microsoft.AnalysisServices.Runtime.Core.resources.dll": {
+            "locale": "pl"
+          },
+          "lib/netcoreapp3.0/pt-PT/Microsoft.AnalysisServices.AdomdClient.resources.dll": {
+            "locale": "pt-PT"
+          },
+          "lib/netcoreapp3.0/pt-PT/Microsoft.AnalysisServices.Runtime.Core.resources.dll": {
+            "locale": "pt-PT"
+          },
+          "lib/netcoreapp3.0/pt/Microsoft.AnalysisServices.AdomdClient.resources.dll": {
+            "locale": "pt"
+          },
+          "lib/netcoreapp3.0/pt/Microsoft.AnalysisServices.Runtime.Core.resources.dll": {
+            "locale": "pt"
+          },
+          "lib/netcoreapp3.0/ro/Microsoft.AnalysisServices.AdomdClient.resources.dll": {
+            "locale": "ro"
+          },
+          "lib/netcoreapp3.0/ro/Microsoft.AnalysisServices.Runtime.Core.resources.dll": {
+            "locale": "ro"
+          },
+          "lib/netcoreapp3.0/ru/Microsoft.AnalysisServices.AdomdClient.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/Microsoft.AnalysisServices.Runtime.Core.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/sk/Microsoft.AnalysisServices.AdomdClient.resources.dll": {
+            "locale": "sk"
+          },
+          "lib/netcoreapp3.0/sk/Microsoft.AnalysisServices.Runtime.Core.resources.dll": {
+            "locale": "sk"
+          },
+          "lib/netcoreapp3.0/sl/Microsoft.AnalysisServices.AdomdClient.resources.dll": {
+            "locale": "sl"
+          },
+          "lib/netcoreapp3.0/sl/Microsoft.AnalysisServices.Runtime.Core.resources.dll": {
+            "locale": "sl"
+          },
+          "lib/netcoreapp3.0/sr-Cyrl/Microsoft.AnalysisServices.AdomdClient.resources.dll": {
+            "locale": "sr-Cyrl"
+          },
+          "lib/netcoreapp3.0/sr-Cyrl/Microsoft.AnalysisServices.Runtime.Core.resources.dll": {
+            "locale": "sr-Cyrl"
+          },
+          "lib/netcoreapp3.0/sr-Latn/Microsoft.AnalysisServices.AdomdClient.resources.dll": {
+            "locale": "sr-Latn"
+          },
+          "lib/netcoreapp3.0/sr-Latn/Microsoft.AnalysisServices.Runtime.Core.resources.dll": {
+            "locale": "sr-Latn"
+          },
+          "lib/netcoreapp3.0/sv/Microsoft.AnalysisServices.AdomdClient.resources.dll": {
+            "locale": "sv"
+          },
+          "lib/netcoreapp3.0/sv/Microsoft.AnalysisServices.Runtime.Core.resources.dll": {
+            "locale": "sv"
+          },
+          "lib/netcoreapp3.0/th/Microsoft.AnalysisServices.AdomdClient.resources.dll": {
+            "locale": "th"
+          },
+          "lib/netcoreapp3.0/th/Microsoft.AnalysisServices.Runtime.Core.resources.dll": {
+            "locale": "th"
+          },
+          "lib/netcoreapp3.0/tr/Microsoft.AnalysisServices.AdomdClient.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/netcoreapp3.0/tr/Microsoft.AnalysisServices.Runtime.Core.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/netcoreapp3.0/uk/Microsoft.AnalysisServices.AdomdClient.resources.dll": {
+            "locale": "uk"
+          },
+          "lib/netcoreapp3.0/uk/Microsoft.AnalysisServices.Runtime.Core.resources.dll": {
+            "locale": "uk"
+          },
+          "lib/netcoreapp3.0/vi/Microsoft.AnalysisServices.AdomdClient.resources.dll": {
+            "locale": "vi"
+          },
+          "lib/netcoreapp3.0/vi/Microsoft.AnalysisServices.Runtime.Core.resources.dll": {
+            "locale": "vi"
+          },
+          "lib/netcoreapp3.0/zh-Hans/Microsoft.AnalysisServices.AdomdClient.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/netcoreapp3.0/zh-Hans/Microsoft.AnalysisServices.Runtime.Core.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/netcoreapp3.0/zh-Hant/Microsoft.AnalysisServices.AdomdClient.resources.dll": {
+            "locale": "zh-Hant"
+          },
+          "lib/netcoreapp3.0/zh-Hant/Microsoft.AnalysisServices.Runtime.Core.resources.dll": {
+            "locale": "zh-Hant"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win-x64/native/msasxpress.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "2022.160.77.22"
+          }
+        }
+      },
+      "Microsoft.AnalysisServices.NetCore.retail.amd64/19.61.1.4": {
+        "dependencies": {
+          "Microsoft.Identity.Client": "4.45.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Microsoft.AnalysisServices.Core.dll": {
+            "assemblyVersion": "19.61.1.4",
+            "fileVersion": "16.0.77.22"
+          },
+          "lib/netcoreapp3.0/Microsoft.AnalysisServices.Tabular.Json.dll": {
+            "assemblyVersion": "19.61.1.4",
+            "fileVersion": "16.0.77.22"
+          },
+          "lib/netcoreapp3.0/Microsoft.AnalysisServices.Tabular.dll": {
+            "assemblyVersion": "19.61.1.4",
+            "fileVersion": "16.0.77.22"
+          },
+          "lib/netcoreapp3.0/Microsoft.AnalysisServices.dll": {
+            "assemblyVersion": "19.61.1.4",
+            "fileVersion": "16.0.77.22"
+          }
+        },
+        "resources": {
+          "lib/netcoreapp3.0/ar/Microsoft.AnalysisServices.Core.resources.dll": {
+            "locale": "ar"
+          },
+          "lib/netcoreapp3.0/ar/Microsoft.AnalysisServices.Tabular.resources.dll": {
+            "locale": "ar"
+          },
+          "lib/netcoreapp3.0/ar/Microsoft.AnalysisServices.resources.dll": {
+            "locale": "ar"
+          },
+          "lib/netcoreapp3.0/bg/Microsoft.AnalysisServices.Core.resources.dll": {
+            "locale": "bg"
+          },
+          "lib/netcoreapp3.0/bg/Microsoft.AnalysisServices.Tabular.resources.dll": {
+            "locale": "bg"
+          },
+          "lib/netcoreapp3.0/bg/Microsoft.AnalysisServices.resources.dll": {
+            "locale": "bg"
+          },
+          "lib/netcoreapp3.0/ca/Microsoft.AnalysisServices.Core.resources.dll": {
+            "locale": "ca"
+          },
+          "lib/netcoreapp3.0/ca/Microsoft.AnalysisServices.Tabular.resources.dll": {
+            "locale": "ca"
+          },
+          "lib/netcoreapp3.0/ca/Microsoft.AnalysisServices.resources.dll": {
+            "locale": "ca"
+          },
+          "lib/netcoreapp3.0/cs/Microsoft.AnalysisServices.Core.resources.dll": {
+            "locale": "cs"
+          },
+          "lib/netcoreapp3.0/cs/Microsoft.AnalysisServices.Tabular.resources.dll": {
+            "locale": "cs"
+          },
+          "lib/netcoreapp3.0/cs/Microsoft.AnalysisServices.resources.dll": {
+            "locale": "cs"
+          },
+          "lib/netcoreapp3.0/da/Microsoft.AnalysisServices.Core.resources.dll": {
+            "locale": "da"
+          },
+          "lib/netcoreapp3.0/da/Microsoft.AnalysisServices.Tabular.resources.dll": {
+            "locale": "da"
+          },
+          "lib/netcoreapp3.0/da/Microsoft.AnalysisServices.resources.dll": {
+            "locale": "da"
+          },
+          "lib/netcoreapp3.0/de/Microsoft.AnalysisServices.Core.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/Microsoft.AnalysisServices.Tabular.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/de/Microsoft.AnalysisServices.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/el/Microsoft.AnalysisServices.Core.resources.dll": {
+            "locale": "el"
+          },
+          "lib/netcoreapp3.0/el/Microsoft.AnalysisServices.Tabular.resources.dll": {
+            "locale": "el"
+          },
+          "lib/netcoreapp3.0/el/Microsoft.AnalysisServices.resources.dll": {
+            "locale": "el"
+          },
+          "lib/netcoreapp3.0/es/Microsoft.AnalysisServices.Core.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/Microsoft.AnalysisServices.Tabular.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/es/Microsoft.AnalysisServices.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/et/Microsoft.AnalysisServices.Core.resources.dll": {
+            "locale": "et"
+          },
+          "lib/netcoreapp3.0/et/Microsoft.AnalysisServices.Tabular.resources.dll": {
+            "locale": "et"
+          },
+          "lib/netcoreapp3.0/et/Microsoft.AnalysisServices.resources.dll": {
+            "locale": "et"
+          },
+          "lib/netcoreapp3.0/eu/Microsoft.AnalysisServices.Core.resources.dll": {
+            "locale": "eu"
+          },
+          "lib/netcoreapp3.0/eu/Microsoft.AnalysisServices.Tabular.resources.dll": {
+            "locale": "eu"
+          },
+          "lib/netcoreapp3.0/eu/Microsoft.AnalysisServices.resources.dll": {
+            "locale": "eu"
+          },
+          "lib/netcoreapp3.0/fi/Microsoft.AnalysisServices.Core.resources.dll": {
+            "locale": "fi"
+          },
+          "lib/netcoreapp3.0/fi/Microsoft.AnalysisServices.Tabular.resources.dll": {
+            "locale": "fi"
+          },
+          "lib/netcoreapp3.0/fi/Microsoft.AnalysisServices.resources.dll": {
+            "locale": "fi"
+          },
+          "lib/netcoreapp3.0/fr/Microsoft.AnalysisServices.Core.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/netcoreapp3.0/fr/Microsoft.AnalysisServices.Tabular.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/netcoreapp3.0/fr/Microsoft.AnalysisServices.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/netcoreapp3.0/gl/Microsoft.AnalysisServices.Core.resources.dll": {
+            "locale": "gl"
+          },
+          "lib/netcoreapp3.0/gl/Microsoft.AnalysisServices.Tabular.resources.dll": {
+            "locale": "gl"
+          },
+          "lib/netcoreapp3.0/gl/Microsoft.AnalysisServices.resources.dll": {
+            "locale": "gl"
+          },
+          "lib/netcoreapp3.0/he/Microsoft.AnalysisServices.Core.resources.dll": {
+            "locale": "he"
+          },
+          "lib/netcoreapp3.0/he/Microsoft.AnalysisServices.Tabular.resources.dll": {
+            "locale": "he"
+          },
+          "lib/netcoreapp3.0/he/Microsoft.AnalysisServices.resources.dll": {
+            "locale": "he"
+          },
+          "lib/netcoreapp3.0/hi/Microsoft.AnalysisServices.Core.resources.dll": {
+            "locale": "hi"
+          },
+          "lib/netcoreapp3.0/hi/Microsoft.AnalysisServices.Tabular.resources.dll": {
+            "locale": "hi"
+          },
+          "lib/netcoreapp3.0/hi/Microsoft.AnalysisServices.resources.dll": {
+            "locale": "hi"
+          },
+          "lib/netcoreapp3.0/hr/Microsoft.AnalysisServices.Core.resources.dll": {
+            "locale": "hr"
+          },
+          "lib/netcoreapp3.0/hr/Microsoft.AnalysisServices.Tabular.resources.dll": {
+            "locale": "hr"
+          },
+          "lib/netcoreapp3.0/hr/Microsoft.AnalysisServices.resources.dll": {
+            "locale": "hr"
+          },
+          "lib/netcoreapp3.0/hu/Microsoft.AnalysisServices.Core.resources.dll": {
+            "locale": "hu"
+          },
+          "lib/netcoreapp3.0/hu/Microsoft.AnalysisServices.Tabular.resources.dll": {
+            "locale": "hu"
+          },
+          "lib/netcoreapp3.0/hu/Microsoft.AnalysisServices.resources.dll": {
+            "locale": "hu"
+          },
+          "lib/netcoreapp3.0/id/Microsoft.AnalysisServices.Core.resources.dll": {
+            "locale": "id"
+          },
+          "lib/netcoreapp3.0/id/Microsoft.AnalysisServices.Tabular.resources.dll": {
+            "locale": "id"
+          },
+          "lib/netcoreapp3.0/id/Microsoft.AnalysisServices.resources.dll": {
+            "locale": "id"
+          },
+          "lib/netcoreapp3.0/it/Microsoft.AnalysisServices.Core.resources.dll": {
+            "locale": "it"
+          },
+          "lib/netcoreapp3.0/it/Microsoft.AnalysisServices.Tabular.resources.dll": {
+            "locale": "it"
+          },
+          "lib/netcoreapp3.0/it/Microsoft.AnalysisServices.resources.dll": {
+            "locale": "it"
+          },
+          "lib/netcoreapp3.0/ja/Microsoft.AnalysisServices.Core.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/Microsoft.AnalysisServices.Tabular.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ja/Microsoft.AnalysisServices.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/kk/Microsoft.AnalysisServices.Core.resources.dll": {
+            "locale": "kk"
+          },
+          "lib/netcoreapp3.0/kk/Microsoft.AnalysisServices.Tabular.resources.dll": {
+            "locale": "kk"
+          },
+          "lib/netcoreapp3.0/kk/Microsoft.AnalysisServices.resources.dll": {
+            "locale": "kk"
+          },
+          "lib/netcoreapp3.0/ko/Microsoft.AnalysisServices.Core.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/netcoreapp3.0/ko/Microsoft.AnalysisServices.Tabular.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/netcoreapp3.0/ko/Microsoft.AnalysisServices.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/netcoreapp3.0/lt/Microsoft.AnalysisServices.Core.resources.dll": {
+            "locale": "lt"
+          },
+          "lib/netcoreapp3.0/lt/Microsoft.AnalysisServices.Tabular.resources.dll": {
+            "locale": "lt"
+          },
+          "lib/netcoreapp3.0/lt/Microsoft.AnalysisServices.resources.dll": {
+            "locale": "lt"
+          },
+          "lib/netcoreapp3.0/lv/Microsoft.AnalysisServices.Core.resources.dll": {
+            "locale": "lv"
+          },
+          "lib/netcoreapp3.0/lv/Microsoft.AnalysisServices.Tabular.resources.dll": {
+            "locale": "lv"
+          },
+          "lib/netcoreapp3.0/lv/Microsoft.AnalysisServices.resources.dll": {
+            "locale": "lv"
+          },
+          "lib/netcoreapp3.0/ms/Microsoft.AnalysisServices.Core.resources.dll": {
+            "locale": "ms"
+          },
+          "lib/netcoreapp3.0/ms/Microsoft.AnalysisServices.Tabular.resources.dll": {
+            "locale": "ms"
+          },
+          "lib/netcoreapp3.0/ms/Microsoft.AnalysisServices.resources.dll": {
+            "locale": "ms"
+          },
+          "lib/netcoreapp3.0/nl/Microsoft.AnalysisServices.Core.resources.dll": {
+            "locale": "nl"
+          },
+          "lib/netcoreapp3.0/nl/Microsoft.AnalysisServices.Tabular.resources.dll": {
+            "locale": "nl"
+          },
+          "lib/netcoreapp3.0/nl/Microsoft.AnalysisServices.resources.dll": {
+            "locale": "nl"
+          },
+          "lib/netcoreapp3.0/no/Microsoft.AnalysisServices.Core.resources.dll": {
+            "locale": "no"
+          },
+          "lib/netcoreapp3.0/no/Microsoft.AnalysisServices.Tabular.resources.dll": {
+            "locale": "no"
+          },
+          "lib/netcoreapp3.0/no/Microsoft.AnalysisServices.resources.dll": {
+            "locale": "no"
+          },
+          "lib/netcoreapp3.0/pl/Microsoft.AnalysisServices.Core.resources.dll": {
+            "locale": "pl"
+          },
+          "lib/netcoreapp3.0/pl/Microsoft.AnalysisServices.Tabular.resources.dll": {
+            "locale": "pl"
+          },
+          "lib/netcoreapp3.0/pl/Microsoft.AnalysisServices.resources.dll": {
+            "locale": "pl"
+          },
+          "lib/netcoreapp3.0/pt-PT/Microsoft.AnalysisServices.Core.resources.dll": {
+            "locale": "pt-PT"
+          },
+          "lib/netcoreapp3.0/pt-PT/Microsoft.AnalysisServices.Tabular.resources.dll": {
+            "locale": "pt-PT"
+          },
+          "lib/netcoreapp3.0/pt-PT/Microsoft.AnalysisServices.resources.dll": {
+            "locale": "pt-PT"
+          },
+          "lib/netcoreapp3.0/pt/Microsoft.AnalysisServices.Core.resources.dll": {
+            "locale": "pt"
+          },
+          "lib/netcoreapp3.0/pt/Microsoft.AnalysisServices.Tabular.resources.dll": {
+            "locale": "pt"
+          },
+          "lib/netcoreapp3.0/pt/Microsoft.AnalysisServices.resources.dll": {
+            "locale": "pt"
+          },
+          "lib/netcoreapp3.0/ro/Microsoft.AnalysisServices.Core.resources.dll": {
+            "locale": "ro"
+          },
+          "lib/netcoreapp3.0/ro/Microsoft.AnalysisServices.Tabular.resources.dll": {
+            "locale": "ro"
+          },
+          "lib/netcoreapp3.0/ro/Microsoft.AnalysisServices.resources.dll": {
+            "locale": "ro"
+          },
+          "lib/netcoreapp3.0/ru/Microsoft.AnalysisServices.Core.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/Microsoft.AnalysisServices.Tabular.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/ru/Microsoft.AnalysisServices.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/sk/Microsoft.AnalysisServices.Core.resources.dll": {
+            "locale": "sk"
+          },
+          "lib/netcoreapp3.0/sk/Microsoft.AnalysisServices.Tabular.resources.dll": {
+            "locale": "sk"
+          },
+          "lib/netcoreapp3.0/sk/Microsoft.AnalysisServices.resources.dll": {
+            "locale": "sk"
+          },
+          "lib/netcoreapp3.0/sl/Microsoft.AnalysisServices.Core.resources.dll": {
+            "locale": "sl"
+          },
+          "lib/netcoreapp3.0/sl/Microsoft.AnalysisServices.Tabular.resources.dll": {
+            "locale": "sl"
+          },
+          "lib/netcoreapp3.0/sl/Microsoft.AnalysisServices.resources.dll": {
+            "locale": "sl"
+          },
+          "lib/netcoreapp3.0/sr-Cyrl/Microsoft.AnalysisServices.Core.resources.dll": {
+            "locale": "sr-Cyrl"
+          },
+          "lib/netcoreapp3.0/sr-Cyrl/Microsoft.AnalysisServices.Tabular.resources.dll": {
+            "locale": "sr-Cyrl"
+          },
+          "lib/netcoreapp3.0/sr-Cyrl/Microsoft.AnalysisServices.resources.dll": {
+            "locale": "sr-Cyrl"
+          },
+          "lib/netcoreapp3.0/sr-Latn/Microsoft.AnalysisServices.Core.resources.dll": {
+            "locale": "sr-Latn"
+          },
+          "lib/netcoreapp3.0/sr-Latn/Microsoft.AnalysisServices.Tabular.resources.dll": {
+            "locale": "sr-Latn"
+          },
+          "lib/netcoreapp3.0/sr-Latn/Microsoft.AnalysisServices.resources.dll": {
+            "locale": "sr-Latn"
+          },
+          "lib/netcoreapp3.0/sv/Microsoft.AnalysisServices.Core.resources.dll": {
+            "locale": "sv"
+          },
+          "lib/netcoreapp3.0/sv/Microsoft.AnalysisServices.Tabular.resources.dll": {
+            "locale": "sv"
+          },
+          "lib/netcoreapp3.0/sv/Microsoft.AnalysisServices.resources.dll": {
+            "locale": "sv"
+          },
+          "lib/netcoreapp3.0/th/Microsoft.AnalysisServices.Core.resources.dll": {
+            "locale": "th"
+          },
+          "lib/netcoreapp3.0/th/Microsoft.AnalysisServices.Tabular.resources.dll": {
+            "locale": "th"
+          },
+          "lib/netcoreapp3.0/th/Microsoft.AnalysisServices.resources.dll": {
+            "locale": "th"
+          },
+          "lib/netcoreapp3.0/tr/Microsoft.AnalysisServices.Core.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/netcoreapp3.0/tr/Microsoft.AnalysisServices.Tabular.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/netcoreapp3.0/tr/Microsoft.AnalysisServices.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/netcoreapp3.0/uk/Microsoft.AnalysisServices.Core.resources.dll": {
+            "locale": "uk"
+          },
+          "lib/netcoreapp3.0/uk/Microsoft.AnalysisServices.Tabular.resources.dll": {
+            "locale": "uk"
+          },
+          "lib/netcoreapp3.0/uk/Microsoft.AnalysisServices.resources.dll": {
+            "locale": "uk"
+          },
+          "lib/netcoreapp3.0/vi/Microsoft.AnalysisServices.Core.resources.dll": {
+            "locale": "vi"
+          },
+          "lib/netcoreapp3.0/vi/Microsoft.AnalysisServices.Tabular.resources.dll": {
+            "locale": "vi"
+          },
+          "lib/netcoreapp3.0/vi/Microsoft.AnalysisServices.resources.dll": {
+            "locale": "vi"
+          },
+          "lib/netcoreapp3.0/zh-Hans/Microsoft.AnalysisServices.Core.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/netcoreapp3.0/zh-Hans/Microsoft.AnalysisServices.Tabular.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/netcoreapp3.0/zh-Hans/Microsoft.AnalysisServices.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/netcoreapp3.0/zh-Hant/Microsoft.AnalysisServices.Core.resources.dll": {
+            "locale": "zh-Hant"
+          },
+          "lib/netcoreapp3.0/zh-Hant/Microsoft.AnalysisServices.Tabular.resources.dll": {
+            "locale": "zh-Hant"
+          },
+          "lib/netcoreapp3.0/zh-Hant/Microsoft.AnalysisServices.resources.dll": {
+            "locale": "zh-Hant"
           }
         }
       },
@@ -213,7 +911,7 @@
           "Microsoft.SqlServer.Server": "1.0.0",
           "Microsoft.Win32.Registry": "5.0.0",
           "System.Buffers": "4.5.1",
-          "System.Configuration.ConfigurationManager": "5.0.0",
+          "System.Configuration.ConfigurationManager": "7.0.0",
           "System.Diagnostics.DiagnosticSource": "5.0.0",
           "System.IO": "4.3.0",
           "System.Resources.ResourceManager": "4.3.0",
@@ -409,7 +1107,7 @@
       "Microsoft.Identity.Client.Extensions.Msal/2.19.3": {
         "dependencies": {
           "Microsoft.Identity.Client": "4.45.0",
-          "System.Security.Cryptography.ProtectedData": "5.0.0"
+          "System.Security.Cryptography.ProtectedData": "7.0.0"
         },
         "runtime": {
           "lib/netcoreapp2.1/Microsoft.Identity.Client.Extensions.Msal.dll": {
@@ -516,22 +1214,19 @@
           "System.Security.Principal.Windows": "5.0.0"
         }
       },
-      "Microsoft.Win32.SystemEvents/5.0.0": {
-        "dependencies": {
-          "Microsoft.NETCore.Platforms": "5.0.0"
-        },
+      "Microsoft.Win32.SystemEvents/7.0.0": {
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Win32.SystemEvents.dll": {
-            "assemblyVersion": "5.0.0.0",
-            "fileVersion": "5.0.20.51904"
+          "lib/net7.0/Microsoft.Win32.SystemEvents.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
           }
         },
         "runtimeTargets": {
-          "runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll": {
+          "runtimes/win/lib/net7.0/Microsoft.Win32.SystemEvents.dll": {
             "rid": "win",
             "assetType": "runtime",
-            "assemblyVersion": "5.0.0.0",
-            "fileVersion": "5.0.20.51904"
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
           }
         }
       },
@@ -861,15 +1556,16 @@
           "System.Threading": "4.3.0"
         }
       },
-      "System.Configuration.ConfigurationManager/5.0.0": {
+      "System.Configuration.ConfigurationManager/7.0.0": {
         "dependencies": {
-          "System.Security.Cryptography.ProtectedData": "5.0.0",
-          "System.Security.Permissions": "5.0.0"
+          "System.Diagnostics.EventLog": "7.0.0",
+          "System.Security.Cryptography.ProtectedData": "7.0.0",
+          "System.Security.Permissions": "7.0.0"
         },
         "runtime": {
-          "lib/netstandard2.0/System.Configuration.ConfigurationManager.dll": {
-            "assemblyVersion": "5.0.0.0",
-            "fileVersion": "5.0.20.51904"
+          "lib/net7.0/System.Configuration.ConfigurationManager.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
           }
         }
       },
@@ -880,6 +1576,26 @@
           "System.IO": "4.3.0",
           "System.Runtime": "4.3.0",
           "System.Text.Encoding": "4.3.0"
+        }
+      },
+      "System.Data.OleDb/7.0.0": {
+        "dependencies": {
+          "System.Configuration.ConfigurationManager": "7.0.0",
+          "System.Diagnostics.PerformanceCounter": "7.0.0"
+        },
+        "runtime": {
+          "lib/net7.0/System.Data.OleDb.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net7.0/System.Data.OleDb.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
+          }
         }
       },
       "System.Data.SqlClient/4.8.1": {
@@ -917,6 +1633,26 @@
         }
       },
       "System.Diagnostics.DiagnosticSource/5.0.0": {},
+      "System.Diagnostics.EventLog/7.0.0": {},
+      "System.Diagnostics.PerformanceCounter/7.0.0": {
+        "dependencies": {
+          "System.Configuration.ConfigurationManager": "7.0.0"
+        },
+        "runtime": {
+          "lib/net7.0/System.Diagnostics.PerformanceCounter.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net7.0/System.Diagnostics.PerformanceCounter.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
+          }
+        }
+      },
       "System.Diagnostics.Tools/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "5.0.0",
@@ -931,28 +1667,22 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "System.Drawing.Common/5.0.0": {
+      "System.Drawing.Common/7.0.0": {
         "dependencies": {
-          "Microsoft.Win32.SystemEvents": "5.0.0"
+          "Microsoft.Win32.SystemEvents": "7.0.0"
         },
         "runtime": {
-          "lib/netcoreapp3.0/System.Drawing.Common.dll": {
-            "assemblyVersion": "5.0.0.0",
-            "fileVersion": "5.0.20.51904"
+          "lib/net7.0/System.Drawing.Common.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
           }
         },
         "runtimeTargets": {
-          "runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll": {
-            "rid": "unix",
-            "assetType": "runtime",
-            "assemblyVersion": "5.0.0.0",
-            "fileVersion": "5.0.20.51904"
-          },
-          "runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll": {
+          "runtimes/win/lib/net7.0/System.Drawing.Common.dll": {
             "rid": "win",
             "assetType": "runtime",
-            "assemblyVersion": "5.0.0.0",
-            "fileVersion": "5.0.20.51904"
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
           }
         }
       },
@@ -1242,7 +1972,7 @@
       },
       "System.Runtime.Caching/5.0.0": {
         "dependencies": {
-          "System.Configuration.ConfigurationManager": "5.0.0"
+          "System.Configuration.ConfigurationManager": "7.0.0"
         },
         "runtime": {
           "lib/netstandard2.0/System.Runtime.Caching.dll": {
@@ -1408,19 +2138,19 @@
           "System.Threading.Tasks": "4.3.0"
         }
       },
-      "System.Security.Cryptography.ProtectedData/5.0.0": {
+      "System.Security.Cryptography.ProtectedData/7.0.0": {
         "runtime": {
-          "lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll": {
-            "assemblyVersion": "5.0.0.0",
-            "fileVersion": "5.0.20.51904"
+          "lib/net7.0/System.Security.Cryptography.ProtectedData.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
           }
         },
         "runtimeTargets": {
-          "runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll": {
+          "runtimes/win/lib/net7.0/System.Security.Cryptography.ProtectedData.dll": {
             "rid": "win",
             "assetType": "runtime",
-            "assemblyVersion": "5.0.0.0",
-            "fileVersion": "5.0.20.51904"
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
           }
         }
       },
@@ -1453,15 +2183,14 @@
           "runtime.native.System.Security.Cryptography.OpenSsl": "4.3.0"
         }
       },
-      "System.Security.Permissions/5.0.0": {
+      "System.Security.Permissions/7.0.0": {
         "dependencies": {
-          "System.Security.AccessControl": "5.0.0",
-          "System.Windows.Extensions": "5.0.0"
+          "System.Windows.Extensions": "7.0.0"
         },
         "runtime": {
-          "lib/net5.0/System.Security.Permissions.dll": {
-            "assemblyVersion": "5.0.0.0",
-            "fileVersion": "5.0.20.51904"
+          "lib/net7.0/System.Security.Permissions.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
           }
         }
       },
@@ -1518,22 +2247,22 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "System.Windows.Extensions/5.0.0": {
+      "System.Windows.Extensions/7.0.0": {
         "dependencies": {
-          "System.Drawing.Common": "5.0.0"
+          "System.Drawing.Common": "7.0.0"
         },
         "runtime": {
-          "lib/netcoreapp3.0/System.Windows.Extensions.dll": {
-            "assemblyVersion": "5.0.0.0",
-            "fileVersion": "5.0.20.51904"
+          "lib/net7.0/System.Windows.Extensions.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
           }
         },
         "runtimeTargets": {
-          "runtimes/win/lib/netcoreapp3.0/System.Windows.Extensions.dll": {
+          "runtimes/win/lib/net7.0/System.Windows.Extensions.dll": {
             "rid": "win",
             "assetType": "runtime",
-            "assemblyVersion": "5.0.0.0",
-            "fileVersion": "5.0.20.51904"
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
           }
         }
       },
@@ -1586,6 +2315,14 @@
           "System.Xml.ReaderWriter": "4.3.0"
         }
       },
+      "Unofficial.Microsoft.AnalysisServices.AdomdClientNetCore/15.3.1.2": {
+        "runtime": {
+          "lib/netstandard2.0/AdomdClientNetCore.dll": {
+            "assemblyVersion": "15.3.1.2",
+            "fileVersion": "15.3.1.2"
+          }
+        }
+      },
       "Application/1.0.0": {
         "dependencies": {
           "AutoMapper": "12.0.1",
@@ -1594,10 +2331,14 @@
           "EntityFramework": "6.4.4",
           "FluentValidation": "11.5.1",
           "MediatR": "12.0.1",
+          "Microsoft.AnalysisServices.AdomdClient.NetCore.retail.amd64": "19.61.1.4",
+          "Microsoft.AnalysisServices.NetCore.retail.amd64": "19.61.1.4",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "7.0.4",
           "Microsoft.EntityFrameworkCore": "7.0.4",
           "Microsoft.EntityFrameworkCore.Abstractions": "7.0.4",
-          "Microsoft.Extensions.Configuration": "7.0.0"
+          "Microsoft.Extensions.Configuration": "7.0.0",
+          "System.Data.OleDb": "7.0.0",
+          "Unofficial.Microsoft.AnalysisServices.AdomdClientNetCore": "15.3.1.2"
         },
         "runtime": {
           "Application.dll": {}
@@ -1710,6 +2451,20 @@
       "sha512": "sha512-FYv95bNT4UwcNA+G/J1oX5OpRiSUxteXaUt2BJbRSdRNiIUNbggJF69wy6mnk2wYToaanpdXZdCwVylt96MpwQ==",
       "path": "mediatr.contracts/2.0.1",
       "hashPath": "mediatr.contracts.2.0.1.nupkg.sha512"
+    },
+    "Microsoft.AnalysisServices.AdomdClient.NetCore.retail.amd64/19.61.1.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CQPWDOrGSrsGM2T2YWCwsy9O3l2dHGktO8uLJLrkkZ1uCG+tncVtGoRSnlqBY0kU0Z/QiXZTUTHU4V9su2OixQ==",
+      "path": "microsoft.analysisservices.adomdclient.netcore.retail.amd64/19.61.1.4",
+      "hashPath": "microsoft.analysisservices.adomdclient.netcore.retail.amd64.19.61.1.4.nupkg.sha512"
+    },
+    "Microsoft.AnalysisServices.NetCore.retail.amd64/19.61.1.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fGCk5tKwZFUT7ITys3+ggR6fkl3ldfjYNJmE3vx55WIH4a+pV2yJyhiFV73Ssf45a+P+5i106MtWjT/UWCLTgg==",
+      "path": "microsoft.analysisservices.netcore.retail.amd64/19.61.1.4",
+      "hashPath": "microsoft.analysisservices.netcore.retail.amd64.19.61.1.4.nupkg.sha512"
     },
     "Microsoft.AspNet.WebApi.Client/5.2.9": {
       "type": "package",
@@ -1998,12 +2753,12 @@
       "path": "microsoft.win32.registry/5.0.0",
       "hashPath": "microsoft.win32.registry.5.0.0.nupkg.sha512"
     },
-    "Microsoft.Win32.SystemEvents/5.0.0": {
+    "Microsoft.Win32.SystemEvents/7.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Bh6blKG8VAKvXiLe2L+sEsn62nc1Ij34MrNxepD2OCrS5cpCwQa9MeLyhVQPQ/R4Wlzwuy6wMK8hLb11QPDRsQ==",
-      "path": "microsoft.win32.systemevents/5.0.0",
-      "hashPath": "microsoft.win32.systemevents.5.0.0.nupkg.sha512"
+      "sha512": "sha512-2nXPrhdAyAzir0gLl8Yy8S5Mnm/uBSQQA7jEsILOS1MTyS7DbmV1NgViMtvV1sfCD1ebITpNwb1NIinKeJgUVQ==",
+      "path": "microsoft.win32.systemevents/7.0.0",
+      "hashPath": "microsoft.win32.systemevents.7.0.0.nupkg.sha512"
     },
     "Mono.TextTemplating/2.2.1": {
       "type": "package",
@@ -2285,12 +3040,12 @@
       "path": "system.componentmodel.typeconverter/4.3.0",
       "hashPath": "system.componentmodel.typeconverter.4.3.0.nupkg.sha512"
     },
-    "System.Configuration.ConfigurationManager/5.0.0": {
+    "System.Configuration.ConfigurationManager/7.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-aM7cbfEfVNlEEOj3DsZP+2g9NRwbkyiAv2isQEzw7pnkDg9ekCU2m1cdJLM02Uq691OaCS91tooaxcEn8d0q5w==",
-      "path": "system.configuration.configurationmanager/5.0.0",
-      "hashPath": "system.configuration.configurationmanager.5.0.0.nupkg.sha512"
+      "sha512": "sha512-WvRUdlL1lB0dTRZSs5XcQOd5q9MYNk90GkbmRmiCvRHThWiojkpGqWdmEDJdXyHbxG/BhE5hmVbMfRLXW9FJVA==",
+      "path": "system.configuration.configurationmanager/7.0.0",
+      "hashPath": "system.configuration.configurationmanager.7.0.0.nupkg.sha512"
     },
     "System.Console/4.3.0": {
       "type": "package",
@@ -2298,6 +3053,13 @@
       "sha512": "sha512-DHDrIxiqk1h03m6khKWV2X8p/uvN79rgSqpilL6uzpmSfxfU5ng8VcPtW4qsDsQDHiTv6IPV9TmD5M/vElPNLg==",
       "path": "system.console/4.3.0",
       "hashPath": "system.console.4.3.0.nupkg.sha512"
+    },
+    "System.Data.OleDb/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bhAs+5X5acgg3zQ6N4HqxqfwwmqWJzgt54BC8iwygcqa2jktxDFzxwN83GNvqgoTcTs2tenDS/jmhC+AQsmcyg==",
+      "path": "system.data.oledb/7.0.0",
+      "hashPath": "system.data.oledb.7.0.0.nupkg.sha512"
     },
     "System.Data.SqlClient/4.8.1": {
       "type": "package",
@@ -2320,6 +3082,20 @@
       "path": "system.diagnostics.diagnosticsource/5.0.0",
       "hashPath": "system.diagnostics.diagnosticsource.5.0.0.nupkg.sha512"
     },
+    "System.Diagnostics.EventLog/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-eUDP47obqQm3SFJfP6z+Fx2nJ4KKTQbXB4Q9Uesnzw9SbYdhjyoGXuvDn/gEmFY6N5Z3bFFbpAQGA7m6hrYJCw==",
+      "path": "system.diagnostics.eventlog/7.0.0",
+      "hashPath": "system.diagnostics.eventlog.7.0.0.nupkg.sha512"
+    },
+    "System.Diagnostics.PerformanceCounter/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-L+zIMEaXp1vA4wZk1KLMpk6tvU0xy94R0IfmhkmTWeC4KwShsmAfbg5I19LgjsCTYp6GVdXZ2aHluVWL0QqBdA==",
+      "path": "system.diagnostics.performancecounter/7.0.0",
+      "hashPath": "system.diagnostics.performancecounter.7.0.0.nupkg.sha512"
+    },
     "System.Diagnostics.Tools/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -2334,12 +3110,12 @@
       "path": "system.diagnostics.tracing/4.3.0",
       "hashPath": "system.diagnostics.tracing.4.3.0.nupkg.sha512"
     },
-    "System.Drawing.Common/5.0.0": {
+    "System.Drawing.Common/7.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-SztFwAnpfKC8+sEKXAFxCBWhKQaEd97EiOL7oZJZP56zbqnLpmxACWA8aGseaUExciuEAUuR9dY8f7HkTRAdnw==",
-      "path": "system.drawing.common/5.0.0",
-      "hashPath": "system.drawing.common.5.0.0.nupkg.sha512"
+      "sha512": "sha512-KIX+oBU38pxkKPxvLcLfIkOV5Ien8ReN78wro7OF5/erwcmortzeFx+iBswlh2Vz6gVne0khocQudGwaO1Ey6A==",
+      "path": "system.drawing.common/7.0.0",
+      "hashPath": "system.drawing.common.7.0.0.nupkg.sha512"
     },
     "System.Dynamic.Runtime/4.3.0": {
       "type": "package",
@@ -2656,12 +3432,12 @@
       "path": "system.security.cryptography.primitives/4.3.0",
       "hashPath": "system.security.cryptography.primitives.4.3.0.nupkg.sha512"
     },
-    "System.Security.Cryptography.ProtectedData/5.0.0": {
+    "System.Security.Cryptography.ProtectedData/7.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-HGxMSAFAPLNoxBvSfW08vHde0F9uh7BjASwu6JF9JnXuEPhCY3YUqURn0+bQV/4UWeaqymmrHWV+Aw9riQCtCA==",
-      "path": "system.security.cryptography.protecteddata/5.0.0",
-      "hashPath": "system.security.cryptography.protecteddata.5.0.0.nupkg.sha512"
+      "sha512": "sha512-xSPiLNlHT6wAHtugASbKAJwV5GVqQK351crnILAucUioFqqieDN79evO1rku1ckt/GfjIn+b17UaSskoY03JuA==",
+      "path": "system.security.cryptography.protecteddata/7.0.0",
+      "hashPath": "system.security.cryptography.protecteddata.7.0.0.nupkg.sha512"
     },
     "System.Security.Cryptography.X509Certificates/4.3.0": {
       "type": "package",
@@ -2670,12 +3446,12 @@
       "path": "system.security.cryptography.x509certificates/4.3.0",
       "hashPath": "system.security.cryptography.x509certificates.4.3.0.nupkg.sha512"
     },
-    "System.Security.Permissions/5.0.0": {
+    "System.Security.Permissions/7.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-uE8juAhEkp7KDBCdjDIE3H9R1HJuEHqeqX8nLX9gmYKWwsqk3T5qZlPx8qle5DPKimC/Fy3AFTdV7HamgCh9qQ==",
-      "path": "system.security.permissions/5.0.0",
-      "hashPath": "system.security.permissions.5.0.0.nupkg.sha512"
+      "sha512": "sha512-Vmp0iRmCEno9BWiskOW5pxJ3d9n+jUqKxvX4GhLwFhnQaySZmBN2FuC0N5gjFHgyFMUjC5sfIJ8KZfoJwkcMmA==",
+      "path": "system.security.permissions/7.0.0",
+      "hashPath": "system.security.permissions.7.0.0.nupkg.sha512"
     },
     "System.Security.Principal.Windows/5.0.0": {
       "type": "package",
@@ -2754,12 +3530,12 @@
       "path": "system.threading.timer/4.3.0",
       "hashPath": "system.threading.timer.4.3.0.nupkg.sha512"
     },
-    "System.Windows.Extensions/5.0.0": {
+    "System.Windows.Extensions/7.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-c1ho9WU9ZxMZawML+ssPKZfdnrg/OjR3pe0m9v8230z3acqphwvPJqzAkH54xRYm5ntZHGG1EPP3sux9H3qSPg==",
-      "path": "system.windows.extensions/5.0.0",
-      "hashPath": "system.windows.extensions.5.0.0.nupkg.sha512"
+      "sha512": "sha512-bR4qdCmssMMbo9Fatci49An5B1UaVJZHKNq70PRgzoLYIlitb8Tj7ns/Xt5Pz1CkERiTjcVBDU2y1AVrPBYkaw==",
+      "path": "system.windows.extensions/7.0.0",
+      "hashPath": "system.windows.extensions.7.0.0.nupkg.sha512"
     },
     "System.Xml.ReaderWriter/4.3.0": {
       "type": "package",
@@ -2781,6 +3557,13 @@
       "sha512": "sha512-lJ8AxvkX7GQxpC6GFCeBj8ThYVyQczx2+f/cWHJU8tjS7YfI6Cv6bon70jVEgs2CiFbmmM8b9j1oZVx0dSI2Ww==",
       "path": "system.xml.xmldocument/4.3.0",
       "hashPath": "system.xml.xmldocument.4.3.0.nupkg.sha512"
+    },
+    "Unofficial.Microsoft.AnalysisServices.AdomdClientNetCore/15.3.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-EgR3zXfEaL0lybYn/s4gf9PFvqva/QPkwHu8dHK1c8WRoT7no6mlHmFK/kFw30/CU1HgkVKAVxD2rnPOMlqV1w==",
+      "path": "unofficial.microsoft.analysisservices.adomdclientnetcore/15.3.1.2",
+      "hashPath": "unofficial.microsoft.analysisservices.adomdclientnetcore.15.3.1.2.nupkg.sha512"
     },
     "Application/1.0.0": {
       "type": "project",

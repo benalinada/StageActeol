@@ -183,11 +183,11 @@ export class DashboardComponent  {
             }, 3500);
           }
         });
-        this.getColumns();
+        
       }
       getColumns() {
         this.columnsDisplay = new Map<string, string[]>();
-        const data = this.serverService.getColumns(this.selectedServerId, this.selectedDatabase,this.selectedTables).pipe(
+        const data = this.serverService.getColumns(this.selectedServerId, this.selectedDatabase,this.tablesDisplay).pipe(
           catchError(err => of(null)),
           tap(() => this.loading = false)
         ).subscribe(data => {
@@ -210,6 +210,19 @@ export class DashboardComponent  {
             setTimeout(() => {
               Swal.close();
             }, 3500);
+          }
+        });
+      } getAttributs() {
+        this.AttributDisplay = new Map<string, string[]>();
+        const data = this.serverService.getAttributs(this.selectedServerId, this.selectedDatabase,this.selectedTables).pipe(
+          catchError(err => of(null)),
+          tap(() => this.loading = false)
+        ).subscribe(data => {
+          if (data) {
+            for(let s of data.Attributes)
+            {
+              this.AttributDisplay.set(s.id,s.name);
+            }
           }
         });
       }

@@ -5,12 +5,14 @@ import { BaseData, BasesData } from "../models/BaseData";
 import { ServerData, ServersData } from '../models/ServerData';
 import { TableData, TablesData } from "../models/TableData";
 import { ColumnData, ColumnsData } from "../models/ColumnData";
+import { AttributeData, AttributesData } from "../models/AttributeData copy";
 @Injectable()
 export class ServerService {
     dataserver: ServerData[] ;
     databases: BaseData[] ;
     Tables: TableData[] ;
     Columns : ColumnData[];
+    Attributes : AttributeData[];
     loading : boolean = false;
     constructor(private http: HttpClient) {
 
@@ -58,7 +60,19 @@ getColumns(id: string, dbName:string,tableName:string): Observable<ColumnsData> 
   this.loading = true;
   const res = this.http.get<ColumnsData | null>(`https://localhost:44362/api/Columns/${id}/${dbName}/${tableName}`).pipe(
       tap( data => {
-          this.Columns = data.Columns;
+          this.databases = data.Columns;
+        }),
+        catchError(err => {
+          return of(null);
+        }),
+        finalize(() =>this.loading = false)
+      );
+      return res;
+}getAttributs(id: string, dbName:string,tableName:string): Observable<AttributesData> {
+  this.loading = true;
+  const res = this.http.get<AttributesData | null>(`https://localhost:44362/api/Attributes/${id}/${dbName}/${tableName}`).pipe(
+      tap( data => {
+          this.Attributes = data.Attributes;
         }),
         catchError(err => {
           return of(null);
@@ -67,5 +81,6 @@ getColumns(id: string, dbName:string,tableName:string): Observable<ColumnsData> 
       );
       return res;
 }
+
 }
 

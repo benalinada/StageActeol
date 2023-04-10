@@ -68,6 +68,14 @@
               "target": "Package",
               "version": "[12.0.1, )"
             },
+            "Microsoft.AnalysisServices.AdomdClient.NetCore.retail.amd64": {
+              "target": "Package",
+              "version": "[19.61.1.4, )"
+            },
+            "Microsoft.AnalysisServices.NetCore.retail.amd64": {
+              "target": "Package",
+              "version": "[19.61.1.4, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[7.0.3, )"
@@ -83,6 +91,14 @@
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
               "version": "[7.0.0, )"
+            },
+            "System.Data.OleDb": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Unofficial.Microsoft.AnalysisServices.AdomdClientNetCore": {
+              "target": "Package",
+              "version": "[15.3.1.2, )"
             }
           },
           "imports": [

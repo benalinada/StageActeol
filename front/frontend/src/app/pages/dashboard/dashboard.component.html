@@ -47,10 +47,20 @@
           <h2>Select new dimensions to be created, based on available tables.</h2>
           <h4> Measure group tables:</h4>
 
-                <label for="selectedColum"></label>
-                <select    id="selectedColumn" [(ngModel)]="selectedColumn" name="selectedColumn">
-                  <option *ngFor="let Column of columnsDisplay | keyvalue" [value]="Column">{{Column}}</option>
-                </select>
+          <table>
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let column of columnsDisplay">
+                <td>{{ column[0] }}</td>
+                <td>{{ column[1] }}</td>
+              </tr>
+            </tbody>
+          </table>
           <br>
       
       
