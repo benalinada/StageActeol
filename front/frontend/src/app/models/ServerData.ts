@@ -1,9 +1,9 @@
 export interface ServerData {
-    name : string
-    id : string
+    Name : string
+    Id : string
   }
   export interface ServersData {
-   servers:ServerData[]
+   Servers:ServerData[]
   }
   
   

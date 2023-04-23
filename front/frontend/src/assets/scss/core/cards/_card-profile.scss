@@ -1,49 +1,48 @@
-//
-// Profile card
-//
+.card-profile{
+  margin-top: 30px;
+  text-align: center;
 
-.card-profile-image {
-    position: relative;
 
-    img {
-        max-width: 180px;
-        border-radius: $border-radius;
-        @extend .shadow;
-        transform: translate(-50%,-30%);
-        position: absolute;
-        left: 50%;
-        transition: $transition-base;
+  .card-avatar {
+      margin: -50px auto 0;
+      border-radius: 50%;
+      overflow: hidden;
+      padding: 0;
 
-        &:hover {
-            transform: translate(-50%, -33%);
-        }
-    }
-}
+      @include shadow-big();
 
-.card-profile-stats {
-    padding: 1rem 0;
+      & + .card-body {
+          margin-top: 15px;
+      }
+      img {
+          width: 100%;
+          height: auto;
+      }
+  }
 
-    > div {
-        text-align: center;
-        margin-right: 1rem;
-        padding: .875rem;
+  .card-body + .card-footer {
+      margin-top: -15px;
+  }
 
-        &:last-child {
-            margin-right: 0;
-        }
+  .card-footer {
+      .btn.btn-just-icon {
+          font-size: 20px;
+          padding: 12px 12px;
+          line-height: 1em;
+      }
+  }
 
-        .heading {
-            font-size: 1.1rem;
-            font-weight: bold;
-            display: block;
-        }
-        .description {
-            font-size: .875rem;
-            color: $gray-500;
-        }
-    }
-}
+  &.card-plain {
+      .card-avatar {
+          margin-top: 0;
+      }
+  }
 
-.card-profile-actions {
-    padding: .875rem;
+  .card-header:not([class*="card-header-"]){
+    background: transparent;
+  }
+  .card-avatar {
+    max-width: 130px;
+    max-height: 130px;
+  }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
+declare const $: any;
 declare interface RouteInfo {
     path: string;
     title: string;
@@ -8,29 +8,31 @@ declare interface RouteInfo {
     class: string;
 }
 export const ROUTES: RouteInfo[] = [
-    { path: '/dashboard', title: 'Add Cube',  icon: 'fa fa-cubes', class: '' },
-    { path: '/icons', title: 'Add Calculation ',  icon:'fa fa-calculator', class: '' },
-    { path: '/maps', title: 'Dispatch',  icon:'fa fa-paper-plane', class: '' },
-    //{ path: '/user-profile', title: 'Repporting', icon:'fa fa-line-chart', class: '' },
-   
+  { path: '/dashboard', title: 'Add New Cube',  icon: 'fiber_new', class: '' },
+  { path: '/icons', title: 'Add new Calculation ',  icon:'playlist_add', class: '' },
+  { path: '/table-list', title: 'dispatch',  icon:'send', class: '' },
+  { path: '/typography', title: 'Reporting',  icon:'equalizer', class: '' },
+ { path: '/user-profile', title: 'Acount',  icon:'person', class: '' },
+ // { path: '/icons', title: 'Icons',  icon:'bubble_chart', class: '' },
 ];
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.scss']
+  styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
+  menuItems: any[];
 
-  public menuItems: any[];
-  public isCollapsed = true;
-
-  constructor(private router: Router) { }
+  constructor() { }
 
   ngOnInit() {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
-    this.router.events.subscribe((event) => {
-      this.isCollapsed = true;
-   });
   }
+  isMobileMenu() {
+      if ($(window).width() > 991) {
+          return false;
+      }
+      return true;
+  };
 }

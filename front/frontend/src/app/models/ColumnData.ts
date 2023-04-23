@@ -1,6 +1,6 @@
 export interface ColumnData {
-    name : string
-    id : string
+    Name : string
+    Id : string
   }
   export interface ColumnsData {
    Columns:ColumnData[]

@@ -1,24 +1,19 @@
 @model LoginViewModel
 
 <div class="login-page">
-    <div class="lead">
-        <h1>Login</h1>
-        <p>Choose how to login</p>
-    </div>
+
 
     <partial name="_ValidationSummary" />
+      
 
     <div class="row">
-
+        <div class="card">
+            <br /> <h1 style="text-align:center"> login </h1>
+            <section>
+                <br />
         @if (Model.EnableLocalLogin)
         {
-            <div class="col-sm-6">
-                <div class="card">
-                    <div class="card-header">
-                        <h2>Local Account</h2>
-                    </div>
-
-                    <div class="card-body">
+            
                         <form asp-route="Login">
                             <input type="hidden" asp-for="ReturnUrl" />
 
@@ -44,18 +39,15 @@
                             <button class="btn btn-primary" name="button" value="login">Login</button>
                             <button class="btn btn-secondary" name="button" value="cancel">Cancel</button>
                         </form>
-                    </div>
-                </div>
-            </div>
+              
         }
-
+        </section>
+        <section>
+                <br />
         @if (Model.VisibleExternalProviders.Any())
         {
-            <div class="col-sm-6">
-                <div class="card">
-                    <div class="card-header">
-                        <h2>External Account</h2>
-                    </div>
+         
+                   
                     <div class="card-body">
                         <ul class="list-inline">
                             @foreach (var provider in Model.VisibleExternalProviders)
@@ -72,10 +64,10 @@
                             }
                         </ul>
                     </div>
-                </div>
-            </div>
+           
         }
-
+            </section>
+        </div>
         @if (!Model.EnableLocalLogin && !Model.VisibleExternalProviders.Any())
         {
             <div class="alert alert-warning">

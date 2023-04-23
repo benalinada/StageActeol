@@ -4,62 +4,31 @@ import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 import { AuthGuard } from './guards/oauth2.guard';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
+
 
 const routes: Routes =[
+
+ 
+  {
+    path: 'signin-oidc',
+    redirectTo: 'dashboard',
+    pathMatch: 'full'
+  },
   {
     path: '',
     redirectTo: 'dashboard',
     pathMatch: 'full',
-    canActivate: [AuthGuard],
-  }, 
-
-  {
-    path: '**',
-    redirectTo: 'dashboard'
-  },
-  {
-    path: '',
-    pathMatch: 'full',
-    canActivate: [AuthGuard],
-    component: AdminLayoutComponent,
-    children: [
-      {
-        path: '',
-        loadChildren: () => import('src/app/layouts/admin-layout/admin-layout.module').then(m => m.AdminLayoutModule),
-        canActivate: [AuthGuard],
-      }
-    ],
-  },
- {
+    canActivate: [AuthGuard]
+  }, {
     path: '',
     component: AdminLayoutComponent,
-    children: [
-      {
-        path: '',
-        loadChildren: () => import('src/app/layouts/admin-layout/admin-layout.module').then(m => m.AdminLayoutModule),
-        canActivate: [AuthGuard],
-      }
-    ],
-    
-  }, 
-  {
-    path: '',
-    component: AuthLayoutComponent,
-    children: [
-      {
-        path: '',
-        loadChildren: () => import('src/app/layouts/auth-layout/auth-layout.module').then(m => m.AuthLayoutModule),
-        canActivate: [AuthGuard],
-      }
-    ],
     canActivate: [AuthGuard],
-  },
-  {
-    path: '**',
-    redirectTo: 'dashboard'
+    children: [{
+      path: '',
+      canActivate: [AuthGuard],
+      loadChildren: () => import('./layouts/admin-layout/admin-layout.module').then(m => m.AdminLayoutModule)
+    }]
   }
 ];
 
@@ -68,7 +37,7 @@ const routes: Routes =[
     CommonModule,
     BrowserModule,
     RouterModule.forRoot(routes,{
-      useHash: true
+       //useHash: true
     })
   ],
   exports: [

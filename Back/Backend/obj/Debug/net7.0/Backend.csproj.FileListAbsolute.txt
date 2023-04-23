@@ -621,7 +621,6 @@ D:\PFE\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.GeneratedMSBuildEditorC
 D:\PFE\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.AssemblyInfoInputs.cache
 D:\PFE\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.AssemblyInfo.cs
 D:\PFE\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.csproj.CoreCompileInputs.cache
-D:\PFE\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.MvcApplicationPartsAssemblyInfo.cs
 D:\PFE\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.MvcApplicationPartsAssemblyInfo.cache
 D:\PFE\StageActeol\Back\Backend\obj\Debug\net7.0\staticwebassets\msbuild.Backend.Microsoft.AspNetCore.StaticWebAssets.props
 D:\PFE\StageActeol\Back\Backend\obj\Debug\net7.0\staticwebassets\msbuild.build.Backend.props
@@ -815,3 +814,11 @@ D:\PFE\StageActeol\Back\Backend\bin\Debug\net7.0\zh-Hans\Microsoft.AnalysisServi
 D:\PFE\StageActeol\Back\Backend\bin\Debug\net7.0\zh-Hant\Microsoft.AnalysisServices.Core.resources.dll
 D:\PFE\StageActeol\Back\Backend\bin\Debug\net7.0\zh-Hant\Microsoft.AnalysisServices.Tabular.resources.dll
 D:\PFE\StageActeol\Back\Backend\bin\Debug\net7.0\zh-Hant\Microsoft.AnalysisServices.resources.dll
+D:\PFE\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.MvcApplicationPartsAssemblyInfo.cs
+D:\PFE\StageActeol\Back\Backend\bin\Debug\net7.0\Bond.Attributes.dll
+D:\PFE\StageActeol\Back\Backend\bin\Debug\net7.0\Bond.IO.dll
+D:\PFE\StageActeol\Back\Backend\bin\Debug\net7.0\Bond.Reflection.dll
+D:\PFE\StageActeol\Back\Backend\bin\Debug\net7.0\Bond.dll
+D:\PFE\StageActeol\Back\Backend\bin\Debug\net7.0\Bond.JSON.dll
+D:\PFE\StageActeol\Back\Backend\bin\Debug\net7.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\PFE\StageActeol\Back\Backend\bin\Debug\net7.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll

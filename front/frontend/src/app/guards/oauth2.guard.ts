@@ -19,10 +19,11 @@ import { authConfig } from "../config/auth.config";
 
           await this.oauthService.tryLogin({})
           .then(
-            status => {
+            async status => {
     
               if (!this.oauthService.hasValidAccessToken()) {
-                this.oauthService.initImplicitFlow()
+                await this.oauthService.initImplicitFlow()
+                return false;
               }
               else {
                 return true

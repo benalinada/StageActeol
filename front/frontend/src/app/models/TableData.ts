@@ -1,8 +1,8 @@
 export interface TableData {
-    name : string
-    id : string
+    Name : string
+    Id : string
   }
   export interface TablesData {
-   tables:TableData[]
+   Tables:TableData[]
   }
   

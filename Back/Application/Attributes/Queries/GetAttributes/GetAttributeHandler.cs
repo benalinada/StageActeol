@@ -52,7 +52,7 @@ namespace Application.Attributes.Queries.GetAttribute
                     return new GetAttributeResponse()
                     {
                         DataBaseName = request.DBName,
-                        Attribute = data.Select(t => new AttributeDto() { Id = Guid.NewGuid(), Name = t.name,TableName=t.table })
+                        Attribute = data.Select(t => new AttributeDto() { Id = Guid.NewGuid(), Name = t.name})
                     };
 
                 }

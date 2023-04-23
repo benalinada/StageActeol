@@ -10,13 +10,13 @@ namespace Application.Cube.Commandes.CreateCubeCommand
     public  class CreateCubeCommand : IRequest<Unit>
     {
 
-        public string DBServerName = "DESKTOP-0159C82\\VE_SERVER";
-        public string ProviderName = "msolap";
-        public string FactTableName = "Fact_Bookings";
+        public string DBServer ;
+        public string ProviderName ;
+        public string FactTableName ;
         public string DBName ;
         public string CubeDBName ;
-        public string CubeDataSourceName = "Data";
-        public string CubeDataSourceViewName = "DataView";
+        public string CubeDataSourceName ;
+        public string CubeDataSourceViewName ;
         public int DimensionTableCount = 1;
 
         public string[,] TableNamesAndKeys;

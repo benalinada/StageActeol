@@ -1,7 +1,7 @@
 export interface BaseData {
-    name : string
-    id : string
+    Name : string
+    Id : string
   }
   export interface BasesData {
-   dataBases:BaseData[]
+   DataBases:BaseData[]
   }

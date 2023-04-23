@@ -13,7 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.Tables.Queries.GetColumns
+namespace Application.Columns.Queries.GetColumns
 {
     public class GetColumnsHandler : IRequestHandler<GetColumnsQuery, GetColumnsResponse>
     {

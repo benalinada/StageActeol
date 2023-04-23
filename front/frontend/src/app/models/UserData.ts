@@ -1,8 +1,8 @@
 export interface UserData {
-    firstName : string;
-    lastName : string;
-    function : string;
-    job : string;
-    email : string;
-    id : string
+    FirstName : string;
+    LastName : string;
+    Function : string;
+    Job : string;
+    Email : string;
+    Id : string;
   }

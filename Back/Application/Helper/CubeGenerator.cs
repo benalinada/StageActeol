@@ -32,9 +32,7 @@ namespace Application.Helper
             {
                 try
                 {
-                    Console.WriteLine("Cube creation process started.");
-                    Console.WriteLine("");
-
+             
 
                     Server objServer = new Server();
                     Database objDatabase = new Database();
@@ -44,13 +42,13 @@ namespace Application.Helper
                     Dimension[] objDimensions = new Dimension[command.DimensionTableCount];
 
                     //Connecting to the Analysis Services.
-                    objServer = (Server)ConnectAnalysisServices(command.DBServerName, command.ProviderName);
+                    objServer = (Server)ConnectAnalysisServices(command.DBServer, command.ProviderName);
                     //Creating a Database.
                     objDatabase = (Database)CreateDatabase(objServer, command.CubeDBName);
                     //Creating a DataSource.
-                    objDataSource = (RelationalDataSource)CreateDataSource(objServer, objDatabase, command.CubeDataSourceName, command.DBServerName, command.DBName);
+                    objDataSource = (RelationalDataSource)CreateDataSource(objServer, objDatabase, command.CubeDataSourceName, command.DBServer, command.DBName);
                     //Creating a DataSourceView.
-                    objDataSet = (DataSet)GenerateDWSchema(command.DBServerName, command.DBName, command.FactTableName, command.TableNamesAndKeys, command.DimensionTableCount);
+                    objDataSet = (DataSet)GenerateDWSchema(command.DBServer, command.DBName, command.FactTableName, command.TableNamesAndKeys, command.DimensionTableCount);
                     objDataSourceView = (DataSourceView)CreateDataSourceView(objDatabase, objDataSource, objDataSet, command.CubeDataSourceViewName);
                     //Creating the Dimension, Attribute, Hierarchy, and MemberProperty Objects.                
                     objDimensions = (Dimension[])CreateDimension(objDatabase, objDataSourceView, command.TableNamesAndKeys, command.DimensionTableCount);
@@ -85,7 +83,7 @@ namespace Application.Helper
 
                     Server objServer = new Server();
                     //string strConnection = "Data Source=" + strDBServerName + ";";
-                   string strConnection = "Data Source=localhost;Provider=" + strProviderName + ";Persist Security Info=True;Password=0000;User ID=sa";
+                   string strConnection = "Data Source=localhost; Provider=" + strProviderName + ";Persist Security Info=True;Password=0000;User ID=sa";
                     //Disconnect from current connection if it's currently connected.
                     if (objServer.Connected)
                         objServer.Disconnect();
@@ -146,7 +144,7 @@ namespace Application.Helper
             {
                 try
                 {
-                    Console.WriteLine("Creating a DataSource ...");
+                  
                     RelationalDataSource objDataSource = new RelationalDataSource();
                     //Add Data Source to the Database.
                     objDataSource = objDatabase.DataSources.Add(objServer.Databases.GetNewName(strCubeDataSourceName));
@@ -178,7 +176,7 @@ namespace Application.Helper
             {
                 try
                 {
-                    Console.WriteLine("Creating a DataSourceView ...");
+                    
                     //Create the connection string.
                     string conxString = "Data Source=DESKTOP-0159C82\\VE_SERVER; Initial Catalog=" + strDBName + "; Integrated Security=True;";
                     //Create the SqlConnection.
