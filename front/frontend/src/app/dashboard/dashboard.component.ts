@@ -25,6 +25,7 @@ export class DashboardComponent implements OnInit {
   serveurid: any; // servur id slecté 
   bd_name: any; // dbname slecte 
   dim: any;  // dim slecté 
+  fact_name : any;
   liste_des_Atr_fact: any = [];
   liste_des_attribute: any = [];
   liste_des_attribute_grouper: any = {};
@@ -69,10 +70,13 @@ export class DashboardComponent implements OnInit {
     this.liste_des_serveur = []
     this.user = user;
     this.serverDisplays = new Map<string, number>();
+       let progress = 0;
     const data = this.serverService.getServers(user.Id)
+ 
       .pipe(
         catchError(err => of(null)),
         tap(() => this.lodaing == false)
+   
       ).subscribe(data => {
         this.liste_des_serveur = data.Servers
         if (data) {
@@ -119,7 +123,7 @@ export class DashboardComponent implements OnInit {
   }
   // get dim  tables a partir de id serveur et db name et factname
   settable(name: any) {
-    this.dim = name
+    this.fact_name = name
     this.tablesDisplay = new Map<string, string>();
     const data = this.serverService.getColumns(this.serveurid, this.bd_name, name)
       .pipe(
@@ -306,8 +310,10 @@ export class DashboardComponent implements OnInit {
         this.liste_des_dim.splice(i, 1)
       }
     }
-    this.obj_select={dim:this.dim,obj1:this.obj1,obj2:this.obj2}
+    this.obj_select={dim:this.dim,obj1:this.obj1 , obj2:this.obj2 , Fact:this.fact_name }
     this.resultat_de_selection.push(this.obj_select)
+   
+
 
   }
 

@@ -12,7 +12,7 @@
     <div class="loader"> </div>
   </div>
   <div *ngIf="!loading">
-    <mat-label>Select a server (*) </mat-label>
+    <mat-label style="color:black;font-size: 20px;"> Choose a Server Name  </mat-label>
     <mat-form-field >
       <mat-select  id="selectedServerId" [(ngModel)]="selectedServerId" [compareWith]="comparer" >
         <mat-option *ngFor="let obj  of liste_des_serveur " [value]="obj" (click)="setserveur(obj.Id)">
@@ -20,7 +20,8 @@
         </mat-option>
       </mat-select>
     </mat-form-field>
-    <mat-label>Select a data base (*) </mat-label>
+<br>
+    <mat-label style="color:black;font-size: 20px;">Choose data base  </mat-label>
     <mat-form-field >
      
       <mat-select  id="database-select" [(ngModel)]="selectedDatabase" required>
@@ -28,19 +29,19 @@
 
       </mat-select>
     </mat-form-field>
-
-    <mat-label>Select a fact table (*) </mat-label>
+    <br>
+    <mat-label style="color:black;font-size: 20px;">Select a fact table </mat-label>
     <mat-form-field >
      
       <mat-select disableRipple id="selectedTables" [(ngModel)]="selectedTables" name="selectedTables">
         <mat-option *ngFor="let obj  of liste_des_table  " [value]="obj" (click)="settable(obj.Name)"> {{ obj.Name }} </mat-option>
       </mat-select>
     </mat-form-field>
-
+    <br>
 
   
 
-    <mat-label>Dimention (*)</mat-label>
+    <mat-label style="color:black;font-size: 20px;">Select Dimenssion(s) </mat-label>
     <mat-form-field>
       <mat-select [(ngModel)]="selectedObjects" [compareWith]="comparer" >
         <mat-option *ngFor="let el of liste_des_dim" [value]="el" (click)="setAtrFact(el.Name)"  >
@@ -48,7 +49,7 @@
         </mat-option>
       </mat-select>
     </mat-form-field>
-
+    <br>
 
     <!-- <mat-form-field>
       <mat-label>Select attributes</mat-label>
@@ -60,7 +61,7 @@
 
     </mat-form-field>
     <br />  -->
-    <mat-label> Attribute Fact match (*)  </mat-label>
+    <mat-label style="color:black;font-size: 20px;" > Please add relation(s) between fact and dimenssions  </mat-label>
     <div style="display: flex  ; width: 80%;">
       <section  >
         <mat-form-field>
@@ -84,25 +85,78 @@
         </mat-form-field>
       </section>
    
-      <button type="button" [disabled]="obj1 == null || obj2 == null" class="btn btn-primary btn-lg btn-block" (click)="match()" style="margin-left: 10%;"> grouper </button>
+      <button type="button" class="btn btn-dark" [disabled]="obj1 == null || obj2 == null"  (click)="match()" style=" margin-left:100px; width: 300PX;"> Matching </button>
 
 
     </div>
-  <ul>
-    <li  *ngFor="let obj of resultat_de_selection " > dim : {{obj.dim}}  : id_dim :{{ obj.obj1.name}}  - cle_fact :{{ obj.obj2.name}} </li>
-  </ul>
-  <mat-label> Cube Name (*)</mat-label>
+ 
+    <br>
+    <br>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>dim</th>
+        <th>id_dim</th>
+        <th>fact</th>
+        <th>cle_fact</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let obj of resultat_de_selection">
+        <td>{{ obj.obj1.TableName }}</td>
+        <td>{{ obj.obj1.Name }}</td>
+        <td>{{ this.fact_name }}</td>
+        <td>{{ obj.obj2.Name }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <br>
+   <mat-label style="color:black;font-size: 20px;" > Please Select a Mesure  </mat-label>
+  <div style="display: flex  ; width: 80%;">
+    <section  >
+      <mat-form-field>
+       
+        <mat-select    [compareWith]="comparer" >
+          <mat-option *ngFor="let el of liste1 " [value]="el" (click)="setselect1(el)" >
+            {{el.Name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </section>
+    
+    <section  style="margin-left: 5%;">
+      <mat-form-field>
+       
+        <mat-select    [compareWith]="comparer" >
+          <mat-option *ngFor="let el of liste2 " [value]="el" (click)="setselect2(el)" >
+            {{el.Name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </section>
+ 
+    <button type="button" class="btn btn-dark" [disabled]="obj1 == null || obj2 == null"  (click)="match()" style=" margin-left:100px; width: 300PX;"> Add </button>
+
+
+  </div>
+  <br>
+  <br>
+  <mat-label style="color:black;font-size: 20px;"> Please Set a Name For the Cube </mat-label>
         <mat-form-field class="example-full-width">
+    <br>
          
           <input matInput  [(ngModel)]="Cubename">
         </mat-form-field>
-
-    <button   [disabled]="Cubename == null" class="btn btn-primary btn-lg btn-block" (click)="envoyer_data()">
-      send 
+        <br>
+        <br>
+    <button    type="button" class="btn btn-danger" [disabled]="Cubename == null"  (click)="envoyer_data()" style="width:80% ; margin: top 30px; margin-left: 120PX; text-align: center ; text-size-adjust:3px ;">
+      <h2> Generate Your Cube  </h2>
     </button>
   </div>
    
-    
+
+ 
 
 
 
