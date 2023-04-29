@@ -18,6 +18,7 @@ namespace Application.Helper
     using System.CodeDom.Compiler;
     using Application.Common.Interfaces;
     using Application.Cube.Commandes.CreateCubeCommand;
+    using Domain.Common.Models;
 
     namespace OLAPCube
     {
@@ -75,7 +76,7 @@ namespace Application.Helper
             /// <param name="strDBServerName">Database Server Name.</param>
             /// <param name="strProviderName">Provider Name.</param>
             /// <returns>Database Server instance.</returns>
-            private static object ConnectAnalysisServices(string strDBServerName, string strProviderName)
+            public static object ConnectAnalysisServices(string strDBServerName, string strProviderName)
             {
                 try
                 {
@@ -449,6 +450,20 @@ namespace Application.Helper
             #endregion Creating the Cube, MeasureGroup, Measure, and Partition Objects.
 
             #endregion Cube Generation.
+
+            public static IEnumerable<DataBase> GetDataBaseAnalyser(string serverName, string provider)
+            {
+                var server = (Microsoft.AnalysisServices.Server)CubeGenerator.ConnectAnalysisServices(serverName,provider);
+
+                var listdb = new List<DataBase>();
+
+                foreach (Database db in server.Databases)
+                {
+                    listdb.Add(new DataBase{ Name = db.Name, Id = new Guid() });
+                }
+
+                return listdb;
+            }
         }
     }
 

@@ -23,7 +23,7 @@ namespace Application.Servers.Qeuries.GetServers
 
             return new GetServersResponse()
             {
-                Servers = Server.Select(s => new ServerDto() { Id = s.Id, Name = s.Name })
+                Servers = Server.Select(s => new ServerDto() { Id = s.Id, Name = s.Name , type=s.type })
             };
 
         }

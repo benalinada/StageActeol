@@ -16,6 +16,8 @@ namespace Infrastructure.Persistance.Configurations
             builder.HasKey(x => x.Id);
             builder.HasData(new UserServer() { Id = new Guid(""), UserId = new Guid("b995b0f3-f7da-4878-ae1a-d3a667b79906"), ServerId= new Guid("caec2ebb-a150-45f1-996f-7e89ec5f4028") });
             builder.HasData(new UserServer() { Id = new Guid(""), UserId = new Guid("b995b0f3-f7da-4878-ae1a-d3a667b79906"), ServerId= new Guid("f06ab99c-ab02-4c93-b788-4d5a7211b694") });
+            builder.HasData(new UserServer() { Id = new Guid(""), UserId = new Guid("b995b0f3-f7da-4878-ae1a-d3a667b79906"), ServerId = new Guid("aca3c183-8428-484c-945a-aa46883bf669") });
+
         }
 
     }

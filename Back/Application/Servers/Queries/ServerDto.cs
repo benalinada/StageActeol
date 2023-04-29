@@ -10,5 +10,6 @@ namespace Application.Servers.Qeuries
     {
         public string Name { get; set; }
         public Guid Id { get; set; }
+        public string type { get; set; }
     }
 }

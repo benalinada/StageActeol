@@ -37,7 +37,7 @@ namespace Application.Tables.Queries.GetTables
             string connectionString = server.ConnexionString.Replace("master", request.DBName);
 
             //// Ouvrir une connexion à la base de données
-            var query = $"SELECT  f.name AS name FROM  sys.foreign_keys fk   INNER JOIN sys.tables f ON fk.parent_object_id = f.object_id    INNER JOIN sys.tables d ON fk.referenced_object_id = d.object_id WHERE     f.type = 'U'     AND d.type = 'U'  GROUP BY     f.name ";
+            var query = $"SELECT name FROM {request.DBName}.sys.tables WHERE type = 'U' ORDER BY name;";
             //// Ouvrir une connexion à la base de données
             ///{request.TableName}
 

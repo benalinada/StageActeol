@@ -1,5 +1,6 @@
 ﻿
 using Application.Database.Queries;
+using Application.Database.Queries.GetDataBaseSql;
 using Application.Servers.Qeuries.GetServers;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
