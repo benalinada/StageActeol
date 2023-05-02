@@ -1,29 +1,59 @@
 
 <div class="main-content">
   <div class="container-fluid">
-      <div class="card card-plain">
-          <div class="card-header card-header-danger">
-              <h4 class="card-title">Material Design Icons</h4>
-              <p class="card-category">Handcrafted by our friends from
-                  <a target="_blank" href="https://fonts.google.com/icons">Google</a>
-              </p>
-          </div>
-          <div class="row">
-              <div class="col-md-12">
-                  <div class="card-body">
-                      <div class="iframe-container d-none d-lg-block">
-                          <iframe src="https://material.io/design/iconography/system-icons.html#grid-and-keyline-shapes">
-                              <p>Your browser does not support iframes.</p>
-                          </iframe>
-                      </div>
-                      <div class="col-md-12 d-none d-sm-block d-md-block d-lg-none d-block d-sm-none text-center ml-auto mr-auto">
-                          <h5>The icons are visible on Desktop mode inside an iframe. Since the iframe is not working on Mobile and Tablets please visit the icons on their original page on Google. Check the
-                              <a href="https://fonts.google.com/icons" target="_blank">Material Icons</a>
-                          </h5>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
+    <mat-label style="color:black;font-size: 20px;"> Choose a Server Name  </mat-label>
+    <mat-form-field >
+      <mat-select  id="selectedServerSorceId" [(ngModel)]="selectedServerSorceId" [compareWith]="comparer" >
+        <mat-option *ngFor="let obj  of liste_des_serveur " [value]="obj" (click)="setserveur(obj.Id)">
+          {{ obj.Name }} 
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+      <br><br>
+  
+
+      <mat-label style="color:black;font-size: 20px;">Choose data base  </mat-label>
+    <mat-form-field >
+    
+      <mat-select  id="database-select" [(ngModel)]="selectedDatabase" required>
+        <mat-option *ngFor="let obj  of liste_des_bd  " [value]="obj" (click)="setbasedonnees(obj.Name)"> {{ obj.Name }} </mat-option>
+        
+      </mat-select>
+    </mat-form-field>
   </div>
+  <div class="row">
+    <div class="col-sm-6">
+        <div class="card">
+
+            <div class="card-body">
+            <mat-label style="color:black;font-size: 20px;">Choose data base  </mat-label>
+            <mat-form-field >
+            
+            <mat-select  id="database-select" [(ngModel)]="selectedDatabase" required>
+                <mat-option *ngFor="let obj  of liste_des_bd  " [value]="obj" (click)="setbasedonnees(obj.Name)"> {{ obj.Name }} </mat-option>
+                
+            </mat-select>
+            </mat-form-field>
+            <select name="operateur" size="1" value="choix de l'opérateur" class="input2" style="width: 3%;; height:40px; text-align: center;">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select>
+            <mat-label style="color:black;font-size: 20px;">Choose data base  </mat-label>
+            <mat-form-field >
+            
+            <mat-select  id="database-select" [(ngModel)]="selectedDatabase" required>
+                <mat-option *ngFor="let obj  of liste_des_bd  " [value]="obj" (click)="setbasedonnees(obj.Name)"> {{ obj.Name }} </mat-option>
+                
+            </mat-select>
+            </mat-form-field>
+            <button type="button" class="btn btn-success" style="margin-left: 500px; width: 30%;">Success</button>
+        </div>
+        </div>
+    </div>
+  </div>
+  
+
+  
 </div>

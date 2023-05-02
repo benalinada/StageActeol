@@ -32,25 +32,27 @@ export class DashboardComponent implements OnInit {
   liste_des_attribute_grouper1: any = [];
   liste_des_attribute_grouper1_value: any = [];
   liste_des_attribute_grouper1_key: any = [];
-  lodaing: boolean = false;
   liste_des_attribute_grouper_KEY: any = [];
   res: any = [];
   variable_res: any = {};
   liste_var_res: any = [];
   Cubename: string
-  loading:boolean = false;
   MeassageError :any;
+  isLoading = false;
   constructor(private serverService: ServerService, private userService: UserAppService) {
 
   }
 
   async ngOnInit() {
+    
     await this.getUser();
    // await this.getServers();
   }
   //get user 
-  async getUser() {
 
+  
+  async getUser() {
+       this.isLoading = true;
     (await this.userService.getUser())
       .pipe(
         catchError(err => of(null)),
@@ -58,15 +60,20 @@ export class DashboardComponent implements OnInit {
       ).subscribe(data => {
         if (data) {
           this.getServers(data);
+          this.loading = false;
         }
+        this.isLoading = false;
+        console.log(this.loading)
       });
   }
+ 
   ngOnChanges() : void {
     // logique du composant
 }
   //get serveur 
   liste_des_serveur: any = [];
   getServers(user:UserData) {
+    this.isLoading = true;
     this.liste_des_serveur = []
     this.user = user;
     this.serverDisplays = new Map<string, number>();
@@ -82,9 +89,11 @@ export class DashboardComponent implements OnInit {
         if (data) {
           for (let s of data.Servers) {
             this.serverDisplays.set(s.Id, s.Name);
-            //  this.showServerPopup();
+            
           }
+          this.lodaing == false
         }
+        this.isLoading = false;
       });
 
 
@@ -92,6 +101,7 @@ export class DashboardComponent implements OnInit {
   //  get db a partir de id serveur 
   setserveur(id: any) {
     this.serveurid = id;
+    this.isLoading = true;
     const data = this.serverService.getBbs(id)
       .pipe(
         catchError(err => of(null)),
@@ -100,13 +110,15 @@ export class DashboardComponent implements OnInit {
 
         if (data) {
           this.liste_des_bd = data.DataBases
-
+          this.isLoading = false;
         }
+        this.isLoading = false;
       });
   }
   //  get fact table a partir de id serveur et db name
   setbasedonnees(name: any) {
     this.bd_name = name
+    this.isLoading = true;
     this.tablesDisplay = new Map<string, string>();
     const data = this.serverService.getTables(this.serveurid, name)
       .pipe(
@@ -117,12 +129,16 @@ export class DashboardComponent implements OnInit {
         if (data) {
           for (let s of data.Tables) {
             this.tablesDisplay.set(s.Id, s.Name);
+            
           }
+          this.isLoading = false;
         }
+        this.isLoading = false;
       });
   }
   // get dim  tables a partir de id serveur et db name et factname
   settable(name: any) {
+    this.isLoading = true;
     this.fact_name = name
     this.tablesDisplay = new Map<string, string>();
     const data = this.serverService.getColumns(this.serveurid, this.bd_name, name)
@@ -134,7 +150,9 @@ export class DashboardComponent implements OnInit {
 
         this.liste_des_dim = data.Columns
         this.setAtrFact2(name)
+        this.isLoading = false;
       });
+      this.isLoading = false;
   }
 
   // affiche le nom de attribute !!!!!!!!!!!!!!!!!!!

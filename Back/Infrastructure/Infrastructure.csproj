@@ -7,13 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Persistance\Migrations\**" />
+    <EmbeddedResource Remove="Persistance\Migrations\**" />
+    <None Remove="Persistance\Migrations\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Application\Application.csproj" />
     <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Common\" />
-    <Folder Include="Persistance\Migrations\" />
   </ItemGroup>
 
   <ItemGroup>

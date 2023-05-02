@@ -7,6 +7,7 @@ import { TableData, TablesData } from "../models/TableData";
 import { ColumnData, ColumnsData } from "../models/ColumnData";
 import { AttributFactData, AttributFactsData } from "app/models/AttributFact";
 import { CubeData } from "app/models/CubeData";
+import { DispatchData } from "app/models/DispatchData";
 @Injectable()
 export class ServerService {
     dataserver: ServerData[] ;
@@ -105,7 +106,15 @@ getAttributFacts(id: string, dbName:string,tableName:string ): Observable<Attrib
     }),
     finalize(() =>  this.loading = false)
   );
-}
+ }
+  postCubedispatch(DispatchData : DispatchData ): Observable<Boolean>{
+    this.loading = true;
+    return this.http.post<Boolean>('https://localhost:44362/api/Dispatch', DispatchData).pipe(
+      catchError(err => {
+        return of(false);
+      }),
+      finalize(() =>  this.loading = false)
+    );
 
 }
-
+}

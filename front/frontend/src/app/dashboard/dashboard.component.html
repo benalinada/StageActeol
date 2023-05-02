@@ -1,15 +1,20 @@
-<div class="main-content">
+<div *ngIf="isLoading">
+  <app-notifications></app-notifications>
+  
+</div>
+
+<div class="main-content" *ngIf="!isLoading" >
   <div class="container-fluid">
     <div *ngIf= "loading && MeassageError && MeassageError.length>0">
       Error create cube ...
     </div>
     <div *ngIf= "loading && MeassageError && MeassageError.length == 0">
       cube created succes ...   
+      <img src="../../assets/img/faces/1436013803checkbox-1024x1024.webp"/>
       <button   class="btn btn-primary btn-lg btn-block" (click)="reset()">OK</button>
      </div>
   <div *ngIf= "loading && !MeassageError" >
-    starting create cube ...
-    <div class="loader"> </div>
+    <app-maps></app-maps>
   </div>
   <div *ngIf="!loading">
     <mat-label style="color:black;font-size: 20px;"> Choose a Server Name  </mat-label>
@@ -99,6 +104,7 @@
         <th>id_dim</th>
         <th>fact</th>
         <th>cle_fact</th>
+        <th>Action</th>
       </tr>
     </thead>
     <tbody>
@@ -107,6 +113,7 @@
         <td>{{ obj.obj1.Name }}</td>
         <td>{{ this.fact_name }}</td>
         <td>{{ obj.obj2.Name }}</td>
+        <td> <mat-icon>create</mat-icon> <br> <mat-icon>clear</mat-icon> </td>
       </tr>
     </tbody>
   </table>
@@ -154,12 +161,7 @@
       <h2> Generate Your Cube  </h2>
     </button>
   </div>
-   
-
- 
-
-
-
+  
 
 
   </div>

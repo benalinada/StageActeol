@@ -14,16 +14,18 @@ import { AuthModule, LogLevel } from 'angular-auth-oidc-client';
 import { MatCardModule } from '@angular/material/card'
 import { NgPipesModule } from 'ngx-pipes';
 import { CommonModule } from '@angular/common';
-
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @NgModule({
   imports: [
+    
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
     ComponentsModule,
     MatCardModule,
+    MatSlideToggleModule,
     RouterModule,
     NgPipesModule,
     CommonModule,
