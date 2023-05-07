@@ -19,6 +19,8 @@ namespace Application.Helper
     using Application.Common.Interfaces;
     using Application.Cube.Commandes.CreateCubeCommand;
     using Domain.Common.Models;
+    using Microsoft.AspNetCore.Mvc;
+    using System.Xml.Linq;
 
     namespace OLAPCube
     {
@@ -29,7 +31,7 @@ namespace Application.Helper
 
             #region Cube Generation.
 
-            public static void BuildCube(CreateCubeCommand command)
+            public static void BuildCube(CreateCubeCommand command, bool isEmptyCube = false)
             {
                 try
                 {
@@ -43,19 +45,23 @@ namespace Application.Helper
                     Dimension[] objDimensions = new Dimension[command.DimensionTableCount];
 
                     //Connecting to the Analysis Services.
-                    objServer = (Server)ConnectAnalysisServices(command.DBServer, command.ProviderName);
+                    objServer = (Server)ConnectAnalysisServices(command.DBAnalyserServerName, command.ProviderName);
                     //Creating a Database.
                     objDatabase = (Database)CreateDatabase(objServer, command.CubeDBName);
                     //Creating a DataSource.
-                    objDataSource = (RelationalDataSource)CreateDataSource(objServer, objDatabase, command.CubeDataSourceName, command.DBServer, command.DBName);
-                    //Creating a DataSourceView.
-                    objDataSet = (DataSet)GenerateDWSchema(command.DBServer, command.DBName, command.FactTableName, command.TableNamesAndKeys, command.DimensionTableCount);
+                    objDataSource = (RelationalDataSource)CreateDataSource(objServer, objDatabase, command.CubeDataSourceName, command.DBEngineServer, command.DBName);
+                    if (!isEmptyCube)
+                    {
+                        //Creating a DataSourceView.
+                        objDataSet = (DataSet)GenerateDWSchema(command.DBEngineServer, command.DBName, command.FactTableName, command.TableNamesAndKeys, command.DimensionTableCount);
                     objDataSourceView = (DataSourceView)CreateDataSourceView(objDatabase, objDataSource, objDataSet, command.CubeDataSourceViewName);
                     //Creating the Dimension, Attribute, Hierarchy, and MemberProperty Objects.                
                     objDimensions = (Dimension[])CreateDimension(objDatabase, objDataSourceView, command.TableNamesAndKeys, command.DimensionTableCount);
                     //Creating the Cube, MeasureGroup, Measure, and Partition Objects.
-                    CreateCube(objDatabase, objDataSourceView, objDataSource, objDimensions, command.FactTableName, command.TableNamesAndKeys, command.DimensionTableCount);
+                  
+                        CreateCube(objDatabase, objDataSourceView, objDataSource, objDimensions, command.FactTableName, command.TableNamesAndKeys, command.DimensionTableCount);
 
+                    }
                     objDatabase.Process(ProcessType.ProcessFull);
 
                     Console.WriteLine("Cube created successfully.");
@@ -76,7 +82,7 @@ namespace Application.Helper
             /// <param name="strDBServerName">Database Server Name.</param>
             /// <param name="strProviderName">Provider Name.</param>
             /// <returns>Database Server instance.</returns>
-            public static object ConnectAnalysisServices(string strDBServerName, string strProviderName)
+            public static object ConnectAnalysisServices(string serverName , string strProviderName)
             {
                 try
                 {
@@ -84,7 +90,7 @@ namespace Application.Helper
 
                     Server objServer = new Server();
                     //string strConnection = "Data Source=" + strDBServerName + ";";
-                   string strConnection = "Data Source=localhost; Provider=" + strProviderName + ";Persist Security Info=True;Password=0000;User ID=sa";
+                   string strConnection = $"Data Source={serverName}; Provider={ strProviderName};Persist Security Info=True;Password=0000;User ID=sa";
                     //Disconnect from current connection if it's currently connected.
                     if (objServer.Connected)
                         objServer.Disconnect();
@@ -459,10 +465,31 @@ namespace Application.Helper
 
                 foreach (Database db in server.Databases)
                 {
-                    listdb.Add(new DataBase{ Name = db.Name, Id = new Guid() });
+                    listdb.Add(new DataBase { Name = db.Name, Id = new Guid() });
                 }
 
                 return listdb;
+            }
+            public  static Cube GetCube(string serverName,string dbName,string cubeName, string provider)
+            {
+                var server = (Microsoft.AnalysisServices.Server)CubeGenerator.ConnectAnalysisServices(serverName, provider);
+
+                var db = server.Databases.FindByName(dbName);
+                return db.Cubes.FindByName(cubeName);
+
+            }
+            public static void Clone(string serverSourceName, string dbSourceName, string serverTargetName, string dbTargetName,string cubeName, string provider)
+            {
+                var existCube = GetCube(serverSourceName, dbSourceName, cubeName, provider);
+                var newEmptyCube = GetCube(serverTargetName, dbTargetName, cubeName, provider);
+                if (existCube == null || newEmptyCube == null)
+                {
+                    throw new Exception("Cube not found");
+                }
+                var serverTarget = (Microsoft.AnalysisServices.Server)CubeGenerator.ConnectAnalysisServices(serverTargetName, provider);
+                var db = serverTarget.Databases.FindByName(dbTargetName);
+                db.Cubes.Add(existCube);
+                db.Update();
             }
         }
     }

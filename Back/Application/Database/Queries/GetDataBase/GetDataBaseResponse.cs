@@ -1,6 +1,6 @@
 ﻿using Domain.Common.Models;
 
-namespace Application.Database.Queries.GetDataBaseSql
+namespace Application.Database.Queries.GetDataBase
 {
     public class GetDataBaseResponse
     {

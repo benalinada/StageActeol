@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LvNzqp094sQ8BQq41atbdP42h70Iph5hMoLXQUTpVRqVWLsQgvdjd4S/mG62+hxxUFIb4urkqeuGysSDZPj9dg==",
+  "dgSpecHash": "kKARMIg+e3TPoYS9gZQxl0zPZ3tWHsdaiSJjK6F3TNHXNGQdBLdQiR/4UzbG75I7MHfv5C5+8d2Z9ZQUlp6QTQ==",
   "success": true,
-  "projectFilePath": "D:\\PFE\\StageActeol\\Back\\Application\\Application.csproj",
+  "projectFilePath": "D:\\pfe 2\\StageActeol\\Back\\Application\\Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Nedia\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Nedia\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
@@ -36,6 +36,7 @@
     "C:\\Users\\Nedia\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Nedia\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\Nedia\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
+    "C:\\Users\\Nedia\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\Nedia\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
     "C:\\Users\\Nedia\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\Nedia\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2X85t/DnMpuT5JB1NduPQVPwR0WGN2ksQuaQSicbjjFeZQpSUUkKdj3gv1U00tDpjJaRNXamfinxTF3yt3H8Gw==",
+  "dgSpecHash": "YsRJmdR35q+rLMiA/2ou9w/QorjDABVefgb+ZVURKtfPTchAjzsry8Rv61OHqs1h1a+r8cCzXkSJWZuy5m/h5A==",
   "success": true,
-  "projectFilePath": "D:\\PFE\\StageActeol\\Back\\Infrastructure\\Infrastructure.csproj",
+  "projectFilePath": "D:\\pfe 2\\StageActeol\\Back\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Nedia\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Nedia\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
@@ -53,6 +53,7 @@
     "C:\\Users\\Nedia\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\Nedia\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
     "C:\\Users\\Nedia\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\Nedia\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\Nedia\\.nuget\\packages\\nodatime\\3.0.0\\nodatime.3.0.0.nupkg.sha512",
     "C:\\Users\\Nedia\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
     "C:\\Users\\Nedia\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",

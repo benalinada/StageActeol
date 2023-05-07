@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\PFE\\StageActeol\\Back\\Infrastructure\\Infrastructure.csproj": {}
+    "D:\\pfe 2\\StageActeol\\Back\\Infrastructure\\Infrastructure.csproj": {}
   },
   "projects": {
-    "D:\\PFE\\StageActeol\\Back\\Application\\Application.csproj": {
+    "D:\\pfe 2\\StageActeol\\Back\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PFE\\StageActeol\\Back\\Application\\Application.csproj",
+        "projectUniqueName": "D:\\pfe 2\\StageActeol\\Back\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "D:\\PFE\\StageActeol\\Back\\Application\\Application.csproj",
+        "projectPath": "D:\\pfe 2\\StageActeol\\Back\\Application\\Application.csproj",
         "packagesPath": "C:\\Users\\Nedia\\.nuget\\packages\\",
-        "outputPath": "D:\\PFE\\StageActeol\\Back\\Application\\obj\\",
+        "outputPath": "D:\\pfe 2\\StageActeol\\Back\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,8 +32,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\PFE\\StageActeol\\Back\\Domain\\Domain.csproj": {
-                "projectPath": "D:\\PFE\\StageActeol\\Back\\Domain\\Domain.csproj"
+              "D:\\pfe 2\\StageActeol\\Back\\Domain\\Domain.csproj": {
+                "projectPath": "D:\\pfe 2\\StageActeol\\Back\\Domain\\Domain.csproj"
               }
             }
           }
@@ -92,6 +92,10 @@
               "target": "Package",
               "version": "[7.0.0, )"
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
             "System.Data.OleDb": {
               "target": "Package",
               "version": "[7.0.0, )"
@@ -121,14 +125,14 @@
         }
       }
     },
-    "D:\\PFE\\StageActeol\\Back\\Domain\\Domain.csproj": {
+    "D:\\pfe 2\\StageActeol\\Back\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PFE\\StageActeol\\Back\\Domain\\Domain.csproj",
+        "projectUniqueName": "D:\\pfe 2\\StageActeol\\Back\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "D:\\PFE\\StageActeol\\Back\\Domain\\Domain.csproj",
+        "projectPath": "D:\\pfe 2\\StageActeol\\Back\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\Nedia\\.nuget\\packages\\",
-        "outputPath": "D:\\PFE\\StageActeol\\Back\\Domain\\obj\\",
+        "outputPath": "D:\\pfe 2\\StageActeol\\Back\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -206,14 +210,14 @@
         }
       }
     },
-    "D:\\PFE\\StageActeol\\Back\\Infrastructure\\Infrastructure.csproj": {
+    "D:\\pfe 2\\StageActeol\\Back\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PFE\\StageActeol\\Back\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "D:\\pfe 2\\StageActeol\\Back\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "D:\\PFE\\StageActeol\\Back\\Infrastructure\\Infrastructure.csproj",
+        "projectPath": "D:\\pfe 2\\StageActeol\\Back\\Infrastructure\\Infrastructure.csproj",
         "packagesPath": "C:\\Users\\Nedia\\.nuget\\packages\\",
-        "outputPath": "D:\\PFE\\StageActeol\\Back\\Infrastructure\\obj\\",
+        "outputPath": "D:\\pfe 2\\StageActeol\\Back\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -234,11 +238,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\PFE\\StageActeol\\Back\\Application\\Application.csproj": {
-                "projectPath": "D:\\PFE\\StageActeol\\Back\\Application\\Application.csproj"
+              "D:\\pfe 2\\StageActeol\\Back\\Application\\Application.csproj": {
+                "projectPath": "D:\\pfe 2\\StageActeol\\Back\\Application\\Application.csproj"
               },
-              "D:\\PFE\\StageActeol\\Back\\Domain\\Domain.csproj": {
-                "projectPath": "D:\\PFE\\StageActeol\\Back\\Domain\\Domain.csproj"
+              "D:\\pfe 2\\StageActeol\\Back\\Domain\\Domain.csproj": {
+                "projectPath": "D:\\pfe 2\\StageActeol\\Back\\Domain\\Domain.csproj"
               }
             }
           }

@@ -21,14 +21,22 @@ namespace Application.Cube.Commandes.CreateCubeCommand
         }
         public async Task<Unit> Handle(CreateCubeCommand request, CancellationToken cancellationToken)
         {
-            var server = _applicationDBContext.Servers.SingleOrDefault(s => s.Id == new Guid(request.DBServer));
-
-            if (server == null)
+            if (!request.EmptyCube)
             {
-                throw new ArgumentException("Invalid server ID specified.");
+                var server = _applicationDBContext.Servers.SingleOrDefault(s => s.Id == new Guid(request.DBEngineServer));
+
+                if (server == null)
+                {
+                    throw new ArgumentException("Invalid server ID specified.");
+                }
+                request.DBEngineServer = server.ConnexionString;
+
             }
-            request.DBServer = server.ConnexionString;
-            CubeGenerator.BuildCube(request);
+           if(!string.IsNullOrEmpty(request.DBAnalyserServer))
+            {
+                request.DBAnalyserServerName = _applicationDBContext.Servers.SingleOrDefault(s => s.Id == new Guid (request.DBAnalyserServer)).Name;
+            }
+            CubeGenerator.BuildCube(request,request.EmptyCube);
             //
             return Unit.Value;
         }

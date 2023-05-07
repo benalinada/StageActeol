@@ -4,29 +4,28 @@ import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-import { AuthGuard } from './guards/oauth2.guard';
 
 
 const routes: Routes =[
 
  
   {
-    path: 'signin-oidc',
+    path: 'dashboard',
     redirectTo: 'dashboard',
     pathMatch: 'full'
   },
   {
     path: '',
     redirectTo: 'dashboard',
-    pathMatch: 'full',
-    canActivate: [AuthGuard]
+    pathMatch: 'full'
+ 
   }, {
     path: '',
     component: AdminLayoutComponent,
-    canActivate: [AuthGuard],
+
     children: [{
       path: '',
-      canActivate: [AuthGuard],
+   
       loadChildren: () => import('./layouts/admin-layout/admin-layout.module').then(m => m.AdminLayoutModule)
     }]
   }

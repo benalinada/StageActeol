@@ -1,10 +1,52 @@
-<div class="main-content">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="column">
-          <div class="card">
-            <h1>Source  Analyse :</h1>
-                  <mat-label style="color:black;font-size: 20px;"> Choose a Server Engine  Name  </mat-label>
+<div *ngIf="isLooading">
+  <app-notifications></app-notifications>
+</div>
+<div *ngIf="isLoading">
+  <app-notifications></app-notifications>
+</div>
+<div class="main-content" *ngIf="!isLoading"  style="padding: 70px 60px ;margin-right: 60px ;" >
+  <div class="container-fluid">
+    <div *ngIf= "loading && MeassageError && MeassageError.length>0">
+      <div class="col-sm-12">
+        <div class="alert fade alert-simple alert-danger alert-dismissible text-left font__family-montserrat font__size-16 font__weight-light brk-library-rendered rendered show" role="alert" data-brk-library="component__alert">
+          <button type="button" class="close font__size-18" data-dismiss="alert">
+									<span aria-hidden="true">
+										<i class="fa fa-times danger "></i>
+									</span>
+									<span class="sr-only">Close</span>
+								</button>
+          <i class="start-icon far fa-times-circle faa-pulse animated"></i>
+          <strong class="font__weight-semibold">Oh Error!</strong> Try again.
+        </div>
+      </div>
+    </div>
+  </div> 
+    <div *ngIf= "loading && MeassageError && MeassageError.length == 0">
+      <div class="col-sm-12">
+        <div class="alert fade alert-simple alert-success alert-dismissible text-left font__family-montserrat font__size-16 font__weight-light brk-library-rendered rendered show">
+          <button type="button" class="close font__size-18" data-dismiss="alert">
+									<span aria-hidden="true"><a>
+                    <i class="fa fa-times greencross"></i>
+                    </a></span>
+									<span class="sr-only">Close</span> 
+								</button>
+          <i class="start-icon far fa-check-circle faa-tada animated"></i>
+          <strong class="font__weight-semibold">Well done!</strong> Cube Creat successfully.
+        </div>
+      </div>
+    </div>
+  <div *ngIf= "loading && !MeassageError" >
+    <app-maps></app-maps>
+  </div>
+  <div *ngIf="!loading">
+      <mat-label style="color:black;font-size: 28px ; text-align: center; font-family: Georgia, serif;">
+        Data_Base_Source
+      </mat-label>
+      <br><br><br>
+
+                  <mat-label style="color:black;font-size: 23px;">
+                     Choose an Analysis server name 
+                   </mat-label>
                   <mat-form-field >
                     <mat-select  id="selectedServerSorceId" [(ngModel)]="selectedServerEngineSorceId" [compareWith]="comparer" >
                       <mat-option *ngFor="let obj  of liste_des_serveur " [value]="obj" (click)="setserveur(obj.Id)">
@@ -12,10 +54,12 @@
                       </mat-option>
                     </mat-select>
                   </mat-form-field>
-                    <br><br>
+                <br>
                 
               
-                    <mat-label style="color:black;font-size: 20px;">Choose data warehouse   </mat-label>
+                    <mat-label style="color:black;font-size: 23px;">
+                      Choose data base  
+                    </mat-label>
                   <mat-form-field >
                   
                     <mat-select  id="database-select" [(ngModel)]="selectedDataWarhouse" required>
@@ -23,12 +67,15 @@
                       
                     </mat-select>
                   </mat-form-field>
-          </div>
-        </div>
-        <div class="column">
-          <div class="card">
-            <h1>Source  Engine :</h1>
-                  <mat-label style="color:black;font-size: 20px;"> Choose a Server Analyse  Name  </mat-label>
+                  <br>
+ 
+             <mat-label style="color:black;font-size: 28px ; margin-left: 250px; margin-top: 20px;font-family: Georgia, serif;">
+              Data_Base_Source
+            </mat-label>
+            <br><br><br>
+                   <mat-label style="color:black;font-size: 23px;">
+                 Choose a Server Engin  Name  
+                    </mat-label>
                   <mat-form-field >
                     <mat-select  id="selectedServerSorceId" [(ngModel)]="selectedServerSorceId" [compareWith]="comparer" >
                       <mat-option *ngFor="let obj  of liste_des_serveur " [value]="obj" (click)="setserveur(obj.Id)">
@@ -36,10 +83,12 @@
                       </mat-option>
                     </mat-select>
                   </mat-form-field>
-                    <br><br>
+                  <br>
                 
               
-                    <mat-label style="color:black;font-size: 20px;">Choose data base Cube </mat-label>
+                    <mat-label style="color:black;font-size: 23px;">
+                     Choose a data base (Data Warehouse)
+                    </mat-label>
                   <mat-form-field >
                   
                     <mat-select  id="database-select" [(ngModel)]="selectedDatabase" required>
@@ -47,14 +96,12 @@
                       
                     </mat-select>
                   </mat-form-field>
-          </div>
-        </div>
-      
-        <div class="column">
-          <div class="card">
-            <h1>Destination :</h1>
-           
-                <mat-label style="color:black;font-size: 20px;"> Choose a Server Name  </mat-label>
+                  <br>
+       
+                <mat-label style="color:black;font-size: 28px ; margin-left: 250px; margin-top: 20px;font-family: Georgia, serif;">
+                  Destination </mat-label>
+                  <br>
+                <mat-label style="color:black;font-size: 23px ;"> Choose a destination server </mat-label>
               <mat-form-field >
                 <mat-select multiple id="ServerAnalyse" [(ngModel)]="selectedServer" [compareWith]="comparer" >
                   <mat-option *ngFor="let obj  of liste_des_serveur " [value]="obj" >
@@ -63,41 +110,20 @@
                 </mat-select>
               </mat-form-field>
        
-              <br><br>
-            
-               <mat-label style="color:black;font-size: 20px;"> Please Set a Name For the Cube </mat-label>
+              <br>
+               <mat-label style="color:black;font-size: 23px;">  Set a Name to the Cube </mat-label>
                    <mat-form-field class="example-full-width">
-  
+                    <br>
                    
                      <input matInput  [(ngModel)]="newCubename"  >
                    </mat-form-field>
           
-          </div>
-        </div>
-      </div> 
+        
+
      
-      <button type="button" class="btn btn-success"   (click)="Dispatch()"  style="width:80% ; margin: top 30px; margin-left: 120PX; text-align: center ; text-size-adjust:3px ;"> Dispatch   <br> <i class="material-icons" >send</i></button>
-      <br>
-      <br>
-      <table class="table">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">date</th>
-            <th scope="col">Serveur Source</th>
-            <th scope="col">Data Base Source </th>
-            <th scope="col">Serveur Targs</th>
-            <th scope="col"> New DataBase Cube_Name</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let obj of Table_Reponse" >
-            <th scope="row">DATE </th>
-            <td>serveur</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-        </tbody>
-      </table>
+          <button type="button" class="btn btn-success"   (click)="Dispatch()"  style="width:80% ; margin: top 30px; margin-left: 120PX; text-align: center ; text-size-adjust:3px ;"> Dispatch   <br> <i class="material-icons" >send</i></button>
+      
+     
       <br>   
-    </div>
+
   </div>

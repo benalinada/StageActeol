@@ -13,7 +13,7 @@ import {MatSnackBar } from '@angular/material/snack-bar'
 
 @Component({
   selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
+  templateUrl:'./dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
@@ -39,6 +39,8 @@ export class DashboardComponent implements OnInit {
   Cubename: string
   MeassageError :any;
   isLoading = false;
+  step : number = 0;
+
   constructor(private serverService: ServerService, private userService: UserAppService) {
 
   }
@@ -46,6 +48,7 @@ export class DashboardComponent implements OnInit {
   async ngOnInit() {
     
     await this.getUser();
+    this.step =0;
    // await this.getServers();
   }
   //get user 
@@ -97,6 +100,14 @@ export class DashboardComponent implements OnInit {
       });
 
 
+  }
+  nextStep()
+  {
+    this.step = this.step +1;
+  }
+  previousStep()
+  {
+    this.step = this.step -1;
   }
   //  get db a partir de id serveur 
   setserveur(id: any) {
@@ -157,7 +168,13 @@ export class DashboardComponent implements OnInit {
 
   // affiche le nom de attribute !!!!!!!!!!!!!!!!!!!
   // set attribute de dim slecte 
-
+  deleteRow(event: any) {
+    // Récupérer l'élément parent direct de l'icône de suppression
+    let row = event.target.closest('tr');
+  
+    // Supprimer la ligne de la table
+    row.remove();
+  }
   ch: any = []
   setchoix(ev: any) {
     this.ch = []
@@ -315,17 +332,17 @@ export class DashboardComponent implements OnInit {
   match() {
     for (let i = 0; i < this.liste1.length; i++) {
       if (this.obj1.name == this.liste1[i].name) {
-        this.liste1.splice(i, 1)
+      //this.liste1.splice(i, 1)
       }
     }
     for (let i = 0; i < this.liste2.length; i++) {
       if (this.obj2.name == this.liste2[i].name) {
-        this.liste2.splice(i, 1)
+       // this.liste2.splice(i, 1)
       }
     }
     for (let i = 0; i < this.liste_des_dim.length; i++) {
       if (this.dim == this.liste_des_dim[i].name) {
-        this.liste_des_dim.splice(i, 1)
+     //   this.liste_des_dim.splice(i, 1)
       }
     }
     this.obj_select={dim:this.dim,obj1:this.obj1 , obj2:this.obj2 , Fact:this.fact_name }
@@ -333,10 +350,25 @@ export class DashboardComponent implements OnInit {
    
 
 
+
   }
-
-
+  nouvelle_mesure = {
+    mesure: '',
+    operation: '',
+    nom: ''
+  };
+  addMessure(){
+   
+      this.resultat_de_selection.push({
+        obj1: this.selectedMesures,
+        obj2: {Name: this.nouvelle_mesure.operation},
+        obj3: this.nouvelle_mesure.nom
+      });
+      this.nouvelle_mesure = {mesure: '', operation: '', nom: ''}; // réinitialiser la variable pour les prochaines nouvelles mesures
+    }
 }
+
+
 
 
 

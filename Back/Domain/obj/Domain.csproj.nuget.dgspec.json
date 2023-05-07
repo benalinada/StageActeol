@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\PFE\\StageActeol\\Back\\Domain\\Domain.csproj": {}
+    "D:\\pfe 2\\StageActeol\\Back\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "D:\\PFE\\StageActeol\\Back\\Domain\\Domain.csproj": {
+    "D:\\pfe 2\\StageActeol\\Back\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PFE\\StageActeol\\Back\\Domain\\Domain.csproj",
+        "projectUniqueName": "D:\\pfe 2\\StageActeol\\Back\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "D:\\PFE\\StageActeol\\Back\\Domain\\Domain.csproj",
+        "projectPath": "D:\\pfe 2\\StageActeol\\Back\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\Nedia\\.nuget\\packages\\",
-        "outputPath": "D:\\PFE\\StageActeol\\Back\\Domain\\obj\\",
+        "outputPath": "D:\\pfe 2\\StageActeol\\Back\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

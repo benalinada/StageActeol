@@ -23,7 +23,7 @@ export class IconsComponent implements OnInit {
   newCubename: any;
    selectedDatabase : any;
    responseDate : Date;
-
+   isLoading = false;
   constructor(private serverService: ServerService, private userService: UserAppService) { }
 
   async ngOnInit() {
@@ -32,6 +32,7 @@ export class IconsComponent implements OnInit {
           // serveur Engine 
           getServers() {
             this.liste_des_serveur = []
+            this.isLoading = true;
             this.serverDisplays = new Map<string, number>();
               let progress = 0;
             const data = this.serverService.getServers(this.userService.user.Id)
@@ -48,6 +49,7 @@ export class IconsComponent implements OnInit {
                     this.getServers
                   }
                 }
+                this.isLoading = false;
               });
 
 
@@ -56,6 +58,7 @@ export class IconsComponent implements OnInit {
           //  get db a partir de id serveur 
           setserveur(id: any) {
             this.serveurid = id;
+            this.isLoading = true;
             const data = this.serverService.getBbs(id)
               .pipe(
                 catchError(err => of(null)),
@@ -66,6 +69,7 @@ export class IconsComponent implements OnInit {
                   this.liste_des_bd = data.DataBases
 
                 }
+                this.isLoading = false;
               });
           }
 

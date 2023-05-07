@@ -3,7 +3,7 @@ import {  DispatchData } from 'app/models/DispatchData';
 import { ServerService } from 'app/services/server.service';
 import { UserAppService } from 'app/services/userApp.service';
 import { catchError, of, tap } from 'rxjs';
-
+import Swal from 'sweetalert2'
 @Component({
   selector: 'app-table-list',
   templateUrl: './table-list.component.html',
@@ -23,8 +23,9 @@ export class TableListComponent implements OnInit {
   selectedServerSourceId : any;
   newCubename: any;
    selectedDatabase : any;
+  looodaing : boolean = true ;
    responseDate : Date;
-
+   isLooading = false;
   constructor(private serverService: ServerService, private userService: UserAppService) { }
 
   async ngOnInit() {
@@ -35,9 +36,10 @@ export class TableListComponent implements OnInit {
 getServers() {
   this.liste_des_serveur = []
   this.serverDisplays = new Map<string, number>();
-     let progress = 0;
+     let progress = 0; 
+     this.isLooading = true;
   const data = this.serverService.getServers(this.userService.user.Id)
-
+  
     .pipe(
       catchError(err => of(null)),
       tap(() => this.lodaing == false)
@@ -48,8 +50,11 @@ getServers() {
         for (let s of data.Servers) {
           this.serverDisplays.set(s.Id, s.Name);
           this.getServers
+        
         }
+        this.isLooading = false;
       }
+      this.isLooading = false;
     });
 
 
@@ -58,6 +63,7 @@ getServers() {
 //  get db a partir de id serveur 
 setserveur(id: any) {
   this.serveurid = id;
+  this.isLooading = true;
   const data = this.serverService.getBbs(id)
     .pipe(
       catchError(err => of(null)),
@@ -66,8 +72,9 @@ setserveur(id: any) {
 
       if (data) {
         this.liste_des_bd = data.DataBases
-
+        this.islooading = false;
       }
+      this.isLooading = false;
     });
 }
 
@@ -76,8 +83,7 @@ setserveur(id: any) {
 Table_Reponse: any[] = []; 
 Dispatch() {
   let cubedispatch : DispatchData = new DispatchData();
-  this.loading = true;
-  console.log( cubedispatch )
+  
   this.isLoading = true;
   cubedispatch.sourceServerId = this.serveurid;
   cubedispatch.nameCube = this.newCubename;
@@ -86,18 +92,43 @@ Dispatch() {
   debugger
   this.selectedServer.forEach( s => {
    cubedispatch.targetServerId.push(s.Id)
+
   });
+  console.log( cubedispatch )
+  console.log(this.looodaing )
   const data = this.serverService.postCubedispatch(cubedispatch)
   .pipe(
     catchError(err => of(null)),
-    tap(() => this.lodaing == false)
+    tap(() => this.lodaing == false
+
+    )
   ).subscribe(async (data: any) => {
-    this.isLoading = false
-    this.Table_Reponse.push(data)
-    console.log(this.Table_Reponse)
-    this.responseDate = new Date(data.date);
+       
+    if (data) {
+      this.MeassageError = []
+     
+    }else{
+      this.MeassageError = []
+      this.MeassageError.push("Error creaing cube")
+    }
+    
   });
 
 }
+reset(){
+  this.MeassageError = null;
+  this.loading =false;
+}
+
+
+
+ 
 
 }
+
+
+
+
+
+
+

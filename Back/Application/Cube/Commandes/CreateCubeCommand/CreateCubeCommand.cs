@@ -10,14 +10,17 @@ namespace Application.Cube.Commandes.CreateCubeCommand
     public  class CreateCubeCommand : IRequest<Unit>
     {
 
-        public string DBServer ;
-        public string ProviderName ;
-        public string FactTableName ;
-        public string DBName ;
-        public string CubeDBName ;
-        public string CubeDataSourceName ;
-        public string CubeDataSourceViewName ;
+        public string? DBEngineServer ;  
+        public string? DBAnalyserServer ;
+        public string? DBAnalyserServerName ;
+        public string ProviderName ="msolap";
+        public string? FactTableName ;
+        public string? DBName ;
+        public string? CubeDBName ;
+        public string CubeDataSourceName = "Data";
+        public string CubeDataSourceViewName = "DataView";
         public int DimensionTableCount = 1;
+        public bool EmptyCube { get; set; } = false;
 
         public string[,] TableNamesAndKeys;
     }

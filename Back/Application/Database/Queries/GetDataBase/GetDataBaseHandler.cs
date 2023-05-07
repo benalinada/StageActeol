@@ -19,7 +19,7 @@ using Application.Helper.OLAPCube;
 using Microsoft.AnalysisServices;
 
 
-namespace Application.Database.Queries.GetDataBaseSql
+namespace Application.Database.Queries.GetDataBase
 {
     public class GetDataBaseHandler : IRequestHandler<GetDataBaseQuery, GetDataBaseResponse>
     {

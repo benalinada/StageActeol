@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HEdrxSnnuokf68azwDbRqzZ0bTZCTt51an8zTThSX3laBcjBspSZdLQqUj4R8dg+P8bg/2LdP7LsLTvTZolqug==",
+  "dgSpecHash": "TjxqZSsel5JO9XqM1Bz/vfgO7iNULdFA/qDiBOBMNHG/vVPiwfUs1zUcS1JiwNLD7IV5WUZnzS/tWVXSwAjhgg==",
   "success": true,
-  "projectFilePath": "D:\\PFE\\StageActeol\\Back\\Domain\\Domain.csproj",
+  "projectFilePath": "D:\\pfe 2\\StageActeol\\Back\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Nedia\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Nedia\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
