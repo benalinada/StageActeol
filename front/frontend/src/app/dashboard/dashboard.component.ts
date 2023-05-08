@@ -77,7 +77,7 @@ export class DashboardComponent implements OnInit {
 }
   //get serveur 
   liste_des_serveur: any = [];
-  getServers(user:UserData) {
+  getServers(user:UserData) { 
     this.isLoading = true;
     this.liste_des_serveur = []
     this.user = user;
@@ -100,6 +100,7 @@ export class DashboardComponent implements OnInit {
         }
         this.isLoading = false;
       });
+
 
 
   }
@@ -284,9 +285,11 @@ export class DashboardComponent implements OnInit {
     let cube : CubeData = new CubeData();
     cube.DBName = this.bd_name;
     cube.cubeDbName= this.Cubename;
-    cube.DBServer = this.serveurid;
+    cube.DBEngineServer= this.serveurid;
     cube.CubeDataSourceName='Data';
+    cube.CubeDataSourceViewName='dataView'
     cube.FactTableName =this.dim;
+    cube.DBAnalyserServer = this.selectedServertargtId.Id;
     cube.DimensionTableCount= this.resultat_de_selection.length;
     cube.TableNamesAndKeys =[];
     this.loading = true;
@@ -363,7 +366,7 @@ export class DashboardComponent implements OnInit {
       console.log(this.mesureliste)
     }
     refreche_page() {
-      location.reload();
+      window.location.reload();
     }
 }
 

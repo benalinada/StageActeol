@@ -7,238 +7,319 @@
 
 <div class="main-content" *ngIf="!isLoading"  style="padding: 70px 60px ;margin-right: 60px ;" >
    
-<!-- div error message  -->
-<div class="container-fluid">
-  <div *ngIf= "loading && MeassageError && MeassageError.length>0">
-     <div class="col-sm-12">
-        <div class="alert fade alert-simple alert-danger alert-dismissible text-left font__family-montserrat font__size-16 font__weight-light brk-library-rendered rendered show" role="alert" data-brk-library="component__alert">
-           <button type="button" class="close font__size-18" data-dismiss="alert"  (click)="reset()" >
-           <span aria-hidden="true">
-           <i class="fa fa-times danger "></i>
-           </span>
-           <span class="sr-only"  >Close</span>
-          
-           </button>
-           <i class="start-icon far fa-times-circle faa-pulse animated"></i>
-           <strong class="font__weight-semibold">Oh Error!</strong> Try again.
-        </div>
-     </div>
-  </div>
-</div>
+   <!-- div error message  -->
+   <div class="container-fluid">
+   <div *ngIf= "loading && MeassageError && MeassageError.length>0">
+      <div class="col-sm-12">
+         <div class="alert fade alert-simple alert-danger alert-dismissible text-left font__family-montserrat font__size-16 font__weight-light brk-library-rendered rendered show" role="alert" data-brk-library="component__alert">
+            <button type="button" class="close font__size-18" data-dismiss="alert"  (click)="reset()" >
+            <span aria-hidden="true">
+            <i class="fa fa-times danger "></i>
+            </span>
+            <span class="sr-only"  >Close</span>
+            
+            </button>
+            <i class="start-icon far fa-times-circle faa-pulse animated"></i>
+            <strong class="font__weight-semibold">Oh Error!</strong> Try again.
+         </div>
+      </div>
+   </div>
+   </div>
 
-<!-- div lssucsses message  -->
-<div *ngIf= "loading && MeassageError && MeassageError.length == 0">
-  <div class="col-sm-12">
-     <div class="alert fade alert-simple alert-success alert-dismissible text-left font__family-montserrat font__size-16 font__weight-light brk-library-rendered rendered show">
-        <button type="button" class="close font__size-18" data-dismiss="alert" (click)="reset()" >
-        <span aria-hidden="true"><a>
-        <i class="fa fa-times greencross"></i>
-        </a></span>
-        <span class="sr-only"  >Close</span> 
-        </button>
-        <i class="start-icon far fa-check-circle faa-tada animated"></i>
-        <strong class="font__weight-semibold">Well done!</strong> Cube Creat successfully.
-     </div>
-  </div>
-</div>
+   <!-- div lssucsses message  -->
+   <div *ngIf= "loading && MeassageError && MeassageError.length == 0">
+   <div class="col-sm-12">
+      <div class="alert fade alert-simple alert-success alert-dismissible text-left font__family-montserrat font__size-16 font__weight-light brk-library-rendered rendered show">
+         <button type="button" class="close font__size-18" data-dismiss="alert" (click)="refreche_page()" >
+         <span aria-hidden="true"><a>
+         <i class="fa fa-times greencross"></i>
+         </a></span>
+         <span class="sr-only"  >Close</span> 
+         </button>
+         <i class="start-icon far fa-check-circle faa-tada animated"></i>
+         <strong class="font__weight-semibold">Well done!</strong> Cube Creat successfully.
+      </div>
+   </div>
+   </div>
 
-<!-- div crate start -->
-<div *ngIf= "loading && !MeassageError" >
-  <app-maps></app-maps>
-</div>
+   <!-- div crate start -->
+   <div *ngIf= "loading && !MeassageError" >
+   <app-maps></app-maps>
+   </div>
 
-<!-- div principale-->
-<div *ngIf="!loading">
-   <!-- div principale step 1 -->
-  <div id="step1" *ngIf="step==0" >
-    <mat-label style="color:black;font-size: 18px;" > Server Name (*) </mat-label>
-    <mat-form-field >
-       <mat-select  id="selectedServerId" [(ngModel)]="selectedServerId"  >
-       <mat-option *ngFor="let obj  of liste_des_serveur " [value]="obj" (click)="setserveur(obj.Id)">
-       {{ obj.Name }} 
-       </mat-option>
-       </mat-select>
-    </mat-form-field>
-    <br>
-    <mat-label style="color:black;font-size: 18px;">Data base  (*)</mat-label>
-    <mat-form-field >
-       <mat-select  id="database-select" [(ngModel)]="selectedDatabase">
-       <mat-option *ngFor="let obj  of liste_des_bd  " [value]="obj" (click)="setbasedonnees(obj.Name)"> {{ obj.Name }} </mat-option>
-       </mat-select>
-    </mat-form-field>
-    <br>
-    <mat-label style="color:black;font-size: 18px;">Fact table (*)</mat-label>
-    <mat-form-field >
-       <mat-select disableRipple id="selectedTables" [(ngModel)]="selectedTables" name="selectedTables">
-       <mat-option *ngFor="let obj  of liste_des_table  " [value]="obj" (click)="settable(obj.Name)"> {{ obj.Name }} </mat-option>
-       </mat-select>
-    </mat-form-field>
-    <br>
-    <mat-label style="color:black;font-size: 18px;"> Dimenssion(s) (*)</mat-label>
-    <mat-form-field>
-       <mat-select [(ngModel)]="selectedObjects"  >
-       <mat-option *ngFor="let el of liste_des_dim" [value]="el" (click)="setAtrFact(el.Name)"  >
-       {{el.Name}}
-       </mat-option>
-       </mat-select>
-    </mat-form-field>
-    <br>
-    
-    <div style="display: flex  ;">
-      <section   >
-        <mat-label style="color:black;font-size: 18px;" > Matching(s) between fact and dimenssions (*)  </mat-label>
-     </section>
-       <section  style="margin-left: auto;margin-top: auto;" >
-          <mat-form-field>
-             <mat-select    >
-                <mat-option *ngFor="let el of liste1 " [value]="el" (click)="setselect1(el)" >
-                {{el.Name}}
-                </mat-option>                                                                                         
-             </mat-select>
-          </mat-form-field>
-       </section>
-       <section style="margin-left: auto;" >
-          <mat-form-field>
-             <mat-select  >
-                <mat-option *ngFor="let el of liste2 " [value]="el" (click)="setselect2(el)" >
-                {{el.Name}}
-                </mat-option>
-             </mat-select>
-          </mat-form-field>
-       </section>
-       <section style="margin-left: auto;"> 
-      
-        <mat-button type="button" data-func="dt-add" class="btn btn-success btn-xs dt-add" [disabled]="obj1 == null || obj2 == null"  (click)="match()" > Add </mat-button>
-       </section>
-       
-    </div>
-    <br>
-    <table class="table table-bordered,table-light">
-       <thead>
-          <tr>
-             <th>Dimension</th>
-             <th>Primiry_key</th>
-             <th>Fact_Table_Name</th>
-             <th>FOREIGN_KEY  </th>
-             <th>Action</th>
-          </tr>
-       </thead>
-       <tbody>
-          <tr *ngFor="let obj of resultat_de_selection">
-             <td>{{ obj.obj1.TableName }}</td>
-             <td>{{ obj.obj1.Name }}</td>
-             <td>{{ this.fact_name }}</td>
-             <td>{{ obj.obj2.Name }}</td>
-             <td>
-                <div>
+   <!-- div principale-->
+   <div *ngIf="!loading">
+      <!-- div principale step 1 -->
+      <div id="step1" *ngIf="step==0" >
+         <mat-label style="color:black;font-size: 18px;" > Server Name (*) </mat-label>
+         <mat-form-field >
+            <mat-select  id="selectedServerId" [(ngModel)]="selectedServerId"  >
+            <mat-option *ngFor="let obj  of liste_des_serveur " [value]="obj" (click)="setserveur(obj.Id)">
+            {{ obj.Name }} 
+            </mat-option>
+            </mat-select>
+         </mat-form-field>
+         <br>
+         <mat-label style="color:black;font-size: 18px;">Data base  (*)</mat-label>
+         <mat-form-field >
+            <mat-select  id="database-select" [(ngModel)]="selectedDatabase">
+            <mat-option *ngFor="let obj  of liste_des_bd  " [value]="obj" (click)="setbasedonnees(obj.Name)"> {{ obj.Name }} </mat-option>
+            </mat-select>
+         </mat-form-field>
+         <br>
+         <mat-label style="color:black;font-size: 18px;">Fact table (*)</mat-label>
+         <mat-form-field >
+            <mat-select disableRipple id="selectedTables" [(ngModel)]="selectedTables" name="selectedTables">
+            <mat-option *ngFor="let obj  of liste_des_table  " [value]="obj" (click)="settable(obj.Name)"> {{ obj.Name }} </mat-option>
+            </mat-select>
+         </mat-form-field>
+         <br>
+         <mat-label style="color:black;font-size: 18px;"> Dimenssion(s) (*)</mat-label>
+         <mat-form-field>
+            <mat-select [(ngModel)]="selectedObjects"  >
+            <mat-option *ngFor="let el of liste_des_dim" [value]="el" (click)="setAtrFact(el.Name)"  >
+            {{el.Name}}
+            </mat-option>
+            </mat-select>
+         </mat-form-field>
+         <br>
+         
+         <div style="display: flex  ;">
+            <section   >
+            <mat-label style="color:black;font-size: 18px;" > Matching(s) between fact and dimenssions (*)  </mat-label>
+         </section>
+            <section  style="margin-left: auto;margin-top: auto;" >
+               <mat-form-field>
+                  <mat-select    >
+                     <mat-option *ngFor="let el of liste1 " [value]="el" (click)="setselect1(el)" >
+                     {{el.Name}}
+                     </mat-option>                                                                                         
+                  </mat-select>
+               </mat-form-field>
+            </section>
+            <section style="margin-left: auto;" >
+               <mat-form-field>
+                  <mat-select  >
+                     <mat-option *ngFor="let el of liste2 " [value]="el" (click)="setselect2(el)" >
+                     {{el.Name}}
+                     </mat-option>
+                  </mat-select>
+               </mat-form-field>
+            </section>
+            <section style="margin-left: auto;"> 
+            
+            <mat-button type="button" data-func="dt-add" class="btn btn-success btn-xs dt-add" [disabled]="obj1 == null || obj2 == null"  (click)="match()" > Add </mat-button>
+            </section>
+            
+         </div>
+         <br>
+         <table class="table table-bordered,table-light">
+            <thead>
+               <tr>
+                  <th>Dimension</th>
+                  <th>Primiry_key</th>
+                  <th>Fact_Table_Name</th>
+                  <th>FOREIGN_KEY  </th>
+                  <th>Action</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr *ngFor="let obj of resultat_de_selection">
+                  <td>{{ obj.obj1.TableName }}</td>
+                  <td>{{ obj.obj1.Name }}</td>
+                  <td>{{ this.fact_name }}</td>
+                  <td>{{ obj.obj2.Name }}</td>
+                  <td>
+                     <div>
+                        
+                        <i class="material-icons button delete" (click)="deleteRow($event)"  style="color: #dc2a2a">delete</i>
+                     </div>
+                  </td>
+               </tr>
+            </tbody>
+         </table>
+         
+         <section style="position: relative">  
+            <mat-button type="button" class="btn btn-primary nextBtn pull-right"  style="background-color: rgb(87, 110, 216);  right: 10px ;" [disabled]="obj1 == null || obj2 == null"  (click)="nextStep()" > Next </mat-button>
+         
+         </section>
+      </div>
+        <!-- div principale step 2 -->
+      <div id = "step2" *ngIf ="step==1" >
+         <mat-label style="color:black;font-size: 23px;" > Please Select a Mesure  </mat-label>
+         <div style="display: flex  ; width: 80%;">
+            <section  style="margin-left: auto"  >
+               <mat-form-field>
+                  <mat-label>Mesures</mat-label>
                   
-                  <i class="material-icons button delete" (click)="deleteRow($event)"  style="color: #dc2a2a">delete</i>
+                  
+                  <mat-select   [(ngModel)]="selectedMesures" >
+                     <mat-option *ngFor="let el of liste2  " [value]="el"  >
+                     {{el.Name}}
+                     </mat-option>
+                  </mat-select>
+               </mat-form-field>
+            </section>
+            <section  style="margin-left: auto">
+               <mat-form-field>
+                  <mat-label>Operations</mat-label>
+                  <mat-select [(ngModel)]="value" >
+                     <mat-option value="Sum()">Sum</mat-option>
+                     <mat-option value="Nb()">nb</mat-option>
+                  </mat-select>
+               </mat-form-field>
+            </section>
+            <section  style="margin-left: auto">
+               <mat-form-field appearance="fill">
+                  <mat-label>Mesure Name </mat-label>
+                  <input matInput [(ngModel)]="nameMessure">
+               </mat-form-field>
+            </section>
+            <section  style="margin-left: auto">
+            <button type="button" class="btn btn-success"   (click)="addMessure()" > Add </button>
+         </section>
+            
+         </div>
+         <br>
+         <br>
+         <table class="table table-bordered,table-light">
+            <thead>
+               <tr>
+                  <th>Mesure</th>
+                  <th>Operation</th>
+                  <th>Mesure Name</th>
+                  <th>Action</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr *ngFor="let obj of mesureliste ">
+                  <td>{{ obj.mesure}}</td>
+                  <td>{{ obj.operation}}</td>
+                  <td>{{ obj.nom}}</td>
+                  <td>
+                  <div>
+                     <i class="material-icons button delete" (click)="deleteRow($event)"  style="color: #dc2a2a">delete</i>
+                  </div>
+               </td>
+               </tr>
+            </tbody>
+         </table>
+         <br>
+         <mat-label style="color:black;font-size: 18px;" > Server Name destination (*) </mat-label>
+         <mat-form-field >
+            <mat-select  id="selectedServerAnalysisId" [(ngModel)]="selectedServertargtId"  >
+            <mat-option *ngFor="let obj  of liste_des_serveur " [value]="obj">
+            {{ obj.Name }} 
+            </mat-option>
+            </mat-select>
+         </mat-form-field>
+         <br>
+         <mat-label style="color:black;font-size: 23px;">  Set a Name For the Cube </mat-label>
+         <mat-form-field class="example-full-width">
+            <br>
+            <br>
+            <input matInput  [(ngModel)]="Cubename">
+         </mat-form-field>
+         <br>
+         <br>
+        
+          
+            <mat-button type="button" class="btn" style="background-color: rgb(87, 110, 216);" [disabled]="obj1 == null || obj2 == null"  (click)="previousStep()" > Previous </mat-button>
+         
+          
+               <div style="display: flex; justify-content: center;">
+                  <button type="button" class="btn btn-success" style="font-weight: bold; font-size: 18px;" [disabled]="Cubename == null" (click)="nextStep()">
+                    Generate Your Cube
+                  </button>
                 </div>
-             </td>
-          </tr>
-       </tbody>
-    </table>
-    
-     <section style="position: relative">  
-      <mat-button type="button" class="btn btn-primary nextBtn pull-right"  style="background-color: rgb(87, 110, 216);  right: 10px ;" [disabled]="obj1 == null || obj2 == null"  (click)="nextStep()" > Next </mat-button>
-     
-     </section>
-  </div>
-  <!-- div principale step 2 -->
-  <div id = "step2" *ngIf ="step==1" >
-    <mat-label style="color:black;font-size: 23px;" > Please Select a Mesure  </mat-label>
-    <div style="display: flex  ; width: 80%;">
-       <section  style="margin-left: auto"  >
-          <mat-form-field>
-             <mat-label>Mesures</mat-label>
-             
-              
-             <mat-select   [(ngModel)]="selectedMesures" >
-                <mat-option *ngFor="let el of liste2  " [value]="el"  >
-                {{el.Name}}
-                </mat-option>
-             </mat-select>
-          </mat-form-field>
-       </section>
-       <section  style="margin-left: auto">
-          <mat-form-field>
-             <mat-label>Operations</mat-label>
-             <mat-select [(ngModel)]="value" >
-                <mat-option value="Sum()">Sum</mat-option>
-                <mat-option value="Nb()">nb</mat-option>
-             </mat-select>
-          </mat-form-field>
-       </section>
-       <section  style="margin-left: auto">
-          <mat-form-field appearance="fill">
-             <mat-label>Mesure Name </mat-label>
-             <input matInput [(ngModel)]="nameMessure">
-          </mat-form-field>
-       </section>
-       <section  style="margin-left: auto">
-        <button type="button" class="btn btn-success"   (click)="addMessure()" > Add </button>
-     </section>
-       
-    </div>
-    <br>
-    <br>
-    <table class="table table-bordered,table-light">
-       <thead>
-          <tr>
-             <th>Mesure</th>
-             <th>Operation</th>
-             <th>Mesure Name</th>
-             <th>Action</th>
-          </tr>
-       </thead>
-       <tbody>
-          <tr *ngFor="let obj of mesureliste ">
-             <td>{{ obj.mesure}}</td>
-             <td>{{ obj.operation}}</td>
-             <td>{{ obj.nom}}</td>
-             <td>
-              <div>
-                <i class="material-icons button delete" (click)="deleteRow($event)"  style="color: #dc2a2a">delete</i>
-              </div>
-           </td>
-          </tr>
-       </tbody>
-    </table>
-    <br>
-    <mat-label style="color:black;font-size: 18px;" > Server Name destination (*) </mat-label>
-    <mat-form-field >
-       <mat-select  id="selectedServerAnalysisId" [(ngModel)]="selectedServertargtId"  >
-       <mat-option *ngFor="let obj  of liste_des_serveur " [value]="obj">
-       {{ obj.Name }} 
-       </mat-option>
-       </mat-select>
-    </mat-form-field>
-    <br>
-    <mat-label style="color:black;font-size: 23px;">  Set a Name For the Cube </mat-label>
-    <mat-form-field class="example-full-width">
-       <br>
-       <br>
-       <input matInput  [(ngModel)]="Cubename">
-    </mat-form-field>
-    <br>
-    <br>
-    <div style="display: flex">
-      <section >  
-        <mat-button type="button" class="btn" style="background-color: rgb(87, 110, 216);" [disabled]="obj1 == null || obj2 == null"  (click)="previousStep()" > Previous </mat-button>
-       </section>
-      <section style="margin-left: auto">  
-        <button    type="button" class="btn btn-success" [disabled]="Cubename == null"  (click)="envoyer_data()" >
-           Generate Your Cube  
-          </button>
-      </section>
+            
+           
+            
+            
       
-      
-    </div>
-    
-  </div>
-<!-- div principale step3 -->
-<div>
+         
+      </div>
 
-   
-</div>
+
+      <!-- div principale step3 -->
+      <div id = "step2" *ngIf ="step==2" >
+         <div class="card">
+            <img src="../../assets/img/acteol.png" class="corner-image"> 
+            <div class="card-body">
+               
+                  <h1 style="color:black; text-align:center; font-style: oblique;">Summary</h1>
+                  
+              
+              
+              <br>
+              <h2>  Cube structure</h2>
+              <ul>
+               <li><h3>Data base source name : {{this.bd_name}} </h3></li>
+                <li><h3> Cube Name : {{ this.Cubename}} </h3></li>
+                <li><h3> Fact table Name : {{this.dim}}</h3></li>
+                <li><h3> dimension  : {{this.resultat_de_selection.length}}</h3></li>
+                <!-- <li><h3>Destination server : {{ this.selectedServertargtId.name}} </h3></li> -->
+              </ul>
+              <div class="card">
+                <div class="card-body">
+                     <div class="row">
+                        <div class="col">
+                              <h3>Relations between fact_table and dimensions:</h3>
+                              <table lass="table table-bordered">
+                                 <thead>
+                                    <tr>
+                                    <th>Dimension</th>
+                                    <th>Primiry_key</th>
+                                    <th>Fact_Table_Name</th>
+                                    <th>FOREIGN_KEY  </th>
+                               
+                                 </tr>
+                              </thead>
+                              <tbody>
+                           <tr *ngFor="let obj of resultat_de_selection">
+                                 <td>{{ obj.obj1.TableName }}</td>
+                                 <td>{{ obj.obj1.Name }}</td>
+                                 <td>{{ this.fact_name }}</td>
+                                 <td>{{ obj.obj2.Name }}</td>
+                                 
+                              </tr>
+                              <!-- table content here -->
+                           </tbody>
+                           </table>
+                        </div>
+                        <div class="col">
+                                <h3>Measure </h3>
+                           <table lass="table table-bordered">
+                              <thead>
+                                 <tr>
+                                    <th>Mesure</th>
+                                    <th>Operation</th>
+                                    <th>Mesure Name</th>
+                                 
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr *ngFor="let obj of mesureliste ">
+                                    <td>{{ obj.mesure}}</td>
+                                    <td>{{ obj.operation}}</td>
+                                    <td>{{ obj.nom}}</td>
+                                  
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                     
+                     </div>
+                </div>
+               </div>
+            
+            <div style="display: flex; justify-content: center; margin-top: 20px;">
+               <button type="button" class="btn btn-success" style="margin-right: 20px;" (click)="envoyer_data()">Are you sure!, Yes </button>
+               <button type="button" class="btn btn-xs" style="font-weight: bold; font-size: 18px;" (click)="previousStep()"> Cancel </button>
+             </div>
+            </div>
+          </div> 
+      </div>
+   </div>
+
 </div>
