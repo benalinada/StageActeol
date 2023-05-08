@@ -115,10 +115,7 @@ Dispatch() {
   });
 
 }
-reset(){
-  this.MeassageError = null;
-  this.loading =false;
-}
+
 
 
 

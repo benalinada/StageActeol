@@ -40,7 +40,8 @@ export class TypographyComponent implements OnInit {
     
   }
   
-
-
+  reloadCurrentPage() {
+    window.location.reload();
+   }
 
 }

@@ -13,7 +13,7 @@ body{
     margin: 0 2px;
     width: 30px;
     height: 30px;
-    background-color: #111111;
+    background-color: #3aa3e0;
     border-radius: 50%;
     animation-name: looding;
     animation-duration: .5s;
@@ -54,9 +54,9 @@ body{
   }
   .info
   {
-    margin: 10px auto;
+    margin: 16px auto;
     text-align: center;
-    color: 0F0E0E;
+    color: #3aa3e0;
     text-transform: uppercase;
     font-family: fantasy;
     font-size: 30px;

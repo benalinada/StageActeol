@@ -1,16 +1,23 @@
+
+<!-- div loading de telechargment  -->
 <div *ngIf="isLoading">
   <app-notifications></app-notifications>
+  
 </div>
+
 <div class="main-content" *ngIf="!isLoading"  style="padding: 70px 60px ;margin-right: 60px ;" >
+   
+<!-- div error message  -->
 <div class="container-fluid">
   <div *ngIf= "loading && MeassageError && MeassageError.length>0">
      <div class="col-sm-12">
         <div class="alert fade alert-simple alert-danger alert-dismissible text-left font__family-montserrat font__size-16 font__weight-light brk-library-rendered rendered show" role="alert" data-brk-library="component__alert">
-           <button type="button" class="close font__size-18" data-dismiss="alert">
+           <button type="button" class="close font__size-18" data-dismiss="alert"  (click)="reset()" >
            <span aria-hidden="true">
            <i class="fa fa-times danger "></i>
            </span>
-           <span class="sr-only">Close</span>
+           <span class="sr-only"  >Close</span>
+          
            </button>
            <i class="start-icon far fa-times-circle faa-pulse animated"></i>
            <strong class="font__weight-semibold">Oh Error!</strong> Try again.
@@ -18,24 +25,31 @@
      </div>
   </div>
 </div>
+
+<!-- div lssucsses message  -->
 <div *ngIf= "loading && MeassageError && MeassageError.length == 0">
   <div class="col-sm-12">
      <div class="alert fade alert-simple alert-success alert-dismissible text-left font__family-montserrat font__size-16 font__weight-light brk-library-rendered rendered show">
-        <button type="button" class="close font__size-18" data-dismiss="alert">
+        <button type="button" class="close font__size-18" data-dismiss="alert" (click)="reset()" >
         <span aria-hidden="true"><a>
         <i class="fa fa-times greencross"></i>
         </a></span>
-        <span class="sr-only">Close</span> 
+        <span class="sr-only"  >Close</span> 
         </button>
         <i class="start-icon far fa-check-circle faa-tada animated"></i>
         <strong class="font__weight-semibold">Well done!</strong> Cube Creat successfully.
      </div>
   </div>
 </div>
+
+<!-- div crate start -->
 <div *ngIf= "loading && !MeassageError" >
   <app-maps></app-maps>
 </div>
+
+<!-- div principale-->
 <div *ngIf="!loading">
+   <!-- div principale step 1 -->
   <div id="step1" *ngIf="step==0" >
     <mat-label style="color:black;font-size: 18px;" > Server Name (*) </mat-label>
     <mat-form-field >
@@ -130,14 +144,17 @@
      
      </section>
   </div>
-  <div id = "step2" *ngIf ="step==1" style="border-color: brown;">
+  <!-- div principale step 2 -->
+  <div id = "step2" *ngIf ="step==1" >
     <mat-label style="color:black;font-size: 23px;" > Please Select a Mesure  </mat-label>
     <div style="display: flex  ; width: 80%;">
        <section  style="margin-left: auto"  >
           <mat-form-field>
              <mat-label>Mesures</mat-label>
+             
+              
              <mat-select   [(ngModel)]="selectedMesures" >
-                <mat-option *ngFor="let el of liste1 " [value]="el" (click)="setselect1(el)" >
+                <mat-option *ngFor="let el of liste2  " [value]="el"  >
                 {{el.Name}}
                 </mat-option>
              </mat-select>
@@ -146,16 +163,16 @@
        <section  style="margin-left: auto">
           <mat-form-field>
              <mat-label>Operations</mat-label>
-             <mat-select>
-                <mat-option value="option1">Sum</mat-option>
-                <mat-option value="option3">nb</mat-option>
+             <mat-select [(ngModel)]="value" >
+                <mat-option value="Sum()">Sum</mat-option>
+                <mat-option value="Nb()">nb</mat-option>
              </mat-select>
           </mat-form-field>
        </section>
        <section  style="margin-left: auto">
           <mat-form-field appearance="fill">
              <mat-label>Mesure Name </mat-label>
-             <input matInput [(ngModel)]="name">
+             <input matInput [(ngModel)]="nameMessure">
           </mat-form-field>
        </section>
        <section  style="margin-left: auto">
@@ -175,10 +192,10 @@
           </tr>
        </thead>
        <tbody>
-          <tr *ngFor="let obj of nouvelle_mesure">
-             <td>{{ this.selectedMesures }}</td>
-             <td>{{ value }}</td>
-             <td>{{ this.name}}</td>
+          <tr *ngFor="let obj of mesureliste ">
+             <td>{{ obj.mesure}}</td>
+             <td>{{ obj.operation}}</td>
+             <td>{{ obj.nom}}</td>
              <td>
               <div>
                 <i class="material-icons button delete" (click)="deleteRow($event)"  style="color: #dc2a2a">delete</i>
@@ -190,14 +207,14 @@
     <br>
     <mat-label style="color:black;font-size: 18px;" > Server Name destination (*) </mat-label>
     <mat-form-field >
-       <mat-select  id="selectedServerAnalysisId" [(ngModel)]="selectedServerId"  >
-       <mat-option *ngFor="let obj  of liste_des_serveur " [value]="obj" (click)="setserveur(obj.Id)">
+       <mat-select  id="selectedServerAnalysisId" [(ngModel)]="selectedServertargtId"  >
+       <mat-option *ngFor="let obj  of liste_des_serveur " [value]="obj">
        {{ obj.Name }} 
        </mat-option>
        </mat-select>
     </mat-form-field>
     <br>
-    <mat-label style="color:black;font-size: 23px;"> Please Set a Name For the Cube </mat-label>
+    <mat-label style="color:black;font-size: 23px;">  Set a Name For the Cube </mat-label>
     <mat-form-field class="example-full-width">
        <br>
        <br>
@@ -219,8 +236,9 @@
     </div>
     
   </div>
+<!-- div principale step3 -->
+<div>
 
-  <div>
-     
-  </div>
+   
+</div>
 </div>

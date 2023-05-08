@@ -40,7 +40,9 @@ export class DashboardComponent implements OnInit {
   MeassageError :any;
   isLoading = false;
   step : number = 0;
-
+  selectedMesures :any
+   nameMessure : any
+   value : any
   constructor(private serverService: ServerService, private userService: UserAppService) {
 
   }
@@ -352,19 +354,16 @@ export class DashboardComponent implements OnInit {
 
 
   }
-  nouvelle_mesure = {
-    mesure: '',
-    operation: '',
-    nom: ''
-  };
+    mesureliste :any=[]
+  nouvelle_mesure :any= {}
   addMessure(){
    
-      this.resultat_de_selection.push({
-        obj1: this.selectedMesures,
-        obj2: {Name: this.nouvelle_mesure.operation},
-        obj3: this.nouvelle_mesure.nom
-      });
-      this.nouvelle_mesure = {mesure: '', operation: '', nom: ''}; // réinitialiser la variable pour les prochaines nouvelles mesures
+      this.nouvelle_mesure = {mesure: this.selectedMesures.Name ,operation : this.value , nom: this.nameMessure };
+      this.mesureliste.push(this.nouvelle_mesure) 
+      console.log(this.mesureliste)
+    }
+    refreche_page() {
+      location.reload();
     }
 }
 

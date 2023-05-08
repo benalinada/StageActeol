@@ -1,6 +1,4 @@
-<div *ngIf="isLooading">
-  <app-notifications></app-notifications>
-</div>
+
 <div *ngIf="isLoading">
   <app-notifications></app-notifications>
 </div>
@@ -9,17 +7,21 @@
     <div *ngIf= "loading && MeassageError && MeassageError.length>0">
       <div class="col-sm-12">
         <div class="alert fade alert-simple alert-danger alert-dismissible text-left font__family-montserrat font__size-16 font__weight-light brk-library-rendered rendered show" role="alert" data-brk-library="component__alert">
-          <button type="button" class="close font__size-18" data-dismiss="alert">
+          <button type="button" class="close font__size-18" data-dismiss="alert"  >
 									<span aria-hidden="true">
-										<i class="fa fa-times danger "></i>
+										<i class="fa fa-times danger "  ></i>
 									</span>
-									<span class="sr-only">Close</span>
+								     	<span class="sr-only" >Close</span>
 								</button>
-          <i class="start-icon far fa-times-circle faa-pulse animated"></i>
+          <i class="start-icon far fa-times-circle faa-pulse animated" (click)="reset()"></i>
+           
           <strong class="font__weight-semibold">Oh Error!</strong> Try again.
         </div>
+        <button type="button" class="btn btn-success"   (click)="reset()" >  fff  ok</button>
       </div>
+     
     </div>
+
   </div> 
     <div *ngIf= "loading && MeassageError && MeassageError.length == 0">
       <div class="col-sm-12">
@@ -28,7 +30,7 @@
 									<span aria-hidden="true"><a>
                     <i class="fa fa-times greencross"></i>
                     </a></span>
-									<span class="sr-only">Close</span> 
+									<span class="sr-only" (click)="reset()" >Close</span> 
 								</button>
           <i class="start-icon far fa-check-circle faa-tada animated"></i>
           <strong class="font__weight-semibold">Well done!</strong> Cube Creat successfully.
