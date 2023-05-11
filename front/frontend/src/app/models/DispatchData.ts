@@ -1,7 +1,9 @@
 
 export class DispatchData {
-    sourceServerId: string
-    targetServerId :string[]
-    soureceDb: string
-    nameCube : string
+    sourceServerEngineId: string
+    targetServerEngineId : string[]
+    sourceServerAnalyseId: string
+    targetServerAnalyseId : string[]
+    soureceAnalyserDb : string
+    targetEngineDb : string[]
 }

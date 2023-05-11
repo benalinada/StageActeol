@@ -1,0 +1,9 @@
+.corner-image {
+
+    top: 20px;
+    right: 20px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px #888;
+  }

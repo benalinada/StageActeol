@@ -21,6 +21,7 @@ namespace Application.Helper
     using Domain.Common.Models;
     using Microsoft.AspNetCore.Mvc;
     using System.Xml.Linq;
+    using System.Data.Common;
 
     namespace OLAPCube
     {
@@ -64,11 +65,13 @@ namespace Application.Helper
                     }
                     objDatabase.Process(ProcessType.ProcessFull);
 
+
                     Console.WriteLine("Cube created successfully.");
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine("Error -> " + ex.Message);
+                    throw new Exception( "error cret cube ");
                 }
 
                 Console.WriteLine("Press any key to exit.");

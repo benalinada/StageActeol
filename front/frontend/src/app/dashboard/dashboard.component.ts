@@ -8,6 +8,7 @@ import { UserAppService } from 'app/services/userApp.service';
 import { HttpErrorResponse, HttpEventType } from '@angular/common/http';
 import { CubeData } from 'app/models/CubeData';
 import {MatSnackBar } from '@angular/material/snack-bar'
+import Swal from 'sweetalert2';
 //import { threadId } from 'worker_threads';
 
 
@@ -50,7 +51,7 @@ export class DashboardComponent implements OnInit {
   async ngOnInit() {
     
     await this.getUser();
-    this.step =0;
+    this.Show_Cube();
    // await this.getServers();
   }
   //get user 
@@ -288,17 +289,18 @@ export class DashboardComponent implements OnInit {
     cube.DBEngineServer= this.serveurid;
     cube.CubeDataSourceName='Data';
     cube.CubeDataSourceViewName='dataView'
-    cube.FactTableName =this.dim;
+    cube.FactTableName =this.fact_name;
     cube.DBAnalyserServer = this.selectedServertargtId.Id;
     cube.DimensionTableCount= this.resultat_de_selection.length;
     cube.TableNamesAndKeys =[];
     this.loading = true;
     this.resultat_de_selection.forEach(element => {
       var item  = [];
-      item.push(element.obj2.TableName);
-      item.push(element.obj2.Name);
-      item.push(element.obj1.TableName);
+      item.push(this.dim);
       item.push(element.obj1.Name);
+      item.push(this.fact_name );
+      item.push(element.obj2.Name);
+
       cube.TableNamesAndKeys.push(item)
     });
     const data = this.serverService.postCube(cube)
@@ -368,9 +370,48 @@ export class DashboardComponent implements OnInit {
     refreche_page() {
       window.location.reload();
     }
-}
 
 
+    async Show_Cube(){
+        const {} = Swal.fire({
+        title: 'ACTEOL ',
+        text: 'OLAP Builder and dispatcher : You can generate automatically an OLAP cube and dispatch to diffrent Client/servers .',
+         imageUrl : 'https://media.istockphoto.com/id/1294997127/vector/welcome-concept-team-of-people.jpg?s=1024x1024&w=is&k=20&c=HlP5N80R0f96WjnkKuPVcI_Vxglr_YuWeMykXYCf-F4%3D&fbclid=IwAR0HJfRGcJJj17OxMJVp0S3-sU8DOPGrgjgvVTN5iPtpAFDu-5MpcIQJxB8',
+        imageWidth: 400,
+        imageHeight: 200,
+        imageAlt: 'Custom image',
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+            title:'<h2 style ="text-align: center;">Welcome To Add cube  ! </h2>',
+       
+            width: '950px',
+            html: '<html>'+
+            '<div style="padding: 10px;">'+
+      '<p style= font-family: "Times New Roman", serif; >'+
+      'To add an  OLAP cube, you typically follow these steps:'+
+      '<ul> 1- Select informations to create the cube structure : This involves'+ 'choosing the server source name , a data warehouse , fact_table ,Dimensions tables , their attributs and  you sould define relations between dimension attributs and fact attributs</ul>'+
+      '<ul> 2- You should click "Next", then you have the freedom to choose the'+ 'measures and operations to apply, and then you assign a corresponding name to each measure </ul> '+
+      '<ul> 3- Select a destination Analysis server '+
+      '<ul> 4 - set a name to the new cube.</ul> '+
+      '<ul> 5 -When you click on the Generate button, a preview of the summary appears.</ul> '+
+      '<ul> 6 -You should chek the summary  then you click on "Are You Sure!". '+ 'the cube creation will be initiate</ul> '+
+      '<br>'+
+      '-->By following these steps, you can successfully create an OLAP cube'+ 
+      
+                 '</html>',
+            confirmButtonText:
+              'Continue <i class="fa fa-arrow-right"></i>',
+           
+          })
+          
+         
+        }})
+    
+
+      }
+
+    }
 
 
 
