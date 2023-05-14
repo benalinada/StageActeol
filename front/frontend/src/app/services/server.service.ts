@@ -8,6 +8,8 @@ import { ColumnData, ColumnsData } from "../models/ColumnData";
 import { AttributFactData, AttributFactsData } from "app/models/AttributFact";
 import { CubeData } from "app/models/CubeData";
 import { DispatchData } from "app/models/DispatchData";
+import { Messuresdata } from "app/models/Messure";
+
 @Injectable()
 export class ServerService {
     dataserver: ServerData[] ;
@@ -15,6 +17,7 @@ export class ServerService {
     Tables: TableData[] ;
     Columns : ColumnData[];
     AttributFacts : AttributFactData[];
+    Messures : Messuresdata[];
     loading : boolean = false;
     constructor(private http: HttpClient) {
 
@@ -97,6 +100,20 @@ getAttributFacts(id: string, dbName:string,tableName:string ): Observable<Attrib
       );
       return res;
 }
+getMessures(id: string, dbName:string ): Observable<Messuresdata> {
+  this.loading = true;
+  const res = this.http.get<Messuresdata | null>(`https://localhost:44362/api/Messure/${id}/${dbName}`).pipe(
+      tap( data => {
+          this.Messures = data.Messures
+        }),
+        catchError(err => {
+          return of(null);
+        }),
+        finalize(() =>this.loading = false)
+      );
+      return res;
+}
+// messure de cube 
 
  postCube(cubeData : CubeData ): Observable<Boolean>{
   this.loading = true;

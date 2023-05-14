@@ -1,4 +1,7 @@
-export interface messure {
-    value: string;
-    viewValue: string;
-  }
+export interface Messure {
+  Name : string
+  Id : string
+}
+export interface Messuresdata {
+  Messures : Messuresdata[]
+}

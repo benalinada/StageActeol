@@ -19,14 +19,14 @@ export class TableListComponent implements OnInit {
   serveurid: any; // servur id slecté 
   bd_name: any; // dbname slecte 
   lodaing: boolean = false;
-  selectedServer :any;
-  selectedServerSourceId : any; // SOURCE server dw
-  selectedServerAnalyseSorceId : any ; // source server cube 
-  slecteDdcube : any ; // source db cube 
-  newCubename: any;  
-   selectedDatabase : any; // source dw jdida
-   selectedtargtServerSorceId : any ; // targt server cube 
+  ServerAnalyseSorceId : any ; // server fih lcube l9dima 
+  slecteDdcube : any ; // fih lcube l9dim
+  ServerEngineSorceId : any ; // serveur engine fih dw jdida
+  selectedDatabase : any ; // dw jdida
+  selectedtargtServerId : any = []; //targt serveur analysis
+  newCubename : any ; //cube name
   looodaing : boolean = true ;
+  envoi : boolean = true;
    responseDate : Date;
    step : number = 0;
    isLooading = false;
@@ -115,14 +115,13 @@ Dispatch() {
   let cubedispatch : DispatchData = new DispatchData();
   
   this.isLoading = true;
-  cubedispatch.sourceServerEngineId = "CAEC2EBB-A150-45F1-996F-7E89EC5F4028" ;  // fih base l9dima
-  cubedispatch.targetServerEngineId = this.selectedServerSorceId// fih base jdida
-  cubedispatch.sourceServerAnalyseId = this.selectedServerAnalyseSorceId ;//fih cube 
-  cubedispatch.targetEngineDb = this.selectedDatabase; //dw jdida
-  cubedispatch.soureceAnalyserDb= this.slecteDdcube; //lcube l9dim
-
-  debugger
+  cubedispatch.sourceServerEngineId = this.ServerEngineSorceId.Id ;  // fih base l9dima
+  cubedispatch.targetServerEngineId = "CAEC2EBB-A150-45F1-996F-7E89EC5F4028" ;// fih base jdida
+  cubedispatch.sourceServerAnalyseId = this.ServerAnalyseSorceId.Id ;//fih cube 
+  cubedispatch.targetEngineDb = this.selectedDatabase.Name; //dw jdida
+  cubedispatch.soureceAnalyserDb= this.slecteDdcube.Name; //lcube l9dim
   this.selectedtargtServerId.forEach( s => {
+
    cubedispatch.targetServerAnalyseId.push(s.Id)
 
   }); // win chn7ot lcube 
@@ -141,7 +140,7 @@ Dispatch() {
      
     }else{
       this.MeassageError = []
-      this.MeassageError.push("Error creaing cube")
+      this.MeassageError.push("Error Dispatch cube")
     }
     
   });
@@ -151,9 +150,6 @@ Dispatch() {
 async Show(){
   const { value: accept } = await Swal.fire({
     title:'<h2 style ="text-align: center;">Welcome To Dispatch ! </h2>',
-
-    
-    inputValue: 1,
     width: '950px',
     html: '<html>'+
     '<div style="padding: 10px;text-align: center;margin-top: 0">'+ 
@@ -176,7 +172,28 @@ async Show(){
  
 }
 
+async sammary(){
+  Swal.fire({
+    title: 'Are you sure?',
+    text: "You won't be able to revert this!",
 
+    showCancelButton: true,
+ 
+   
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes, delete it!'
+  }).then((result) => {
+    if (result.isConfirmed) {
+     
+       this.Dispatch();
+       this. envoi = false
+     
+    }
+  })
+  
+ 
+}
 
  
 

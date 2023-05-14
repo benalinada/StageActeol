@@ -494,6 +494,17 @@ namespace Application.Helper
                 db.Cubes.Add(existCube);
                 db.Update();
             }
+
+            public static IEnumerable<MessureCube> GetMessure(string serverName, string dbName, string provider)
+            {
+                var server = (Microsoft.AnalysisServices.Server)CubeGenerator.ConnectAnalysisServices(serverName, provider);
+
+                var db = server.Databases.FindByName(dbName);
+                var mesures = db.Cubes.FindByName("SampleCube").AllMeasures;
+                var data = mesures.Cast<Microsoft.AnalysisServices.Measure>().ToList();
+
+                return data.Select(m => new MessureCube() { Name = m.Name});
+            }
         }
     }
 

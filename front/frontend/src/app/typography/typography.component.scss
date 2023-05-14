@@ -61,7 +61,7 @@ $color-2: #fff;
   .mail-anim{
     @extend .i-mail;
     margin: -2px 0 0 -2px;
-    animation: moveL .8s linear;
+    animation: moveL .8s infinite;
     &:after{
       @extend %mail-after;
     }

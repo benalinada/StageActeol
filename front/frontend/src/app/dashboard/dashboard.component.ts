@@ -15,7 +15,7 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-dashboard',
   templateUrl:'./dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
   [x: string]: any;
@@ -112,6 +112,9 @@ export class DashboardComponent implements OnInit {
   previousStep()
   {
     this.step = this.step -1;
+  }
+  goToStep(step: number) {
+    this.step = this.step -2;
   }
   //  get db a partir de id serveur 
   setserveur(id: any) {
@@ -397,7 +400,7 @@ export class DashboardComponent implements OnInit {
       '<ul> 5 -When you click on the Generate button, a preview of the summary appears.</ul> '+
       '<ul> 6 -You should chek the summary  then you click on "Are You Sure!". '+ 'the cube creation will be initiate</ul> '+
       '<br>'+
-      '-->By following these steps, you can successfully create an OLAP cube'+ 
+      '<H2> =>By following these steps, you can successfully create an OLAP cube</H2>'+ 
       
                  '</html>',
             confirmButtonText:
