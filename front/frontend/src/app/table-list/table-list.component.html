@@ -108,7 +108,7 @@
            <h1 style="color:black;font-size: 23px;" >Destinatin</h1>
            <mat-form-field >
               <mat-label> Selet a Destination Server Name </mat-label>
-              <mat-select  id="selectedtargtServerId" [(ngModel)]="selectedtargtServerId"  >
+              <mat-select  id="selectedtargtServerId" [(ngModel)]="selectedtargtServerId" multiple >
               <mat-option *ngFor="let obj  of liste_des_serveur " [value]="obj" (click)="setserveur(obj.Id)">
               {{ obj.Name }} 
               </mat-option>

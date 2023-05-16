@@ -1158,6 +1158,12 @@ D:\PFE\StageActeol\Back\Backend\obj\Debug\net7.0\refint\Backend.dll
 D:\PFE\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.pdb
 D:\PFE\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.genruntimeconfig.cache
 D:\PFE\StageActeol\Back\Backend\obj\Debug\net7.0\ref\Backend.dll
+D:\pfe 2\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.csproj.AssemblyReference.cache
+D:\pfe 2\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.GeneratedMSBuildEditorConfig.editorconfig
+D:\pfe 2\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.AssemblyInfoInputs.cache
+D:\pfe 2\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.AssemblyInfo.cs
+D:\pfe 2\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.csproj.CoreCompileInputs.cache
+D:\pfe 2\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.MvcApplicationPartsAssemblyInfo.cache
 D:\pfe 2\StageActeol\Back\Backend\bin\Debug\net7.0\appsettings.Development.json
 D:\pfe 2\StageActeol\Back\Backend\bin\Debug\net7.0\appsettings.json
 D:\pfe 2\StageActeol\Back\Backend\bin\Debug\net7.0\Backend.exe
@@ -1473,13 +1479,6 @@ D:\pfe 2\StageActeol\Back\Backend\bin\Debug\net7.0\Infrastructure.dll
 D:\pfe 2\StageActeol\Back\Backend\bin\Debug\net7.0\Application.pdb
 D:\pfe 2\StageActeol\Back\Backend\bin\Debug\net7.0\Infrastructure.pdb
 D:\pfe 2\StageActeol\Back\Backend\bin\Debug\net7.0\Domain.pdb
-D:\pfe 2\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.csproj.AssemblyReference.cache
-D:\pfe 2\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.GeneratedMSBuildEditorConfig.editorconfig
-D:\pfe 2\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.AssemblyInfoInputs.cache
-D:\pfe 2\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.AssemblyInfo.cs
-D:\pfe 2\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.csproj.CoreCompileInputs.cache
-D:\pfe 2\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.MvcApplicationPartsAssemblyInfo.cs
-D:\pfe 2\StageActeol\Back\Backend\obj\Debug\net7.0\Backend.MvcApplicationPartsAssemblyInfo.cache
 D:\pfe 2\StageActeol\Back\Backend\obj\Debug\net7.0\staticwebassets\msbuild.Backend.Microsoft.AspNetCore.StaticWebAssets.props
 D:\pfe 2\StageActeol\Back\Backend\obj\Debug\net7.0\staticwebassets\msbuild.build.Backend.props
 D:\pfe 2\StageActeol\Back\Backend\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.Backend.props

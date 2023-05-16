@@ -114,7 +114,7 @@ export class DashboardComponent implements OnInit {
     this.step = this.step -1;
   }
   goToStep(step: number) {
-    this.step = this.step -2;
+    this.step = this.step -4;
   }
   //  get db a partir de id serveur 
   setserveur(id: any) {
@@ -340,21 +340,7 @@ export class DashboardComponent implements OnInit {
   obj_select:any={}
 
   match() {
-    for (let i = 0; i < this.liste1.length; i++) {
-      if (this.obj1.name == this.liste1[i].name) {
-      //this.liste1.splice(i, 1)
-      }
-    }
-    for (let i = 0; i < this.liste2.length; i++) {
-      if (this.obj2.name == this.liste2[i].name) {
-       // this.liste2.splice(i, 1)
-      }
-    }
-    for (let i = 0; i < this.liste_des_dim.length; i++) {
-      if (this.dim == this.liste_des_dim[i].name) {
-     //   this.liste_des_dim.splice(i, 1)
-      }
-    }
+    
     this.obj_select={dim:this.dim,obj1:this.obj1 , obj2:this.obj2 , Fact:this.fact_name }
     this.resultat_de_selection.push(this.obj_select)
    
@@ -376,44 +362,51 @@ export class DashboardComponent implements OnInit {
 
 
     async Show_Cube(){
-        const {} = Swal.fire({
-        title: 'ACTEOL ',
-        text: 'OLAP Builder and dispatcher : You can generate automatically an OLAP cube and dispatch to diffrent Client/servers .',
-         imageUrl : 'https://media.istockphoto.com/id/1294997127/vector/welcome-concept-team-of-people.jpg?s=1024x1024&w=is&k=20&c=HlP5N80R0f96WjnkKuPVcI_Vxglr_YuWeMykXYCf-F4%3D&fbclid=IwAR0HJfRGcJJj17OxMJVp0S3-sU8DOPGrgjgvVTN5iPtpAFDu-5MpcIQJxB8',
-        imageWidth: 400,
-        imageHeight: 200,
-        imageAlt: 'Custom image',
-      }).then((result) => {
-        if (result.isConfirmed) {
-          Swal.fire({
-            title:'<h2 style ="text-align: center;">Welcome To Add cube  ! </h2>',
-       
-            width: '950px',
-            html: '<html>'+
-            '<div style="padding: 10px;">'+
-      '<p style= font-family: "Times New Roman", serif; >'+
-      'To add an  OLAP cube, you typically follow these steps:'+
-      '<ul> 1- Select informations to create the cube structure : This involves'+ 'choosing the server source name , a data warehouse , fact_table ,Dimensions tables , their attributs and  you sould define relations between dimension attributs and fact attributs</ul>'+
-      '<ul> 2- You should click "Next", then you have the freedom to choose the'+ 'measures and operations to apply, and then you assign a corresponding name to each measure </ul> '+
-      '<ul> 3- Select a destination Analysis server '+
-      '<ul> 4 - set a name to the new cube.</ul> '+
-      '<ul> 5 -When you click on the Generate button, a preview of the summary appears.</ul> '+
-      '<ul> 6 -You should chek the summary  then you click on "Are You Sure!". '+ 'the cube creation will be initiate</ul> '+
-      '<br>'+
-      '<H2> =>By following these steps, you can successfully create an OLAP cube</H2>'+ 
-      
-                 '</html>',
-            confirmButtonText:
-              'Continue <i class="fa fa-arrow-right"></i>',
-           
-          })
-          
-         
-        }})
+      const {} = Swal.fire({
+      title: 'ACTEOL ',
+      text: 'OLAP Builder and dispatcher : You can generate automatically an OLAP cube and dispatch to diffrent Client/servers .',
+       imageUrl : 'https://media.istockphoto.com/id/1294997127/vector/welcome-concept-team-of-people.jpg?s=1024x1024&w=is&k=20&c=HlP5N80R0f96WjnkKuPVcI_Vxglr_YuWeMykXYCf-F4%3D&fbclid=IwAR0HJfRGcJJj17OxMJVp0S3-sU8DOPGrgjgvVTN5iPtpAFDu-5MpcIQJxB8',
+      imageWidth: 400,
+      imageHeight: 200,
+      imageAlt: 'Custom image',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title:'<h1 style ="text-align: center;"> Add cube  ! </h1>',
+          width: '800px',
+          html: '<html>'+
+        '<div style="padding: 10px;">'+
+      '<p>'+
+          'To add an OLAP cube, you should typically follow these steps:'+
     
+         '<p style="text-align:left;">1- Select informations to create the cube structure. This involves choosing the server source name,</p>'+
+      
+            
+            '<p style="text-align:left;">2- You should then click "Next", then you can choose the measures and operations, then you assign a corresponding name to each one</p>'+
+        
+           
+            '<p style="text-align:left;">3- Select a destination Analysis server </p>'+
+              
+        
+            '<p style="text-align:left;">4- Choose a name for the new cube</p>'+
+              
+        
+            '<p style="text-align:left;">5- When you click on the Generate button, a preview of the summary appears</p>'+
+             
+            
+          ' <p style="text-align:left;"> 6- You confirme the cube creation</p>'+
+             
+           
+              
+            '<h3>By following these steps, you can successfully create an OLAP cube</h>'+
+          '</p>'+
+        '</div>'+
+               '</html>',
+        })
+      }})
+  
 
-      }
-
+    }
     }
 
 

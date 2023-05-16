@@ -22,10 +22,11 @@ namespace Application.Helper
     using Microsoft.AspNetCore.Mvc;
     using System.Xml.Linq;
     using System.Data.Common;
+    using Application.Calculation.Commandes;
 
     namespace OLAPCube
     {
-        public static class CubeGenerator  
+        public static class CubeGenerator
         {
 
 
@@ -36,7 +37,7 @@ namespace Application.Helper
             {
                 try
                 {
-             
+
 
                     Server objServer = new Server();
                     Database objDatabase = new Database();
@@ -55,11 +56,11 @@ namespace Application.Helper
                     {
                         //Creating a DataSourceView.
                         objDataSet = (DataSet)GenerateDWSchema(command.DBEngineServer, command.DBName, command.FactTableName, command.TableNamesAndKeys, command.DimensionTableCount);
-                    objDataSourceView = (DataSourceView)CreateDataSourceView(objDatabase, objDataSource, objDataSet, command.CubeDataSourceViewName);
-                    //Creating the Dimension, Attribute, Hierarchy, and MemberProperty Objects.                
-                    objDimensions = (Dimension[])CreateDimension(objDatabase, objDataSourceView, command.TableNamesAndKeys, command.DimensionTableCount);
-                    //Creating the Cube, MeasureGroup, Measure, and Partition Objects.
-                  
+                        objDataSourceView = (DataSourceView)CreateDataSourceView(objDatabase, objDataSource, objDataSet, command.CubeDataSourceViewName);
+                        //Creating the Dimension, Attribute, Hierarchy, and MemberProperty Objects.                
+                        objDimensions = (Dimension[])CreateDimension(objDatabase, objDataSourceView, command.TableNamesAndKeys, command.DimensionTableCount);
+                        //Creating the Cube, MeasureGroup, Measure, and Partition Objects.
+
                         CreateCube(objDatabase, objDataSourceView, objDataSource, objDimensions, command.FactTableName, command.TableNamesAndKeys, command.DimensionTableCount);
 
                     }
@@ -71,11 +72,11 @@ namespace Application.Helper
                 catch (Exception ex)
                 {
                     Console.WriteLine("Error -> " + ex.Message);
-                    throw new Exception( "error cret cube ");
+                    throw new Exception("error cret cube ");
                 }
 
                 Console.WriteLine("Press any key to exit.");
-             
+
             }
 
             #region Connecting to the Analysis Services.
@@ -85,7 +86,7 @@ namespace Application.Helper
             /// <param name="strDBServerName">Database Server Name.</param>
             /// <param name="strProviderName">Provider Name.</param>
             /// <returns>Database Server instance.</returns>
-            public static object ConnectAnalysisServices(string serverName , string strProviderName)
+            public static object ConnectAnalysisServices(string serverName, string strProviderName)
             {
                 try
                 {
@@ -93,7 +94,7 @@ namespace Application.Helper
 
                     Server objServer = new Server();
                     //string strConnection = "Data Source=" + strDBServerName + ";";
-                   string strConnection = $"Data Source={serverName}; Provider={ strProviderName};Persist Security Info=True;Password=0000;User ID=sa";
+                    string strConnection = $"Data Source={serverName}; Provider={strProviderName};Persist Security Info=True;Password=0000;User ID=sa";
                     //Disconnect from current connection if it's currently connected.
                     if (objServer.Connected)
                         objServer.Disconnect();
@@ -127,7 +128,7 @@ namespace Application.Helper
                     //Add Database to the Analysis Services.
                     objDatabase = objServer.Databases.Add(objServer.Databases.GetNewName(strCubeDBName));
                     //Save Database to the Analysis Services.
-                   // objDatabase.StorageEngineUsed = StorageEngineUsed.InMemory;
+                    // objDatabase.StorageEngineUsed = StorageEngineUsed.InMemory;
                     objDatabase.Update();
 
                     return objDatabase;
@@ -154,12 +155,12 @@ namespace Application.Helper
             {
                 try
                 {
-                  
+
                     RelationalDataSource objDataSource = new RelationalDataSource();
                     //Add Data Source to the Database.
                     objDataSource = objDatabase.DataSources.Add(objServer.Databases.GetNewName(strCubeDataSourceName));
-                   // objDataSource.ConnectionString = "Provider=SQLOLEDB.1;Initial Catalog=DW_Bookings ;Data Source=DESKTOP-0159C82\\VE_SERVER;Integrated Security=true;TrustServerCertificate=True;";
-                   objDataSource.ConnectionString = "Provider=sqloledb; Data Source=DESKTOP-0159C82\\VE_SERVER ; Initial Catalog=" + strDBName + "; Persist Security Info=True;Password=1234;User ID=sa";
+                    // objDataSource.ConnectionString = "Provider=SQLOLEDB.1;Initial Catalog=DW_Bookings ;Data Source=DESKTOP-0159C82\\VE_SERVER;Integrated Security=true;TrustServerCertificate=True;";
+                    objDataSource.ConnectionString = "Provider=sqloledb; Data Source=DESKTOP-0159C82\\VE_SERVER ; Initial Catalog=" + strDBName + "; Persist Security Info=True;Password=1234;User ID=sa";
                     objDataSource.Update();
 
                     return objDataSource;
@@ -186,7 +187,7 @@ namespace Application.Helper
             {
                 try
                 {
-                    
+
                     //Create the connection string.
                     string conxString = "Data Source=DESKTOP-0159C82\\VE_SERVER; Initial Catalog=" + strDBName + "; Integrated Security=True;";
                     //Create the SqlConnection.
@@ -392,20 +393,23 @@ namespace Application.Helper
                     //Add Measure Group to the Cube
                     //MeasureGroup objMeasureGroup = objCube.MeasureGroups.Add("FactSales");
                     MeasureGroup objMeasureGroup = objCube.MeasureGroups.Add(strFactTableName);
+                    // plusieur 
 
                     //Add Measure to the Measure Group and set Measure source
                     objSales = objMeasureGroup.Measures.Add("Covers");
-                   objSales.Source = new DataItem(strFactTableName, "Covers", DataType.Int32);
+                    objSales.Source = new DataItem(strFactTableName, "Covers", DataType.Int32);
 
-                   // objQuantity = objMeasureGroup.Measures.Add("Quantity");
-                   //objQuantity.Source = new DataItem(strFactTableName, "OrderQuantity", DataType.Int32);
+                    // objQuantity = objMeasureGroup.Measures.Add("Quantity");
+                    //objQuantity.Source = new DataItem(strFactTableName, "OrderQuantity", DataType.Int32);
 
                     ////Calculated Member Definition
                     //strScript = "Calculated; Create Member CurrentCube.[Measures].[Total] As [Measures].[Quantity] * [Measures].[Amount]";
+
                     ////Add Calculated Member
                     //objTotal.Name = "Total Sales";
                     //objCommand.Text = strScript;
                     //objTotal.Commands.Add(objCommand);
+
                     //objCube.MdxScripts.Add(objTotal);
 
                     for (int i = 0; i < intDimensionTableCount; i++)
@@ -462,7 +466,7 @@ namespace Application.Helper
 
             public static IEnumerable<DataBase> GetDataBaseAnalyser(string serverName, string provider)
             {
-                var server = (Microsoft.AnalysisServices.Server)CubeGenerator.ConnectAnalysisServices(serverName,provider);
+                var server = (Microsoft.AnalysisServices.Server)CubeGenerator.ConnectAnalysisServices(serverName, provider);
 
                 var listdb = new List<DataBase>();
 
@@ -473,7 +477,7 @@ namespace Application.Helper
 
                 return listdb;
             }
-            public  static Cube GetCube(string serverName,string dbName,string cubeName, string provider)
+            public static Cube GetCube(string serverName, string dbName, string cubeName, string provider)
             {
                 var server = (Microsoft.AnalysisServices.Server)CubeGenerator.ConnectAnalysisServices(serverName, provider);
 
@@ -481,7 +485,7 @@ namespace Application.Helper
                 return db.Cubes.FindByName(cubeName);
 
             }
-            public static void Clone(string serverSourceName, string dbSourceName, string serverTargetName, string dbTargetName,string cubeName, string provider)
+            public static void Clone(string serverSourceName, string dbSourceName, string serverTargetName, string dbTargetName, string cubeName, string provider)
             {
                 var existCube = GetCube(serverSourceName, dbSourceName, cubeName, provider);
                 var newEmptyCube = GetCube(serverTargetName, dbTargetName, cubeName, provider);
@@ -503,9 +507,32 @@ namespace Application.Helper
                 var mesures = db.Cubes.FindByName("SampleCube").AllMeasures;
                 var data = mesures.Cast<Microsoft.AnalysisServices.Measure>().ToList();
 
-                return data.Select(m => new MessureCube() { Name = m.Name});
+                return data.Select(m => new MessureCube() { Name = m.Name });
             }
+
+
+            public static void  Calculation(string serverName, string dbName, string provider, string Mes1, string Mes2, string ope, string NameCalculation)
+            {
+                Command objCommand = new Command();
+                MdxScript objTotal = new MdxScript();
+                String strScript;
+                var server = (Microsoft.AnalysisServices.Server)CubeGenerator.ConnectAnalysisServices(serverName, provider);
+
+                var db = server.Databases.FindByName(dbName).Cubes.FindByName("SampleCube");
+
+                //Calculated Member Definition
+                strScript = "Calculated; Create Member CurrentCube.[Measures].[Total] As [Measures].[Mes1] * [Measures].[Mes2]";
+
+                //Add Calculated Member
+                objTotal.Name = NameCalculation;
+                objCommand.Text = strScript;
+                objTotal.Commands.Add(objCommand);
+                db.MdxScripts.Add(objTotal);
+
+            }
+
+          
         }
     }
-
 }
+

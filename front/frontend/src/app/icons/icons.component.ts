@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CalculationData } from 'app/models/CalculationData';
 import { ServerService } from 'app/services/server.service';
 import { UserAppService } from 'app/services/userApp.service';
 import { catchError, of, tap } from 'rxjs';
@@ -19,18 +20,35 @@ export class IconsComponent implements OnInit {
   serveurid: any; // servur id slecté 
   bd_name: any; // dbname slecte 
   lodaing: boolean = false;
-  selectedServer :any;
+  selectedServerSorceId : any ; //serveur analysis Sélectionne. 
+  value :any ; // operation Sélectionne. 
+  selectedDatabase : any ; //DB cube Sélectionne. 
+  mesure2 : any ; //messure 2
+  mesure1 : any ; //messure 1
   selectedServerSourceId : any;
   newCubename: any;
-   selectedDatabase : any;
    responseDate : Date;
+   nameCalculation : any;
    isLoading = false;
   constructor(private serverService: ServerService, private userService: UserAppService) { }
 
   async ngOnInit() {
     
    this.getServers()  
-   this.Show_Calculation();
+  
+  }
+
+  step : number = 0;
+  nextStep()
+  {
+    this.step = this.step +1;
+  }
+  previousStep()
+  {
+    this.step = this.step -1;
+  }
+  goToStep(step: number) {
+    this.step = this.step -2;
   }
           // serveur Engine 
           getServers() {
@@ -53,6 +71,7 @@ export class IconsComponent implements OnInit {
                   }
                 }
                 this.isLoading = false;
+                this.show_Calculations();
               });
 
 
@@ -82,73 +101,104 @@ getmessures (name : any) {
   this.MessureDisplays = new Map<string, number>();
     let progress = 0;
   const data = this.serverService.getMessures(this.serveurid,  name)
-
   .pipe(
     catchError(err => of(null)),
     tap(() => this.lodaing == false)
   ).subscribe((data: any) => {
-           this.liste_messure = data.messures
+          
+           this.liste_messure = data.Messure
+           console.log(this.liste_messure);
            this.isLoading = false;
+
     });
 
 
 }
+  //  envoyer  les dooneé 
+  envoyer_data() {
+    let Calculation : CalculationData = new CalculationData ();
+    Calculation.sourceServerAnalyseId = this.selectedServerSorceId;
+    Calculation.soureceAnalyserDb = this.selectedDatabase;
+    Calculation.provider = "msolap";
+    Calculation.cubeName ="SampleCube";
+    Calculation.mes1 = this.mesure1;
+    Calculation.mes2 = this.mesure1;
+     Calculation.opr  = this.value;
+     Calculation.name = this.nameCalculation;
+    this.loading = true;
+
+    const data = this.serverService.postCalculation(Calculation)
+    .pipe(
+      catchError(err => of(null)),
+      tap(() => this.lodaing == false)
+    ).subscribe(async (data: any) => {
+       
+      if (data) {
+        this.MeassageError = []
+       
+      }else{
+        this.MeassageError = []
+        this.MeassageError.push("Error add calculation")
+      }
+      
+    });
+  
+  }
  /*Add_Calculations'*/
- async Show_Calculation(){
-  const { value: accept } = await Swal.fire({
-    title:'<h2 style ="text-align: center;">Welcome To Add Calculatio(s) ! </h2>',
-    
-    width: '950px',
-    html: '<html>'+
-    '<div style="padding: 10px;text-align: center;margin-top: 0">'+ 
-    'To add calculation(s), you typically follow these steps:'+  '<br>'+
-    '<br>'+
-'<ul> 1-Select a cube source: This involves choosing the server source name and the cube name.</ul>'+
-'<ul> 2-You should create operation(s):This involves selecting mesures , .</ul> '+
-'<ul> 3-Select a destination server and set a name for the new cube: After selecting the database source, you need to choose the destination server where you want to'+
-' dispatch the cube. You also need to provide a name for the new cube that will be created on the destination server.</ul> '+
-'<br>'+
-'--> By following these steps, you can successfully dispatch an OLAP cube and'+ 'create a new cube on the destination server. '+
-'</p>'+
-'</div>'+
+ async show_Calculations(){Swal.fire({
+  title:'<h2 style ="text-align: center;"> Add calculations  ! </h2>',
 
-         '</html>',
-    confirmButtonText:
-      'Continue <i class="fa fa-arrow-right"></i>',
+  width: '800px',
+  html: '<html>'+
+'<div style="padding: 10px;">'+
+'<p>'+
+  'To add caculations to an OLAP cube, you should typically follow these steps:'+
+ 
    
-  })
-}
+'<p style="text-align:left;">1- Select a cube source: This involves choosing the server source name and the cube name.</p>'+
+      '<br>'+
+    '<p style="text-align:left;">2- Then you should create operation(s):this involves selecting mesures, opertions and set a name for each calculation</p>'+
+      '<br>'+
 
+      
+    '<h3 >By following these steps, you can successfully add calculations to an OLAP cube</h3>'+
+  '</p>'+
+'</div>'+
+      '</html>',
+})};
+resultat_de_selection:any=[]
+obj_select:any={}
+add() {
+
+  this.obj_select={name:this.nameCalculation , messure : this.mesure1.Name, messure2 :this.mesure2.Name , operation:this.value }
+  this.resultat_de_selection.push(this.obj_select)
+ 
+ console.log(this.resultat_de_selection)
+ console.log(this.resultat_de_selection.messure)
+
+
+}
 //sammary confirm
 confirm(){
-  const swalWithBootstrapButtons = Swal.mixin({
-    customClass: {
-      confirmButton: 'btn btn-success',
-      cancelButton: 'btn btn-danger'
-    },
-    buttonsStyling: false
-  })
-  
-  swalWithBootstrapButtons.fire({
-    title: 'Are you sure?',
+  Swal.fire({
+    title: "You want to add this measure calculation to the cube : "+this.selectedDatabase.Name+ "",
+    text: "",
     showCancelButton: true,
-
-
-    confirmButtonText: 'Yes, add !',
-    cancelButtonText: 'No, cancel!',
-    reverseButtons: true
+    html: '<html>'+
+    '<div style="padding: 10px;">'+
+    '<p style="text-align:left;">- Expression  : ' + this.mesure1.Name + '  '+this.value+'  ' + this.mesure2.Name+ '</p>'+
+    '<p style="text-align:left;">- Name to calculation: ' + this.nameCalculation+ '</p>'+
+    '</div>'+
+    '</html>',
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Confirm!'
   }).then((result) => {
     if (result.isConfirmed) {
-      swalWithBootstrapButtons.fire(
- 
-        'success'
-      )
-    } else if (
-      /* Read more about handling dismissals below */
-      result.dismiss === Swal.DismissReason.cancel
-    ) {}
- 
-  })
+      this.add();
+      
+    }
+  });
 }
 
 

@@ -35,7 +35,7 @@ export class TableListComponent implements OnInit {
   async ngOnInit() {
    
    this.getServers()  
-   this.Show();
+   this.show_dispatch();
   }
 // serveur Engine 
 getServers() {
@@ -147,51 +147,62 @@ Dispatch() {
 
 }
 /*Dispatch'*/
-async Show(){
-  const { value: accept } = await Swal.fire({
-    title:'<h2 style ="text-align: center;">Welcome To Dispatch ! </h2>',
-    width: '950px',
-    html: '<html>'+
-    '<div style="padding: 10px;text-align: center;margin-top: 0">'+ 
-    'To dispatch an  OLAP cube, you typically follow these steps:'+  '<br>'+
-    '<br>'+
-'<ul> 1-Select a cube source: This involves choosing the server source name and the database source where the cube data resides.</ul>'+
-'<ul> 2-Select a database source: Once you have chosen the cube source, you need to select the database source by choosing the server engine and the specific database that contains the data for the cube.</ul> '+
+async show_dispatch(){Swal.fire({
+  title:'<h2 style ="text-align: center;"> Dispatch ! </h2>',
 
-'<ul> 3-You should click "Next",then select a destination server and set a name for the new cube: After selecting the database source, you need to choose the destination server where you want to'+
-' dispatch the cube. You also need to provide a name for the new cube that will be created on the destination server.</ul> '+
-'<br>'+
-'--> By following these steps, you can successfully dispatch an OLAP cube and'+ 'create a new cube on the destination server. '+
-'</p>'+
-'</div>'+
-
-         '</html>',
+  width: '950px',
+  html: '<html>'+
+'<div style="padding: 10px;">'+
+'<p>'+
+  'To dispatch an OLAP cube, you should typically follow these steps:'+
    
-  })
   
+ '<p style="text-align:left;">1-Select a cube source: Choose the server source name and the existing cube   .</p>'+
  
-}
+    '<p style="text-align:left;">2- Select the database source: Choose the server engine and the specific database to the cube creation </p>'+
+   
+  
+      '<p style="text-align:left;">4- You should choose a new cube name  </p>'+
+   
+      '<p style="text-align:left;">5- When you click  "Dispatch", a preview of the summary appears</p>'+
+   
+  ' <p style="text-align:left;"> 6- You confirme the cube dispatcher</p>'+
 
+      
+    '<h3 >By following these steps, you can successfully dispatch an OLAP cube</h3>'+
+  '</p>'+
+'</div>'+
+       '</html>',
+})}
 async sammary(){
   Swal.fire({
-    title: 'Are you sure?',
-    text: "You won't be able to revert this!",
+    title: "You won't to dispatch this cube !",
+  
 
     showCancelButton: true,
- 
+    html: '<html>'+
+    '<div style="padding: 10px;">'+
+    '<p style="text-align:left;">-  database source: '+this.selectedDatabase.Name+ '</p>'+
+      
+     '<p style="text-align:left;">- cube source: '+ this.slecteDdcube.Name+'.</p>'+
+    
+          '<p style="text-align:left;">-  new cube name '+this.newCubename+' </p>'+
+              
+      '</p>'+
+    '</div>'+
+           '</html>',
    
     confirmButtonColor: '#3085d6',
     cancelButtonColor: '#d33',
-    confirmButtonText: 'Yes, delete it!'
+    confirmButtonText: 'Confirm !'
   }).then((result) => {
     if (result.isConfirmed) {
      
        this.Dispatch();
-       this. envoi = false
+      
      
     }
   })
-  
  
 }
 

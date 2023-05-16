@@ -9,6 +9,8 @@ import { AttributFactData, AttributFactsData } from "app/models/AttributFact";
 import { CubeData } from "app/models/CubeData";
 import { DispatchData } from "app/models/DispatchData";
 import { Messuresdata } from "app/models/Messure";
+import { CalculationData } from "app/models/CalculationData";
+
 
 @Injectable()
 export class ServerService {
@@ -100,6 +102,7 @@ getAttributFacts(id: string, dbName:string,tableName:string ): Observable<Attrib
       );
       return res;
 }
+// messure de cube 
 getMessures(id: string, dbName:string ): Observable<Messuresdata> {
   this.loading = true;
   const res = this.http.get<Messuresdata | null>(`https://localhost:44362/api/Messure/${id}/${dbName}`).pipe(
@@ -113,8 +116,8 @@ getMessures(id: string, dbName:string ): Observable<Messuresdata> {
       );
       return res;
 }
-// messure de cube 
 
+// generation de cube 
  postCube(cubeData : CubeData ): Observable<Boolean>{
   this.loading = true;
   return this.http.post<Boolean>('https://localhost:44362/api/Cube', cubeData).pipe(
@@ -132,6 +135,17 @@ getMessures(id: string, dbName:string ): Observable<Messuresdata> {
       }),
       finalize(() =>  this.loading = false)
     );
+
+ }
+// add calculation
+postCalculation(CalculationData : CalculationData ): Observable<Boolean>{
+  this.loading = true;
+  return this.http.post<Boolean>('https://localhost:44362/api/Calculation', CalculationData).pipe(
+    catchError(err => {
+      return of(false);
+    }),
+    finalize(() =>  this.loading = false)
+  );
 
 }
 }

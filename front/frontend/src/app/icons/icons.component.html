@@ -4,107 +4,152 @@
 <div class="main-content" *ngIf="!isLoading" >
   <div class="card" *ngIf="!loading">
     <div class="card-body">
-      <mat-label style="color:black;font-size: 20px;"> Choose a Server Name  </mat-label>
-      <mat-form-field >
-        <mat-select  id="selectedServerSorceId" [(ngModel)]="selectedServerSorceId"  >
-          <mat-option *ngFor="let obj  of liste_des_serveur " [value]="obj" (click)="setserveur(obj.Id)">
-            {{ obj.Name }} 
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-        <br><br>
-    
-
-        <mat-label style="color:black;font-size: 20px;"> Choose a cube name </mat-label>
-      <mat-form-field >
-      
-        <mat-select  id="database-select" [(ngModel)]="selectedDatabase" required>
-          <mat-option *ngFor="let obj  of liste_des_bd  " [value]="obj" (click)="getmessures( obj.Name)"> {{ obj.Name }} </mat-option>
+        <!-- div principale step 1 -->
+        <div id="step0" *ngIf="step==0" >
+            <mat-label style="color:black;font-size: 20px;"> Choose a Server Name  </mat-label>
+            <mat-form-field >
+              <mat-select  id="selectedServerSorceId" [(ngModel)]="selectedServerSorceId" required >
+                <mat-option *ngFor="let obj  of liste_des_serveur " [value]="obj" (click)="setserveur(obj.Id)">
+                  {{ obj.Name }} 
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+              <br><br>
           
-        </mat-select>
-      </mat-form-field>
 
-    <div>
-    <br>
-
-
-
-    <div style="display: flex  ;">
-      <section   >
-         <mat-label style="color:black;font-size: 18px;" > Create Operation  (*)  </mat-label>
-      </section>
-      <section  style="margin-left: auto;margin-top: auto;" >
-         <mat-form-field>
-            <mat-select    >
-               <mat-option *ngFor="let el of liste_messure " [value]="el" (click)="setselect1(el)" >
-               {{el.Name}}
-               </mat-option>                                                                                         
-            </mat-select>
-         </mat-form-field>
-      </section>
-      <section  style="margin-left: auto;margin-top: auto;">
-   
-        <mat-form-field>
-          <mat-label>Operations</mat-label>
-          <mat-select>
-            <mat-option value="option1">Sum</mat-option>
-            <mat-option value="option2">Avg</mat-option>
-            <mat-option value="option3">count</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </section>
-      <section style="margin-left: auto;" >
-         <mat-form-field>
-            <mat-select  >
-               <mat-option *ngFor="let el of liste_messure" [value]="el" (click)="setselect2(el)" >
-               {{el.Name}}
-               </mat-option>
-            </mat-select>
-         </mat-form-field>
-      </section>
-      <section style="margin-left: auto;"> 
-         <mat-button type="button" data-func="dt-add" class="btn btn-success btn-xs dt-add" [disabled]="obj1 == null || obj2 == null"  (click)="confirm()" >
-         <i class="fa fa-plus"></i> Add
-         </mat-button>
-      </section>
-    </div>
-    
-
-        <br>
-        <br>
-        <table class="table table-bordered,table-light">
-          <thead>
-              <tr>
-                <th>Mesure_Name</th>
-                <th>Operation</th>
-                <th>Calculation Name </th>
-
-                <th>Action</th>
-        
+              <mat-label style="color:black;font-size: 20px;"> Choose a cube name </mat-label>
+            <mat-form-field >
+            
+              <mat-select  id="database-select" [(ngModel)]="selectedDatabase" required>
+                <mat-option *ngFor="let obj  of liste_des_bd  " [value]="obj" (click)="getmessures(obj.Name)"> {{ obj.Name }} </mat-option>
+                
+              </mat-select>
+            </mat-form-field>
+          <br>
+          <br>
+          <table class="table table-bordered,table-light">
+            <thead>
+                <tr>
+                   <th>Calculation Name </th>
+                  <th>Mesure_Name</th>
+                  <th>Mesure_Name</th>
+                  <th>Operation</th>
+                  <th>Action</th>
+          
+                </tr>
+              </thead>
+              <tbody>
+            
+              <tr *ngFor="let obj of resultat_de_selection">
+                <td>{{obj.name}}</td>
+                <td>{{ obj.messure}}</td>
+                <td>{{ obj.operation}}</td>
+                <td>{{ obj.messure2}}</td>
+                <td>
+                  <div>
+                    <i class="material-icons button delete" (click)="deleteRow($event)"  style="color: #dc2a2a">delete</i>
+                  </div>
+                  
+                </td>
+                
               </tr>
-            </thead>
-            <tbody>
+            </tbody>
+          </table>
+          <br>
+          <br>
+          <div class="card-footer d-flex justify-content-between">
+            <button type="button" class="btn btn-primary nextBtn ml-auto align-self-end" style="background-color:rgb(31, 28, 28)" (click)="nextStep()">
+                New <i class="fa fa-plus"></i>
+            </button>
+        </div>
+       </div>
+         <!-- div principale step 2 -->
+         <div id = "step1" *ngIf ="step==1" >
+          <div style="display: flex  ;">
+            <section   >
+               <mat-label style="color:black;font-size: 18px;" > Create Operation  (*)  </mat-label>
+            </section>
+            <section  style="margin-left: auto;margin-top: auto;" >
+               <mat-form-field>
+                  <mat-select  [(ngModel)]="mesure1"    >
+                     <mat-option *ngFor="let el of liste_messure " [value]="el"  >
+                     {{el.Name}}
+                     </mat-option>                                                                                         
+                  </mat-select>
+               </mat-form-field>
+            </section>
+            <section  style="margin-left: auto;margin-top: auto;">
+         
+              <mat-form-field>
+                <mat-label>Operations</mat-label>
+                <mat-select [(ngModel)]="value" >
+                  <mat-option value="*">*</mat-option>
+                  <mat-option value="/">/</mat-option>
+                  <mat-option value="+">+</mat-option>
+                  <mat-option value="-">-</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </section>
+            <section style="margin-left: auto;" >
+               <mat-form-field>
+                  <mat-select [(ngModel)]="mesure2"  >
+                     <mat-option *ngFor="let el of liste_messure" [value]="el"  >
+                     {{el.Name}}
+                     </mat-option>
+                  </mat-select>
+               </mat-form-field>
+            </section>
+            <section style="margin-left: auto;" >
+             
+                <mat-form-field appearance="fill">
+                  <mat-label> calculation Name </mat-label>
+                  <input matInput [(ngModel)]="nameCalculation">
+               </mat-form-field>
+             
+           </section>
+            <section style="margin-left: auto;"> 
+               <mat-button type="button" data-func="dt-add" class="btn btn-success btn-xs dt-add"  (click)="confirm()" >
+               <i class="fa fa-plus"></i> Add
+               </mat-button>
+            </section>
+          </div>
+          <table class="table table-bordered,table-light">
+            <thead>
+                <tr>
+                  <th>Mesure_Name</th>
+                  <th>Mesure_Name</th>
+                  <th>Operation</th>
+                  <th>Calculation Name </th>
+
+                  <th>Action</th>
           
-            <tr *ngFor="let obj of resultat_de_selection">
-              <td>{{ obj.obj1.TableName }}</td>
-              <td>{{ obj.obj1.Name }}</td>
-              <td>{{ this.fact_name }}</td>
-              <td>{{ obj.obj2.Name }}</td>
-              <td>
-                <div>
-                  <i class="material-icons button delete" (click)="deleteRow($event)"  style="color: #dc2a2a">delete</i>
-                </div>
-                <div>
-                  <i class="material-icons button edit" (click)="editRow($event)" style="color: #27077e">edit</i>
-                </div>
-              </td>
-              
-            </tr>
-          </tbody>
-        </table>
-        <br>
-        <br>
-     </div>
+                </tr>
+              </thead>
+              <tbody>
+            
+              <tr *ngFor="let obj of resultat_de_selection">
+                <td>{{obj.name}}</td>
+                <td>{{ obj.messure}}</td>
+                <td>{{ obj.operation}}</td>
+                <td>{{ obj.messure2}}</td>
+                <td>
+                  <div>
+                    <i class="material-icons button delete" (click)="deleteRow($event)"  style="color: #dc2a2a">delete</i>
+                  </div>
+                  
+                </td>
+                
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="card-footer d-flex justify-content-between">
+            <button type="button" class="btn btn-primary nextBtn ml-auto align-self-end" style="background-color:rgb(31, 28, 28)" (click)="previousStep()">
+                Save <i class="fa fa-save"></i>
+            </button>
+        </div>
+         </div>
+    </div>
     </div>
   </div>
   

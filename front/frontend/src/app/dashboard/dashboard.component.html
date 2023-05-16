@@ -43,7 +43,7 @@
    <!-- div principale-->
    <div class="card" *ngIf="!loading">
       <div class="card-body">
-         <!-- div principale step 1 -->
+         <!-- div principale step 0 -->
          <div id="step0" *ngIf="step==0" >
             <mat-label style="color:black;font-size: 18px;" > Server Name (*) </mat-label>
             <mat-form-field >
@@ -68,68 +68,7 @@
                </mat-select>
             </mat-form-field>
             <br>
-            <mat-label style="color:black;font-size: 18px;"> Dimenssion(s) (*)</mat-label>
-            <mat-form-field>
-               <mat-select [(ngModel)]="selectedObjects"  >
-               <mat-option *ngFor="let el of liste_des_dim" [value]="el" (click)="setAtrFact(el.Name)"  >
-               {{el.Name}}
-               </mat-option>
-               </mat-select>
-            </mat-form-field>
-            <br>
-            <div style="display: flex  ;">
-               <section   >
-                  <mat-label style="color:black;font-size: 18px;" > Matching(s) between fact and dimenssions (*)  </mat-label>
-               </section>
-               <section  style="margin-left: auto;margin-top: auto;" >
-                  <mat-form-field>
-                     <mat-select    >
-                        <mat-option *ngFor="let el of liste1 " [value]="el" (click)="setselect1(el)" >
-                        {{el.Name}}
-                        </mat-option>                                                                                         
-                     </mat-select>
-                  </mat-form-field>
-               </section>
-               <section style="margin-left: auto;" >
-                  <mat-form-field>
-                     <mat-select  >
-                        <mat-option *ngFor="let el of liste2 " [value]="el" (click)="setselect2(el)" >
-                        {{el.Name}}
-                        </mat-option>
-                     </mat-select>
-                  </mat-form-field>
-               </section>
-               <section style="margin-left: auto;"> 
-                  <mat-button type="button" data-func="dt-add" class="btn btn-success btn-xs dt-add" [disabled]="obj1 == null || obj2 == null"  (click)="match()" >
-                  <i class="fa fa-plus"></i> Add
-                  </mat-button>
-               </section>
-            </div>
-            <br>
-            <table class="table table-bordered,table-light">
-               <thead>
-                  <tr>
-                     <th>Dimension</th>
-                     <th>Primiry_key</th>
-                     <th>Fact_Table_Name</th>
-                     <th>FOREIGN_KEY  </th>
-                     <th>Action</th>
-                  </tr>
-               </thead>
-               <tbody>
-                  <tr *ngFor="let obj of resultat_de_selection">
-                     <td>{{ obj.obj1.TableName }}</td>
-                     <td>{{ obj.obj1.Name }}</td>
-                     <td>{{ this.fact_name }}</td>
-                     <td>{{ obj.obj2.Name }}</td>
-                     <td>
-                        <div>
-                           <i class="material-icons button delete" (click)="deleteRow($event)"  style="color: #dc2a2a">delete</i>
-                        </div>
-                     </td>
-                  </tr>
-               </tbody>
-            </table>
+          
            <div class="card-footer d-flex justify-content-between">
                <button type="button" class="btn btn-primary prevBtn" style="background-color:rgb(31, 28, 28)" (click)="previousStep()" [disabled]="step === 0">
                <i class="fa fa-arrow-left"></i> Previous
@@ -139,8 +78,87 @@
                </button>
            </div>
          </div>
-         <!-- div principale step 2 -->
-         <div id = "step1" *ngIf ="step==1" >
+         <!-- div principale step 1 -->
+         <div id="step1" *ngIf="step==1" >
+          
+                  <mat-label style="color:black;font-size: 18px;"> Dimenssion(s) (*)</mat-label>
+                  <mat-form-field>
+                     <mat-select [(ngModel)]="selectedObjects"  >
+                     <mat-option *ngFor="let el of liste_des_dim" [value]="el" (click)="setAtrFact(el.Name)"  >
+                     {{el.Name}}
+                     </mat-option>
+                     </mat-select>
+                  </mat-form-field>
+                  <br>
+                  <br>
+                  <br>
+                  <div style="display: flex  ;">
+                     <section   >
+                        <mat-label style="color:black;font-size: 18px;" > Matching(s) between fact and dimenssions (*)  </mat-label>
+                     </section>
+                     <section  style="margin-left: auto;margin-top: auto;" >
+                        <mat-form-field>
+                           <mat-select    >
+                              <mat-option *ngFor="let el of liste1 " [value]="el" (click)="setselect1(el)" >
+                              {{el.Name}}
+                              </mat-option>                                                                                         
+                           </mat-select>
+                        </mat-form-field>
+                     </section>
+                     <section style="margin-left: auto;" >
+                        <mat-form-field>
+                           <mat-select  >
+                              <mat-option *ngFor="let el of liste2 " [value]="el" (click)="setselect2(el)" >
+                              {{el.Name}}
+                              </mat-option>
+                           </mat-select>
+                        </mat-form-field>
+                     </section>
+                     <section style="margin-left: auto;"> 
+                        <mat-button type="button" data-func="dt-add" class="btn btn-success btn-xs dt-add" [disabled]="obj1 == null || obj2 == null"  (click)="match()" >
+                        <i class="fa fa-plus"></i> Matching
+                        </mat-button>
+                     </section>
+                  </div>
+                  <br>
+                  <table class="table table-bordered,table-light">
+                     <thead>
+                        <tr>
+                           <th>Dimension</th>
+                           <th>Primiry_key</th>
+                           <th>Fact_Table_Name</th>
+                           <th>FOREIGN_KEY  </th>
+                           <th>Action</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr *ngFor="let obj of resultat_de_selection">
+                           <td>{{ obj.obj1.TableName }}</td>
+                           <td>{{ obj.obj1.Name }}</td>
+                           <td>{{ this.fact_name }}</td>
+                           <td>{{ obj.obj2.Name }}</td>
+                           <td>
+                              <div>
+                                 <i class="material-icons button delete" (click)="deleteRow($event)"  style="color: #dc2a2a">delete</i>
+                              </div>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <br>
+                  <br>
+               <div class="card-footer d-flex justify-content-between">
+                     <button type="button" class="btn btn-primary prevBtn" style="background-color:rgb(31, 28, 28)" (click)="previousStep()" [disabled]="step === 0">
+                     <i class="fa fa-arrow-left"></i> Previous
+                     </button>
+                     <button type="button" class="btn btn-primary nextBtn" style="background-color:rgb(31, 28, 28)"  (click)="nextStep()">
+                        Next <i class="fa fa-arrow-right"></i>
+                     </button>
+               </div>
+            
+         </div>
+          <!-- div principale step 2 -->
+          <div id = "step2" *ngIf ="step==2" >
             <div style="display: flex  ; width: 80%;">
                <mat-label  >  Select a Mesure  </mat-label>
                <section  style="margin-left: auto"  >
@@ -158,7 +176,9 @@
                      <mat-label>Operations</mat-label>
                      <mat-select [(ngModel)]="value" >
                      <mat-option value="Sum()">Sum</mat-option>
-                     <mat-option value="Nb()">nb</mat-option>
+                     <mat-option value="count()">Count</mat-option>
+                     <mat-option value="count()">Count of Rows </mat-option>
+                     <mat-option value="count()">Count Distinct </mat-option>
                      </mat-select>
                   </mat-form-field>
                </section>
@@ -169,7 +189,7 @@
                   </mat-form-field>
                </section>
                <section style="margin-left: auto;"> 
-                  <mat-button type="button" data-func="dt-add" class="btn btn-success btn-xs dt-add" [disabled]="obj1 == null || obj2 == null"  (click)="match()" >
+                  <mat-button type="button" data-func="dt-add" class="btn btn-success btn-xs dt-add"   (click)="addMessure()" >
                   <i class="fa fa-plus"></i> Add
                   </mat-button>
                </section>
@@ -182,8 +202,8 @@
                      <th>Mesure</th>
                      <th>Operation</th>
                      <th>Mesure Name</th>
-               
-                  </tr>
+                     <th></th>
+                  </tr> 
                </thead>
                <tbody>
                   <tr *ngFor="let obj of mesureliste ">
@@ -199,6 +219,19 @@
                </tbody>
             </table>
             <br>
+            <br>
+            <div class="card-footer d-flex justify-content-between">
+               <button type="button" class="btn btn-primary prevBtn" style="background-color:rgb(31, 28, 28)" (click)="previousStep()" >
+               <i class="fa fa-arrow-left"></i> Previous
+               </button>
+               <button type="button" class="btn btn-primary nextBtn" style="background-color:rgb(31, 28, 28)"  (click)="nextStep()" [disabled]="step === 1" >
+                  Next <i class="fa fa-arrow-right"></i>
+               </button>
+           </div>
+         </div>
+         <!-- div principale step 2 -->
+         <div id = "step3" *ngIf ="step==3" >
+          
             <mat-form-field >
                <mat-label  > Server Name destination (*) </mat-label>
                <mat-select  id="selectedServerAnalysisId" [(ngModel)]="selectedServertargtId"  >
@@ -230,8 +263,9 @@
            </div>
            
          </div>
-         <!-- div principale step3  sammary -->
-         <div id = "step2" *ngIf ="step==2" >
+        
+         <!-- div principale step4 sammary -->
+         <div id = "step4" *ngIf ="step==4" >
             <div class="card">
                <div class="card-body">
                   <h1 style="color:black; text-align:center; font-style: oblique;">Summary</h1>
