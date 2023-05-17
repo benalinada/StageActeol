@@ -299,7 +299,7 @@ export class DashboardComponent implements OnInit {
     this.loading = true;
     this.resultat_de_selection.forEach(element => {
       var item  = [];
-      item.push(this.dim);
+      item.push(element.dim);
       item.push(element.obj1.Name);
       item.push(this.fact_name );
       item.push(element.obj2.Name);
@@ -341,12 +341,10 @@ export class DashboardComponent implements OnInit {
 
   match() {
     
-    this.obj_select={dim:this.dim,obj1:this.obj1 , obj2:this.obj2 , Fact:this.fact_name }
+    this.obj_select={dim:this.dim,obj1:this.obj1 ,Fact:this.fact_name , obj2:this.obj2  }
+    console.log(this.resultat_de_selection)
     this.resultat_de_selection.push(this.obj_select)
-   
-
-
-
+    console.log(this.resultat_de_selection)
   }
     mesureliste :any=[]
   nouvelle_mesure :any= {}

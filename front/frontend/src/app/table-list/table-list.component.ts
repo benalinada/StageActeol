@@ -115,11 +115,11 @@ Dispatch() {
   let cubedispatch : DispatchData = new DispatchData();
   
   this.isLoading = true;
-  cubedispatch.sourceServerEngineId = this.ServerEngineSorceId.Id ;  // fih base l9dima
-  cubedispatch.targetServerEngineId = "CAEC2EBB-A150-45F1-996F-7E89EC5F4028" ;// fih base jdida
-  cubedispatch.sourceServerAnalyseId = this.ServerAnalyseSorceId.Id ;//fih cube 
-  cubedispatch.targetEngineDb = this.selectedDatabase.Name; //dw jdida
-  cubedispatch.soureceAnalyserDb= this.slecteDdcube.Name; //lcube l9dim
+  cubedispatch.sourceServerEngineId = this.ServerEngineSorceId.Id ;  
+  cubedispatch.targetServerEngineId = "CAEC2EBB-A150-45F1-996F-7E89EC5F4028" ;
+  cubedispatch.sourceServerAnalyseId = this.ServerAnalyseSorceId.Id ;
+  cubedispatch.targetEngineDb = this.selectedDatabase.Name; 
+  cubedispatch.soureceAnalyserDb= this.slecteDdcube.Name; 
   this.selectedtargtServerId.forEach( s => {
 
    cubedispatch.targetServerAnalyseId.push(s.Id)

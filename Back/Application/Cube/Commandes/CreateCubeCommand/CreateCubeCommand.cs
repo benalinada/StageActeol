@@ -19,7 +19,7 @@ namespace Application.Cube.Commandes.CreateCubeCommand
         public string? CubeDBName ;
         public string CubeDataSourceName = "Data";
         public string CubeDataSourceViewName = "DataView";
-        public int DimensionTableCount = 1;
+        public int DimensionTableCount ;
         public bool EmptyCube { get; set; } = false;
 
         public string[,] TableNamesAndKeys;
