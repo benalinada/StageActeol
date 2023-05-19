@@ -1,5 +1,5 @@
 ﻿
-using Application.Calculation.Commandes;
+using Application.Calcul.Commandes.CreateCalculCommand;
 using Application.Database.Queries;
 using Application.Dispatch.Commandes;
 using Application.Servers.Qeuries.GetServers;
@@ -12,7 +12,7 @@ namespace Backend.Controllers
     public class CalculationController : ApiControllerBase
     {
         [HttpPost()]
-        public async Task<IActionResult> Get(CreateCalculationCommand command)
+        public async Task<IActionResult> Get(CreateCalculCommand command)
         {
             var vm =  await Mediator.Send(command);
             return Ok(vm);

@@ -23,5 +23,7 @@ namespace Application.Cube.Commandes.CreateCubeCommand
         public bool EmptyCube { get; set; } = false;
 
         public string[,] TableNamesAndKeys;
+        public string[,] Messurecalcl; 
+        public int MessureCout;
     }
 }

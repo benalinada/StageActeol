@@ -5,5 +5,6 @@ export class DispatchData {
     sourceServerAnalyseId: string
     targetServerAnalyseId : string[]
     soureceAnalyserDb : string
-    targetEngineDb : string[]
+    targetEngineDb : string
+    newdbName : string
 }

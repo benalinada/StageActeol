@@ -18,7 +18,6 @@ export class TableListComponent implements OnInit {
   liste_des_dim: any = []; // liste de dim de fact table 
   serveurid: any; // servur id slecté 
   bd_name: any; // dbname slecte 
-  lodaing: boolean = false;
   ServerAnalyseSorceId : any ; // server fih lcube l9dima 
   slecteDdcube : any ; // fih lcube l9dim
   ServerEngineSorceId : any ; // serveur engine fih dw jdida
@@ -28,8 +27,10 @@ export class TableListComponent implements OnInit {
   looodaing : boolean = true ;
   envoi : boolean = true;
    responseDate : Date;
+   MeassageError :any;
+   isLoading = false;
    step : number = 0;
-   isLooading = false;
+
   constructor(private serverService: ServerService, private userService: UserAppService) { }
 
   async ngOnInit() {
@@ -42,7 +43,7 @@ getServers() {
   this.liste_des_serveur = []
   this.serverDisplays = new Map<string, number>();
      let progress = 0; 
-     this.isLooading = true;
+     this.isLoading = true;
   const data = this.serverService.getServers(this.userService.user.Id)
   
     .pipe(
@@ -57,9 +58,9 @@ getServers() {
           this.getServers
         
         }
-        this.isLooading = false;
+        this.isLoading = false;
       }
-      this.isLooading = false;
+      this.isLoading = false;
     });
 
 
@@ -77,7 +78,7 @@ previousStep()
 //  get db a partir de id serveur 
 setserveur(id: any) {
   this.serveurid = id;
-  this.isLooading = true;
+  this.isLoading = true;
   const data = this.serverService.getBbs(id)
     .pipe(
       catchError(err => of(null)),
@@ -86,14 +87,14 @@ setserveur(id: any) {
 
       if (data) {
         this.liste_des_bd = data.DataBases
-        this.islooading = false;
+        this.isLoading = false;
       }
-      this.isLooading = false;
+      this.isLoading = false;
     });
 }
 setserveur2(id: any) {
   this.serveuridAnalysis = id;
-  this.isLooading = true;
+  this.isLoading = true;
   const data = this.serverService.getBbs(id)
     .pipe(
       catchError(err => of(null)),
@@ -102,9 +103,9 @@ setserveur2(id: any) {
 
       if (data) {
         this.liste_des_bdcube = data.DataBases
-        this.islooading = false;
+        this.isLoading = false;
       }
-      this.isLooading = false;
+      this.isLoading = false;
     });
 }
 
@@ -113,37 +114,37 @@ setserveur2(id: any) {
 Table_Reponse: any[] = []; 
 Dispatch() {
   let cubedispatch : DispatchData = new DispatchData();
-  
-  this.isLoading = true;
+  this.loading = true;
+ 
   cubedispatch.sourceServerEngineId = this.ServerEngineSorceId.Id ;  
   cubedispatch.targetServerEngineId = "CAEC2EBB-A150-45F1-996F-7E89EC5F4028" ;
   cubedispatch.sourceServerAnalyseId = this.ServerAnalyseSorceId.Id ;
   cubedispatch.targetEngineDb = this.selectedDatabase.Name; 
   cubedispatch.soureceAnalyserDb= this.slecteDdcube.Name; 
+  cubedispatch.newdbName = this.newCubename;
+  cubedispatch.targetServerAnalyseId =[];
   this.selectedtargtServerId.forEach( s => {
-
    cubedispatch.targetServerAnalyseId.push(s.Id)
-
-  }); // win chn7ot lcube 
-  console.log( cubedispatch )
-  console.log(this.looodaing )
+  }); 
+  
   const data = this.serverService.postCubedispatch(cubedispatch)
   .pipe(
     catchError(err => of(null)),
-    tap(() => this.lodaing == false
-
-    )
+    tap(() => this.lodaing == false)
   ).subscribe(async (data: any) => {
-       
+     
     if (data) {
       this.MeassageError = []
      
     }else{
       this.MeassageError = []
-      this.MeassageError.push("Error Dispatch cube")
+      this.MeassageError.push("Error creaing cube")
+      console.log(this.MeassageError)
     }
     
   });
+
+
 
 }
 /*Dispatch'*/
@@ -176,7 +177,7 @@ async show_dispatch(){Swal.fire({
 })}
 async sammary(){
   Swal.fire({
-    title: "You won't to dispatch this cube !",
+    title: "You want to dispatch this cube !",
   
 
     showCancelButton: true,
@@ -205,7 +206,12 @@ async sammary(){
   })
  
 }
-
+refreche_page() {
+  window.location.reload();
+}
+reset(step: number) {
+  this.step = this.step -1;
+}
  
 
 }

@@ -12,6 +12,8 @@ export class CubeData {
   TableNamesAndKeys : string[][]
   DBAnalyserServer : String
   DBEngineServer : String
+  Messurecalcl :string[][]
+  MessureCout : number
   }
  
  

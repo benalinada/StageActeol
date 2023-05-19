@@ -1,144 +1,146 @@
 <!-- div loading de telechargment  -->
-<div *ngIf="isLooading">
-  <app-notifications></app-notifications>
+<div *ngIf="isLoading">
+   <app-notifications></app-notifications>
 </div>
-<div class="main-content"  *ngIf="!isLooading"   >
-<!-- div error message  -->
-<div *ngIf= "loading && MeassageError && MeassageError.length>0">
-  <div class="col-sm-12">
-     <div class="alert fade alert-simple alert-danger alert-dismissible text-left font__famli/liy-montserrat font__size-16 font__weight-light brk-library-rendered rendered show" role="alert" data-brk-library="component__alert">
-        <button type="button" class="close font__size-18" data-dismiss="alert"  (click)="reset()" >
-        <span aria-hidden="true">
-        <i class="fa fa-times danger "></i>
-        </span>
-        <span class="sr-only"  >Close</span>
-        </button>
-        <i class="start-icon far fa-times-circle faa-pulse animated"></i>
-        <strong class="font__weight-semibold">Oh Error!</strong> Try again.
-     </div>
-  </div>
-</div>
-<!-- div lssucsses message  -->
-<div *ngIf= "loading && MeassageError && MeassageError.length == 0">
-  <div class="col-sm-12">
-     <div class="alert fade alert-simple alert-success alert-dismissible text-left font__famli/liy-montserrat font__size-16 font__weight-light brk-library-rendered rendered show">
-        <button type="button" class="close font__size-18" data-dismiss="alert" (click)="refreche_page()" >
-        <span aria-hidden="true"><a>
-        <i class="fa fa-times greencross"></i>
-        </a></span>
-        <span class="sr-only"  >Close</span> 
-        </button>
-        <i class="start-icon far fa-check-circle faa-tada animated"></i>
-        <strong class="font__weight-semibold">Well done!</strong> Cube Dispatch successfully.
-     </div>
-  </div>
-</div>
-<!-- div dispatch start -->
-<div *ngIf= "loading && !MeassageError" >
-  <app-typography></app-typography>
-</div>
-<!-- div principale-->
-<div *ngIf="!isLooading">
-  <!-- step1 -->
-  <div id="step0" *ngIf="step==0" >
-     <div class="card">
-        <div class="card-body">
-           <h1 style="color:black;">Source</h1>
-           <div style="display: flex; align-items: center;">
-              <div class="card-icon" style="width:30px ; color:black;" >
-                 <i class="fa fa-cube"></i>
-              </div>
-              <br> <br> <br> 
-              <h1 style="color:black;" >Source Cube </h1>
-           </div>
-           <mat-form-field>
-              <mat-label>Select an Analysis server name</mat-label>
-              <mat-select id="ServerAnalyseSorceId" [(ngModel)]="ServerAnalyseSorceId">
-              <mat-option *ngFor="let obj  of liste_des_serveur" [value]="obj" (click)="setserveur(obj.Id)">
-              {{ obj.Name }}
-              </mat-option>
-              </mat-select>
-           </mat-form-field>
-           <mat-form-field>
-              <mat-label>Select data base cube</mat-label>
-              <mat-select id="slecteDdcube" [(ngModel)]="slecteDdcube" required>
-              <mat-option *ngFor="let obj  of liste_des_bd" [value]="obj" (click)="setbasedonnees(obj.Name)">
-              {{ obj.Name }}
-              </mat-option>
-              </mat-select>
-           </mat-form-field>
-           <div style="display: flex; align-items: center;">
-              <div class="card-icon" style="width:30px ; color:black;" > 
-                 <i class="fa fa-database"></i>
-              </div>
-              <br> <br> <br> 
-              <h2>Data Base Source</h2>
-           </div>
-           <mat-form-field>
-              <mat-label>Select a Server Engin Name</mat-label>
-              <mat-select id="ServerEngineSorceId" [(ngModel)]="ServerEngineSorceId">
-              <mat-option *ngFor="let obj  of liste_des_serveur" [value]="obj" (click)="setserveur2(obj.Id)">
-              {{ obj.Name }}
-              </mat-option>
-              </mat-select>
-           </mat-form-field>
-           <mat-form-field>
-              <mat-label>Select a data base (Data Warehouse)</mat-label>
-              <mat-select id="selectedDatabase" [(ngModel)]="selectedDatabase" required>
-              <mat-option *ngFor="let obj  of liste_des_bdcube" [value]="obj" (click)="setbasedonnees(obj.Name)">
-              {{ obj.Name }}
-              </mat-option>
-              </mat-select>
-           </mat-form-field>
-           <div class="card-footer d-flex justify-content-between">
-            <button type="button" class="btn btn-primary prevBtn" style="background-color:rgb(31, 28, 28)" (click)="prevStep()" [disabled]="step === 0" >
-            <i class="fa fa-arrow-left"></i> Previous
-            </button>
-            <button type="button" class="btn btn-primary nextBtn" style="background-color:rgb(31, 28, 28)"  (click)="nextStep()"  >
-               Next <i class="fa fa-arrow-right"></i>
-            </button>
-        </div>
-        </div>
-     </div>
-  </div>
-  <!-- step2 -->
-  <div id="step1" *ngIf="step==1" >
-     <div class="card">
-        <div class="card-body">
-           <h1 style="color:black;font-size: 23px;" >Destinatin</h1>
-           <mat-form-field >
-              <mat-label> Selet a Destination Server Name </mat-label>
-              <mat-select  id="selectedtargtServerId" [(ngModel)]="selectedtargtServerId" multiple >
-              <mat-option *ngFor="let obj  of liste_des_serveur " [value]="obj" (click)="setserveur(obj.Id)">
-              {{ obj.Name }} 
-              </mat-option>
-              </mat-select>
-           </mat-form-field>
-           <br>
-           <mat-form-field class="example-full-width">
-              <mat-label>Set a Name to the Cube</mat-label>
-              <input matInput  [(ngModel)]="newCubename"  >
-           </mat-form-field>
-           <br>
-           <div>
-              <div style="display: flex; justify-content: center;">
-                 <button type="button" class="btn btn-success" style="font-weight: bold; font-size: 18px;" (click)="sammary()">
-                 Dispatch 
-                 </button>
-              </div>
-           </div>
-      
-     
-           <div class="card-footer d-flex justify-content-between">
-            <button type="button" class="btn btn-primary prevBtn" style="background-color:rgb(31, 28, 28)" (click)="previousStep()"  >
-            <i class="fa fa-arrow-left"></i> Previous
-            </button>
-            <button type="button" class="btn btn-primary nextBtn" style="background-color:rgb(31, 28, 28)"  (click)="nextStep()"  [disabled]="step === 1" >
-               Next <i class="fa fa-arrow-right"></i>
-            </button>
-           </div>
+<div class="main-content" *ngIf="!isLoading"   >
+   <!-- div error message  -->
+   <div class="container-fluid">
+      <div *ngIf= "loading && MeassageError && MeassageError.length>0">
+         <div class="col-sm-12">
+            <div class="alert fade alert-simple alert-danger alert-dismissible text-left font__family-montserrat font__size-16 font__weight-light brk-library-rendered rendered show" role="alert" data-brk-library="component__alert">
+               <button type="button" class="close font__size-18" data-dismiss="alert"  (click)="reset()" >
+               <span aria-hidden="true">
+               <i class="fa fa-times danger "></i>
+               </span>
+               <span class="sr-only"  >Close</span>
+               </button>
+               <i class="start-icon far fa-times-circle faa-pulse animated"></i>
+               <strong class="font__weight-semibold">Oh Error!</strong> Try again.
+            </div>
          </div>
-     </div>
-  </div>
-  
+      </div>
+   </div>
+   <!-- div lssucsses message  -->
+   <div *ngIf= "loading && MeassageError && MeassageError.length == 0">
+      <div class="col-sm-12">
+         <div class="alert fade alert-simple alert-success alert-dismissible text-left font__family-montserrat font__size-16 font__weight-light brk-library-rendered rendered show">
+            <button type="button" class="close font__size-18" data-dismiss="alert" (click)="refreche_page()" >
+            <span aria-hidden="true"><a>
+            <i class="fa fa-times greencross"></i>
+            </a></span>
+            <span class="sr-only"  >Close</span> 
+            </button>
+            <i class="start-icon far fa-check-circle faa-tada animated"></i>
+            <strong class="font__weight-semibold">Well done!</strong> Cube Dispatch successfully.
+         </div>
+      </div>
+   </div>
+   <!-- div crate start -->
+
+   <div *ngIf= "loading && !MeassageError" >
+      <app-typography></app-typography>
+   </div>
+   <!-- div principale-->
+   <div class="card" *ngIf="!loading">
+      <div class="card-body">
+          <!-- step1 -->
+          <div id="step0" *ngIf="step==0" >
+            
+             
+                  <h1 style="color:black;">Source</h1>
+                  <div style="display: flex; align-items: center;">
+                     <div class="card-icon" style="width:30px ; color:black;" >
+                        <i class="fa fa-cube"></i>
+                     </div>
+                     <br> <br> <br> 
+                     <h1 style="color:black;" >Source Cube </h1>
+                  </div>
+                  <mat-form-field>
+                     <mat-label>Select an Analysis server name</mat-label>
+                     <mat-select id="ServerAnalyseSorceId" [(ngModel)]="ServerAnalyseSorceId">
+                     <mat-option *ngFor="let obj  of liste_des_serveur" [value]="obj" (click)="setserveur(obj.Id)">
+                     {{ obj.Name }}
+                     </mat-option>
+                     </mat-select>
+                  </mat-form-field>
+                  <mat-form-field>
+                     <mat-label>Select data base cube</mat-label>
+                     <mat-select id="slecteDdcube" [(ngModel)]="slecteDdcube" required>
+                     <mat-option *ngFor="let obj  of liste_des_bd" [value]="obj" (click)="setbasedonnees(obj.Name)">
+                     {{ obj.Name }}
+                     </mat-option>
+                     </mat-select>
+                  </mat-form-field>
+                  <div style="display: flex; align-items: center;">
+                     <div class="card-icon" style="width:30px ; color:black;" > 
+                        <i class="fa fa-database"></i>
+                     </div>
+                     <br> <br> <br> 
+                     <h2>Data Base Source</h2>
+                  </div>
+                  <mat-form-field>
+                     <mat-label>Select a Server Engin Name</mat-label>
+                     <mat-select id="ServerEngineSorceId" [(ngModel)]="ServerEngineSorceId">
+                     <mat-option *ngFor="let obj  of liste_des_serveur" [value]="obj" (click)="setserveur2(obj.Id)">
+                     {{ obj.Name }}
+                     </mat-option>
+                     </mat-select>
+                  </mat-form-field>
+                  <mat-form-field>
+                     <mat-label>Select a data base (Data Warehouse)</mat-label>
+                     <mat-select id="selectedDatabase" [(ngModel)]="selectedDatabase" required>
+                     <mat-option *ngFor="let obj  of liste_des_bdcube" [value]="obj" (click)="setbasedonnees(obj.Name)">
+                     {{ obj.Name }}
+                     </mat-option>
+                     </mat-select>
+                  </mat-form-field>
+                  <div class="card-footer d-flex justify-content-between">
+                     <button type="button" class="btn btn-primary prevBtn" style="background-color:rgb(31, 28, 28)" (click)="prevStep()" [disabled]="step === 0" >
+                     <i class="fa fa-arrow-left"></i> Previous
+                     </button>
+                     <button type="button" class="btn btn-primary nextBtn" style="background-color:rgb(31, 28, 28)"  (click)="nextStep()"  >
+                        Next <i class="fa fa-arrow-right"></i>
+                     </button>
+               </div>
+           
+         </div>
+         <!-- step2 -->
+         <div id="step1" *ngIf="step==1" >
+          
+                  <h1 style="color:black;font-size: 23px;" >Destinatin</h1>
+                  <mat-form-field >
+                     <mat-label> Selet a Destination Server Name </mat-label>
+                     <mat-select  id="selectedtargtServerId" [(ngModel)]="selectedtargtServerId" multiple >
+                     <mat-option *ngFor="let obj  of liste_des_serveur " [value]="obj" (click)="setserveur(obj.Id)">
+                     {{ obj.Name }} 
+                     </mat-option>
+                     </mat-select>
+                  </mat-form-field>
+                  <br>
+                  <mat-form-field class="example-full-width">
+                     <mat-label>Set a Name to the Cube</mat-label>
+                     <input matInput  [(ngModel)]="newCubename"  >
+                  </mat-form-field>
+                  <br>
+                  <div>
+                     <div style="display: flex; justify-content: center;">
+                        <button type="button" class="btn btn-success" style="font-weight: bold; font-size: 18px;" (click)="sammary()">
+                        Dispatch 
+                        </button>
+                     </div>
+                  </div>
+               
+            
+                  <div class="card-footer d-flex justify-content-between">
+                     <button type="button" class="btn btn-primary prevBtn" style="background-color:rgb(31, 28, 28)" (click)="previousStep()"  >
+                     <i class="fa fa-arrow-left"></i> Previous
+                     </button>
+                     <button type="button" class="btn btn-primary nextBtn" style="background-color:rgb(31, 28, 28)"  (click)="nextStep()"  [disabled]="step === 1" >
+                        Next <i class="fa fa-arrow-right"></i>
+                     </button>
+                  </div>
+                  </div>
+            
+      </div>
+   </div>
 </div>

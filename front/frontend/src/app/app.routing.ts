@@ -12,7 +12,7 @@ const routes: Routes =[
  
   {
     //path: 'dashboard',
-    path: 'dashboard',
+    path: 'signin-oidc',
     redirectTo: 'dashboard',
     pathMatch: 'full'
   },
@@ -20,14 +20,14 @@ const routes: Routes =[
     path: '',
     redirectTo: 'dashboard',
     pathMatch: 'full',
-    //canActivate: [AuthGuard]
+    canActivate: [AuthGuard]
   }, {
     path: '',
     component: AdminLayoutComponent,
-    //canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
     children: [{
       path: '',
-     // canActivate: [AuthGuard],
+     canActivate: [AuthGuard],
       loadChildren: () => import('./layouts/admin-layout/admin-layout.module').then(m => m.AdminLayoutModule)
     }]
   }

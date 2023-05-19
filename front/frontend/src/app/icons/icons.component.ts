@@ -117,15 +117,16 @@ getmessures (name : any) {
   //  envoyer  les dooneé 
   envoyer_data() {
     let Calculation : CalculationData = new CalculationData ();
-    Calculation.sourceServerAnalyseId = this.selectedServerSorceId;
-    Calculation.soureceAnalyserDb = this.selectedDatabase;
+    Calculation.sourceServerAnalyseId = this.selectedServerSorceId.Id;
+    Calculation.sourceServerAnalyseName = this.selectedServerSorceId.Name;
+    Calculation.soureceAnalyserDb = this.selectedDatabase.Name;
     Calculation.provider = "msolap";
     Calculation.cubeName ="SampleCube";
-    Calculation.mes1 = this.mesure1;
-    Calculation.mes2 = this.mesure1;
+    Calculation.mes1 = this.mesure1.Name;
+    Calculation.mes2 = this.mesure1.Name;
      Calculation.opr  = this.value;
-     Calculation.name = this.nameCalculation;
-    this.loading = true;
+     Calculation.namecalculation = this.nameCalculation;
+     this.loading = true;
 
     const data = this.serverService.postCalculation(Calculation)
     .pipe(
@@ -200,7 +201,12 @@ confirm(){
     }
   });
 }
-
+reset(step: number) {
+  this.step = this.step -2;
+}
+refreche_page() {
+  window.location.reload();
+}
 
 }
 

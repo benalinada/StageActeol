@@ -11,6 +11,7 @@ using System.Linq;
 using System.Net.Http.Json;
 using System.Runtime.InteropServices;
 using System.Runtime.Serialization.Formatters;
+using System.Security.Permissions;
 using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
@@ -44,9 +45,15 @@ namespace Application.Dispatch.Commandes
                 }
 
                 // creete empty cube in target
+                var mesures = existCube.MeasureGroups[0].Measures;
+               
+                for (int i = 0; i < mesures.Count; i++)
+                {
+
+                }
                 var command = new CreateCubeCommand()
                 {
-                    CubeDBName = request.SoureceAnalyserDb,
+                    CubeDBName = request.NewDbName,
                     DBAnalyserServer = item,
                     CubeDataSourceName = existCube.DataSource.Name,
                     CubeDataSourceViewName = existCube.DataSourceView.Name,
@@ -56,10 +63,17 @@ namespace Application.Dispatch.Commandes
                     DimensionTableCount = existCube.Dimensions.Count,
                     ProviderName = request.Provider,
                     FactTableName = existCube.MeasureGroups[0].Name,
-                   
-
-            };
+                    MessureCout = existCube.MeasureGroups[0].Measures.Count,
+                };
                 var dimentions = existCube.MeasureGroups[0].Dimensions;
+                command.Messurecalcl = new string[existCube.MeasureGroups[0].Measures.Count, 3];
+                for (int i = 0;i < command.MessureCout; i++)
+                {
+                    command.Messurecalcl[i, 0] = existCube.MeasureGroups[0].Measures[i].ID.ToString();
+                    command.Messurecalcl[i, 1] = existCube.MeasureGroups[0].Measures[i].AggregateFunction.ToString();
+                    command.Messurecalcl[i, 2] = existCube.MeasureGroups[0].Measures[i].ToString();
+                }
+                
                 command.TableNamesAndKeys = new string[dimentions.Count, 4];
                 for (int i = 0; i < dimentions.Count; i++)
                 {

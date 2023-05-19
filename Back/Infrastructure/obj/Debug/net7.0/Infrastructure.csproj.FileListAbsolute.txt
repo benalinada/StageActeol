@@ -129,11 +129,6 @@ D:\PFE\StageActeol\Back\Infrastructure\obj\Debug\net7.0\refint\Infrastructure.dl
 D:\PFE\StageActeol\Back\Infrastructure\obj\Debug\net7.0\Infrastructure.pdb
 D:\PFE\StageActeol\Back\Infrastructure\obj\Debug\net7.0\Infrastructure.genruntimeconfig.cache
 D:\PFE\StageActeol\Back\Infrastructure\obj\Debug\net7.0\ref\Infrastructure.dll
-D:\pfe 2\StageActeol\Back\Infrastructure\obj\Debug\net7.0\Infrastructure.csproj.AssemblyReference.cache
-D:\pfe 2\StageActeol\Back\Infrastructure\obj\Debug\net7.0\Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
-D:\pfe 2\StageActeol\Back\Infrastructure\obj\Debug\net7.0\Infrastructure.AssemblyInfoInputs.cache
-D:\pfe 2\StageActeol\Back\Infrastructure\obj\Debug\net7.0\Infrastructure.AssemblyInfo.cs
-D:\pfe 2\StageActeol\Back\Infrastructure\obj\Debug\net7.0\Infrastructure.csproj.CoreCompileInputs.cache
 D:\pfe 2\StageActeol\Back\Infrastructure\bin\Debug\net7.0\Infrastructure.deps.json
 D:\pfe 2\StageActeol\Back\Infrastructure\bin\Debug\net7.0\Infrastructure.runtimeconfig.json
 D:\pfe 2\StageActeol\Back\Infrastructure\bin\Debug\net7.0\Infrastructure.dll
@@ -142,6 +137,11 @@ D:\pfe 2\StageActeol\Back\Infrastructure\bin\Debug\net7.0\Application.dll
 D:\pfe 2\StageActeol\Back\Infrastructure\bin\Debug\net7.0\Domain.dll
 D:\pfe 2\StageActeol\Back\Infrastructure\bin\Debug\net7.0\Application.pdb
 D:\pfe 2\StageActeol\Back\Infrastructure\bin\Debug\net7.0\Domain.pdb
+D:\pfe 2\StageActeol\Back\Infrastructure\obj\Debug\net7.0\Infrastructure.csproj.AssemblyReference.cache
+D:\pfe 2\StageActeol\Back\Infrastructure\obj\Debug\net7.0\Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\pfe 2\StageActeol\Back\Infrastructure\obj\Debug\net7.0\Infrastructure.AssemblyInfoInputs.cache
+D:\pfe 2\StageActeol\Back\Infrastructure\obj\Debug\net7.0\Infrastructure.AssemblyInfo.cs
+D:\pfe 2\StageActeol\Back\Infrastructure\obj\Debug\net7.0\Infrastructure.csproj.CoreCompileInputs.cache
 D:\pfe 2\StageActeol\Back\Infrastructure\obj\Debug\net7.0\Infrastructure.csproj.CopyComplete
 D:\pfe 2\StageActeol\Back\Infrastructure\obj\Debug\net7.0\Infrastructure.dll
 D:\pfe 2\StageActeol\Back\Infrastructure\obj\Debug\net7.0\refint\Infrastructure.dll

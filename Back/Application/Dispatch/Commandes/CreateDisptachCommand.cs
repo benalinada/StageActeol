@@ -17,7 +17,7 @@ namespace Application.Dispatch.Commandes
 
         public string SoureceAnalyserDb { get; set; } // cube selectionne 
         public string TargetEngineDb { get; set; } // dw
-
+        public string NewDbName { get; set; }
         public string Provider { get; set; } = "msolap";
         public string CubeName { get; set; } = "SampleCube";
     }

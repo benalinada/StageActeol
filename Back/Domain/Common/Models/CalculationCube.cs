@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace Domain.Common.Models
 {
-    internal class Calculation
+   public class CalculationCube
     {
         public string Name { get; set; }
+        public string operation  { get; set; }
     }
 }
 

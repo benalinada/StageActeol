@@ -92,15 +92,15 @@ D:\PFE\StageActeol\Back\Domain\obj\Debug\net7.0\refint\Domain.dll
 D:\PFE\StageActeol\Back\Domain\obj\Debug\net7.0\Domain.pdb
 D:\PFE\StageActeol\Back\Domain\obj\Debug\net7.0\Domain.genruntimeconfig.cache
 D:\PFE\StageActeol\Back\Domain\obj\Debug\net7.0\ref\Domain.dll
+D:\pfe 2\StageActeol\Back\Domain\bin\Debug\net7.0\Domain.deps.json
+D:\pfe 2\StageActeol\Back\Domain\bin\Debug\net7.0\Domain.runtimeconfig.json
+D:\pfe 2\StageActeol\Back\Domain\bin\Debug\net7.0\Domain.dll
+D:\pfe 2\StageActeol\Back\Domain\bin\Debug\net7.0\Domain.pdb
 D:\pfe 2\StageActeol\Back\Domain\obj\Debug\net7.0\Domain.csproj.AssemblyReference.cache
 D:\pfe 2\StageActeol\Back\Domain\obj\Debug\net7.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
 D:\pfe 2\StageActeol\Back\Domain\obj\Debug\net7.0\Domain.AssemblyInfoInputs.cache
 D:\pfe 2\StageActeol\Back\Domain\obj\Debug\net7.0\Domain.AssemblyInfo.cs
 D:\pfe 2\StageActeol\Back\Domain\obj\Debug\net7.0\Domain.csproj.CoreCompileInputs.cache
-D:\pfe 2\StageActeol\Back\Domain\bin\Debug\net7.0\Domain.deps.json
-D:\pfe 2\StageActeol\Back\Domain\bin\Debug\net7.0\Domain.runtimeconfig.json
-D:\pfe 2\StageActeol\Back\Domain\bin\Debug\net7.0\Domain.dll
-D:\pfe 2\StageActeol\Back\Domain\bin\Debug\net7.0\Domain.pdb
 D:\pfe 2\StageActeol\Back\Domain\obj\Debug\net7.0\Domain.dll
 D:\pfe 2\StageActeol\Back\Domain\obj\Debug\net7.0\refint\Domain.dll
 D:\pfe 2\StageActeol\Back\Domain\obj\Debug\net7.0\Domain.pdb

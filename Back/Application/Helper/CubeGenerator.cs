@@ -22,8 +22,7 @@ namespace Application.Helper
     using Microsoft.AspNetCore.Mvc;
     using System.Xml.Linq;
     using System.Data.Common;
-    using Application.Calculation.Commandes;
-
+   
     namespace OLAPCube
     {
         public static class CubeGenerator
@@ -61,7 +60,7 @@ namespace Application.Helper
                         objDimensions = (Dimension[])CreateDimension(objDatabase, objDataSourceView, command.TableNamesAndKeys, command.DimensionTableCount);
                         //Creating the Cube, MeasureGroup, Measure, and Partition Objects.
 
-                        CreateCube(objDatabase, objDataSourceView, objDataSource, objDimensions, command.FactTableName, command.TableNamesAndKeys, command.DimensionTableCount);
+                        CreateCube(objDatabase, objDataSourceView, objDataSource, objDimensions, command.FactTableName, command.TableNamesAndKeys, command.DimensionTableCount , command.Messurecalcl , command.MessureCout);
 
                     }
                     objDatabase.Process(ProcessType.ProcessFull);
@@ -374,14 +373,13 @@ namespace Application.Helper
             /// <param name="strFactTableName">FactTable Name.</param>
             /// <param name="strTableNamesAndKeys">Array of Table Names and Keys.</param>
             /// <param name="intDimensionTableCount">DimensionTable Count.</param>
-            private static void CreateCube(Database objDatabase, DataSourceView objDataSourceView, RelationalDataSource objDataSource, Dimension[] objDimensions, string strFactTableName, string[,] strTableNamesAndKeys, int intDimensionTableCount)
+            private static void CreateCube(Database objDatabase, DataSourceView objDataSourceView, RelationalDataSource objDataSource, Dimension[] objDimensions, string strFactTableName, string[,] strTableNamesAndKeys, int intDimensionTableCount , string[,] Messurecalcl , int MessureCout )
             {
                 try
                 {
                     Console.WriteLine("Creating the Cube, MeasureGroup, Measure, and Partition Objects ...");
                     Cube objCube = new Cube();
-                    Measure objSales = new Measure();
-                    Measure objQuantity = new Measure();
+                    
                     MdxScript objTotal = new MdxScript();
                     String strScript;
 
@@ -394,10 +392,43 @@ namespace Application.Helper
                     //MeasureGroup objMeasureGroup = objCube.MeasureGroups.Add("FactSales");
                     MeasureGroup objMeasureGroup = objCube.MeasureGroups.Add(strFactTableName);
                     // plusieur 
+                  
+                    for (int i = 0; i < MessureCout ; i++)
+                    {
+                        Measure objMessure = new Measure();
 
-                    //Add Measure to the Measure Group and set Measure source
-                    objSales = objMeasureGroup.Measures.Add("Covers");
-                    objSales.Source = new DataItem(strFactTableName, "Covers", DataType.Int32);
+                        //Add Measure to the Measure Group and set Measure source
+                        objMessure = objMeasureGroup.Measures.Add(Messurecalcl[i,0]);
+                        
+                        objMessure.Source = new DataItem(strFactTableName, Messurecalcl[i,0], DataType.Int32);
+                        objMessure.Name = Messurecalcl[i, 2];
+                        if(Messurecalcl[i, 1]== "Sum")
+                        {
+                            objMessure.AggregateFunction = AggregationFunction.Sum;
+
+                        }else if (Messurecalcl[i, 1] == "Distinctcount")
+                        {
+                            objMessure.AggregateFunction = AggregationFunction.DistinctCount;
+                        }
+                        else if (Messurecalcl[i, 1] == "count")
+                        {
+                            objMessure.AggregateFunction = AggregationFunction.Count;
+                        }
+                        else if (Messurecalcl[i, 1] == "Avg")
+                        {
+                            objMessure.AggregateFunction = AggregationFunction.AverageOfChildren;
+                        }
+                        else if (Messurecalcl[i, 1] == "Min")
+                        {
+                            objMessure.AggregateFunction = AggregationFunction.Min;
+                        }
+                        else if (Messurecalcl[i, 1] == "Max")
+                        {
+                            objMessure.AggregateFunction = AggregationFunction.Max;
+                        }
+
+                    }
+                    
 
                     // objQuantity = objMeasureGroup.Measures.Add("Quantity");
                     //objQuantity.Source = new DataItem(strFactTableName, "OrderQuantity", DataType.Int32);
@@ -509,9 +540,19 @@ namespace Application.Helper
 
                 return data.Select(m => new MessureCube() { Name = m.Name });
             }
+            public static IEnumerable<CalculationCube> GetCalculation(string serverName, string dbName, string provider)
+            {
+                var server = (Microsoft.AnalysisServices.Server)CubeGenerator.ConnectAnalysisServices(serverName, provider);
+
+                var db = server.Databases.FindByName(dbName);
+                var calcul = db.Cubes.FindByName("SampleCube").DefaultMdxScript;
+                var data = calcul.Annotations;
+                return null;
+               // return data.Select(m => new Calculation() { Name = m.Name });
+            }
 
 
-            public static void  Calculation(string serverName, string dbName, string provider, string Mes1, string Mes2, string ope, string NameCalculation)
+            public static void  Calculation(  string serverName, string dbName, string provider, string Mes1, string Mes2, string ope, string NameCalculation)
             {
                 Command objCommand = new Command();
                 MdxScript objTotal = new MdxScript();
@@ -521,13 +562,15 @@ namespace Application.Helper
                 var db = server.Databases.FindByName(dbName).Cubes.FindByName("SampleCube");
 
                 //Calculated Member Definition
-                strScript = "Calculated; Create Member CurrentCube.[Measures].[Total] As [Measures].[Mes1] * [Measures].[Mes2]";
+               
+                strScript = $"Calculated; Create Member CurrentCube.[Measures].[Total] As [Measures].[{Mes1}] {ope} [Measures].[{Mes2}]";
 
                 //Add Calculated Member
                 objTotal.Name = NameCalculation;
                 objCommand.Text = strScript;
                 objTotal.Commands.Add(objCommand);
                 db.MdxScripts.Add(objTotal);
+                
 
             }
 

@@ -116,6 +116,7 @@ export class DashboardComponent implements OnInit {
   goToStep(step: number) {
     this.step = this.step -4;
   }
+  
   //  get db a partir de id serveur 
   setserveur(id: any) {
     this.serveurid = id;
@@ -306,6 +307,16 @@ export class DashboardComponent implements OnInit {
 
       cube.TableNamesAndKeys.push(item)
     });
+    cube.Messurecalcl=[];
+    this.mesureliste.forEach(element => {
+      var item  = [];
+      item.push(element.mesure);
+      item.push(element.operation);
+      item.push(element.nom);
+
+      cube.Messurecalcl.push(item)
+    });
+    cube.MessureCout=cube.Messurecalcl.length ;
     const data = this.serverService.postCube(cube)
     .pipe(
       catchError(err => of(null)),
@@ -350,7 +361,7 @@ export class DashboardComponent implements OnInit {
   nouvelle_mesure :any= {}
   addMessure(){
    
-      this.nouvelle_mesure = {mesure: this.selectedMesures.Name ,operation : this.value , nom: this.nameMessure };
+      this.nouvelle_mesure = {mesure: this.selectedMesures.Name ,operation : this.value ,nom : this.nameMessure };
       this.mesureliste.push(this.nouvelle_mesure) 
       console.log(this.mesureliste)
     }
